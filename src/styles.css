@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+search{
+    float:right;
+    margin-top:0;
+    margin-right:10px;
+    padding:0%;
+   }
+  .button{
+  float:right;
+  background-color:blue;
+  color: white;
+  margin-top:0;
+  }
+  .grid-container {
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: auto auto auto;
+    background-color: #ffffff;
+    padding: 10px;
+  }
+  
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    font-size: 20px;
+    text-align: Top-right;
+  }
