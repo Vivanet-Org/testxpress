@@ -1,0 +1,29 @@
+.text {
+    font-size: 20px;
+    font-weight: 100;
+    color: var(--text-color);
+    text-indent:100px;
+    
+}
+
+.allplatform {
+    float: right;
+    margin-right: 10px;
+    height: 10px;
+    width: 0;
+    text-align: right;
+}
+
+.search {
+    float: right;
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+.button {
+    float: right;
+    background-color: blue;
+    color: white;
+    margin-top: 0;
+    margin-right: 10px;
+}
