@@ -2,9 +2,9 @@
     position: absolute;
     top: 0;
     top: 0;
-    left: 250px;
-    height: 100vh;
-    width: calc(100% - 250px);
+    left: 20px;
+    height: 200vh;
+    width: calc(100% );
     background-color: var(--body-color);
     transition: var(--tran-05);
 }
@@ -13,8 +13,8 @@
     display: grid;
     gap: 20px 20px;
     grid-template-columns: auto auto auto;
-    padding: 50px;
-    width:100
+    padding: 80px;
+   
 }
 
 .grid-item {
@@ -53,8 +53,8 @@ body {
 /* start: Avatar */
 .avatar-group {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items:end;
+    justify-content:end;
 }
 
 .avatar {
