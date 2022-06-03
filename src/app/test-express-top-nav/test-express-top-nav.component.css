@@ -1,30 +1,35 @@
 .text {
     font-size: 20px;
-    font-weight: 100;
-    color: var(--text-color);
-    text-indent:100px;
-    
+    font-weight: 100px;
+    /* margin-right: 100px; */
+    /* color: var(--text-color); */
+    text-indent: 100px;
+
 }
 
-.allplatform {
+/* .allplatform {
     float: right;
-    margin-right: 10px;
+    margin-right: 50px;
     height: 10px;
     width: 0;
     text-align: right;
-}
+}  */
 
 .search {
     float: right;
-    margin-top: 0;
     margin-right: 10px;
+   
 }
 
 .button {
     float: right;
-    background-color: blue;
-    color: white;
-    margin-top: 0;
-    margin-right: 10px;
+    /* background-color: blue;
+    color: white; */
+    
+
 }
 
+.dropdown {
+    text-align: right;
+    margin-right: 10px;
+}
