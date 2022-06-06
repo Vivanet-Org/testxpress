@@ -1,16 +1,293 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>TMProject</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="pj1.css">
+  <link rel="stylesheet" href="styles.css">
+
+
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+  <script>
+    function changeLanguage(language) {
+      var element = document.getElementById("url");
+      element.value = language;
+      element.innerHTML = language;
+    }
+
+    function showDropdown() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches(".dropbtn")) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains("show")) {
+            openDropdown.classList.remove("show");
+          }
+        }
+      }
+    };
+  </script>
+
 </head>
+
 <body>
+  <nav class="sidebar close">
 
-  <div style="width:25%";Text-align:Right;>My Projects (20)</div>
 
+
+    <div class="container">
+      <div class="icon-bar">
+        <a class="active" href="#"><i class="bx bx-pie-chart-alt icon"></i></a>
+        <a href="#"><i class="fa fa-folder-open-o"></i></a>
+        <a href="#"><i class="fa fa-play-circle"></i></a>
+        <a href="#"><i class="fa fa-file-text-o"></i></a>
+        <a href="#"><i class="material-icons">settings</i></a>
+
+        <a href="#"><i class="bx bx-bell icon"></i></a>
+
+
+
+      </div>
+
+
+
+
+
+    </div>
+
+  </nav>
+
+  <nav>
+
+    <label class="topnav">Projects</label>
+
+  </nav>
+
+  <section class="home">
+
+    <div class="text">My Projects(20)</div>
+
+    <form style="margin:auto;
+        width:0;
+        text-align:right";>
   
+      <select name="All Platform" id="All Platform">
+        <option value="Manual" selected="selected">Manual</option>
+        <option value="All Platform" selected="selected">All Platform</option>
+      </select>
+    </form>
+
+  <div class="button"><a href="createproject.html" button class="button">Create Project</a></button></div>
+
+
+
+    <div class="search">
+      <i class="far fa-search"></i>
+      <input type="text" placeholder="Search" name="search">
+    </div>
+
+    <div class="grid-container">
+      <div class="grid-item">
+
+
+        <div>
+          <h6>Kraft Heinz Project</h6>
+          <span>The Kraft Heinz Company</span>
+
+          <div class="header">
+
+            <!-- three dot menu -->
+            <div class="dropdown">
+              <!-- three dots -->
+              <ul class="dropbtn icons btn-right showRight" onclick="showDropdown()">
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+              <!-- menu -->
+              <div id="myDropdown" class="dropdown-content">
+                <a href="#home">Edit</a>
+                <a href="#about">Duplicate</a>
+                <a href="#contact">Delete</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+
+
+        <div class="avatar-group">
+          <div class="avatar">
+            <span class="avatar-name">Someone 1</span>
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 2</span>
+            <img
+              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 3</span>
+            <img
+              src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 4</span>
+            <img
+              src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 5</span>
+            <img
+              src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+        </div>
+      </div>
+      <div class="grid-item">
+        <div>
+          <h6>TestXpress Project</h6>
+          <span>Test Automation Framework</span>
+        </div>
+        <div class="avatar-group">
+          <div class="avatar">
+            <span class="avatar-name">Someone 1</span>
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 2</span>
+            <img
+              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 3</span>
+            <img
+              src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 4</span>
+            <img
+              src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 5</span>
+            <img
+              src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <h6>Whrilpool Project</h6>
+          <span>Test Automation Framework</span>
+        </div>
+        <div class="avatar-group">
+          <div class="avatar">
+            <span class="avatar-name">Someone 1</span>
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 2</span>
+            <img
+              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 3</span>
+            <img
+              src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 4</span>
+            <img
+              src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 5</span>
+            <img
+              src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <div>
+          <h6>Amir Peleg</h6>
+          <span>Strings utility actions</span>
+
+        </div>
+
+        <div class="avatar-group">
+          <div class="avatar">
+            <span class="avatar-name">Someone 1</span>
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 2</span>
+            <img
+              src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 3</span>
+            <img
+              src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 4</span>
+            <img
+              src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+          <div class="avatar">
+            <span class="avatar-name">Someone 5</span>
+            <img
+              src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Image">
+          </div>
+        </div>
+
+
+  </section>
 </body>
+
 </html>
