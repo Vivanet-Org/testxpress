@@ -1,4 +1,4 @@
-.home {
+  .home {
   position: absolute;
   top: 0;
   top: 0;
@@ -220,4 +220,47 @@ color: #fff !important;
 
 .show {
   display: block;
+}
+
+
+/*vertical ellipsis */
+.dots {
+  float:right;
+}
+.task .dots{
+  cursor:pointer;
+  position:relative;
+}
+.dots .task-menu{
+  position:absolute;
+  padding:5px 0;
+  right:-5px;
+  bottom:-65px;
+  z-index:2;
+  transform:scale(0);
+  border-radius:5px;
+  background:#fff;
+  transform-origin:top right;
+  transition:transform 0.2s ease;
+  box-shadow:0 0 6px rgba(0,0,0,0,15);
+}
+.dots:hover .task-menu{
+  transform:scale(1);
+}
+.task-menu li{
+  height:25px;
+  font-size:16px;
+  margin-bottom:2px;
+  justify-content:flex-start;
+}
+.task-menu li:last-child{
+  margin-bottom:0;
+}
+
+
+.task-menu li:hover{
+  background:white;
+}
+.task-menu li i{
+  padding-right:8px;
 }
