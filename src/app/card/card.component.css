@@ -47,8 +47,36 @@ body {
 }
 
 /* end: Global */
+body {
+	margin: 0;
+	min-height: 20vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #3498d8;
+}
 
-
+.icon-bar {
+	width: 200px;
+	background: #fff;
+}
+.icon-bar a {
+	float: left;
+	width: 20%;
+	text-align: center;
+	padding: 12px 0;
+	transition: all 0.3s ease;
+	color: #555;
+	font-size: 36px;
+}
+.icon-bar a:hover {
+	background: #e74c3c;
+	color: #fff;
+}
+.active {
+	background: #e74c3c;
+	color: #fff !important;
+}
 
 /* start: Avatar */
 .avatar-group {
