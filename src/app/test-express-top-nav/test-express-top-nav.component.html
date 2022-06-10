@@ -1,28 +1,22 @@
-<form>
+<table width="100%" height="50px">
+    <tr>
 
-    <div class="text">My Projects(20)
-        <div class="dropdown">
+        <td>
+            <div class="text">My Projects(20)
 
-            <select name="AllPlatform" id="AllPlatform">
-                <option value="All Platform">All Platform</option>
-                <option value="Manual">Manual</option>
-            </select>
-
-
-
-
-            <div class="button"><a href ="create.componenet.html" > </a><button class="button">Create Project</button>
-
-                <div class="search">
-                    <i class="far fa-search"></i>
-                    <input type="text" placeholder="Search" name="search">
+                <div style="float:right;">
+                    <FORM name="mapform1" method="POST">
+                        <SELECT name="jump1" size="1">
+                            <OPTION value="" SELECTED>All Platform</OPTION>
+                            <OPTION value="manual">Manual</OPTION>
+                        </SELECT>
+                        <input type="text" placeholder="Search" name="search">
+                        <INPUT type=button
+                            onClick="location = '' + document.mapform1.jump1.options[ document.mapform1.jump1.selectedIndex ].value;"
+                            value="Create Project">
+                    </FORM>
                 </div>
             </div>
-        </div>
-    </div>
-
-</form>
-
-
-
-
+        </td>
+    </tr>
+</table>
