@@ -7,30 +7,31 @@
     color: white;
     margin-top: 10px;
     display: inline-block;
-  }
-  .button:hover {
+}
+
+.button:hover {
     background-color: white;
     color: #1686d9;
     border: 2px solid #1686d9;
-  }
-  
-  .card-container {
+}
+
+.card-container {
     max-width: 800px;
     margin: 50px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
-  
-  .card {
+}
+
+.card {
     height: 300px;
     width: 230px;
     border: 1px solid darkgray;
     border-radius: 3px;
     margin: 10px;
-  }
-  
-  .bg-modal {
+}
+
+.bg-modal {
     background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     height: 100%;
@@ -39,9 +40,9 @@
     display: none;
     justify-content: center;
     align-items: center;
-  }
-  
-  .modal-contents {
+}
+
+.modal-contents {
     height: 300px;
     width: 500px;
     background-color: white;
@@ -49,17 +50,17 @@
     padding: 20px;
     position: relative;
     border-radius: 4px;
-  }
-  
-  input {
+}
+
+input {
     margin: 15px auto;
     display: block;
     width: 50%;
     padding: 8px;
     border: 1px solid gray;
-  }
-  
-  .close {
+}
+
+.close {
     position: absolute;
     top: 0;
     right: 10px;
@@ -67,14 +68,8 @@
     color: #333;
     transform: rotate(45deg);
     cursor: pointer;
-  }
-  .close:hover {
+}
+
+.close:hover {
     color: #666;
-  }
-
-
-
-
-
-
-  
+}
