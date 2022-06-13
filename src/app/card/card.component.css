@@ -57,7 +57,7 @@ background: #3498d8;
 }
 
 .icon-bar {
-width: 200px;
+width: 150px;
 background: #fff;
 }
 .icon-bar a {
@@ -184,3 +184,11 @@ color: #fff !important;
   padding-right:8px;
 }
 /*end vertical ellipsis*/
+
+/*horizontal line*/
+.horizontal_line {
+  background-color:silver;
+  width: 103%;
+  height: 2px;
+  line-height: 25%;
+}

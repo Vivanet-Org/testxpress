@@ -5,16 +5,16 @@
             <div class="text">My Projects(20)
 
                 <div style="float:right;">
-                    <FORM name="mapform1" method="POST">
-                        <SELECT name="jump1" size="1">
-                            <OPTION value="" SELECTED>All Platform</OPTION>
-                            <OPTION value="manual">Manual</OPTION>
-                        </SELECT>
+                    <form name="mapform1" method="POST">
+                        <select name="jump1" size="1">
+                            <option value="" SELECTED>All Platform</option>
+                            <option value="manual">Manual</option>
+                        </select>
                         <input type="text" placeholder="Search" name="search">
-                        <INPUT type=button
+                        <input type=button
                             onClick="location = '' + document.mapform1.jump1.options[ document.mapform1.jump1.selectedIndex ].value;"
                             value="Create Project">
-                    </FORM>
+                    </form>
                 </div>
             </div>
         </td>

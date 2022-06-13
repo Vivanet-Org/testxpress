@@ -47,7 +47,7 @@ body.dark{
     top: 0;
     left: 0;
     height: 100%;
-    width: 100px;
+    width: 50px;
     padding: 10px 14px;
     background: black;
     transition: var(--tran-05);
