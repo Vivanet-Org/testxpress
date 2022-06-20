@@ -3,8 +3,50 @@
     font-weight: 100px;
     /* margin-right: 100px; */
     /* color: var(--text-color); */
-    text-indent: 100px;
+    text-indent: 70px;
 }
 
+.align-items{
+    float: right;
+    margin-right: 50px;
+}
+.select-plotform{
+    margin-right: 20px;
+    width: 160px;
+    height: 32px;
+    font-size: 16px;
+    color: grey;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+.search-style{
+    width: 250px;
+    height: 28px;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+#filtersubmit {
+    position: relative;
+    z-index: 1;
+    left: -95px;
+    top: 1px;
+    color: #7B7B7B;
+    cursor: pointer;
+    width: 0;
+    font-size: 16px;
+}
+
+.button-align{
+    margin-left: 20px;
+    width: 150px;
+    height: 32px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 2px;
+}
 
 
