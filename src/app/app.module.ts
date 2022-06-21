@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { TestExpressNavComponent } from './test-express-nav/test-express-nav.component';
 import { CardComponent } from './card/card.component';
 import { TestExpressTopNavComponent } from './test-express-top-nav/test-express-top-nav.component';
+import { MainprojectComponent } from './mainproject/mainproject.component';
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -13,11 +16,13 @@ import { TestExpressTopNavComponent } from './test-express-top-nav/test-express-
     TestExpressNavComponent,
     CardComponent,
     TestExpressTopNavComponent,
+    MainprojectComponent
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
