@@ -1,21 +1,24 @@
 <table width="100%" height="50px">
     <tr>
-
         <td>
-            <div class="text">My Projects(20)
+            <div class="text">
+                <label class="projectsCount"> My Projects (20) </label>
 
-                <div style="float:right;">
-                    <FORM name="mapform1" method="POST">
-                        <SELECT name="jump1" size="1">
-                            <OPTION value="" SELECTED>All Platform</OPTION>
-                            <OPTION value="manual">Manual</OPTION>
-                        </SELECT>
-                        <input type="text" placeholder="Search" name="search">
-                        <INPUT type=button
+                <div class="align-items">
+                    <!-- <form name="mapform1" method="POST"> -->
+                        <select class="select-plotform" name="jump1" size="1">
+                            <option value="" selected>All Platform</option>
+                            <option value="manual">Manual</option>
+                        </select>
+                            <input class="search-style" type="text" placeholder="Search" name="search">
+                            <i id="filtersubmit" class="fa-solid fa-magnifying-glass"></i>
+                        <!-- <input class="button-align" type=button
                             onClick="location = '' + document.mapform1.jump1.options[ document.mapform1.jump1.selectedIndex ].value;"
-                            value="Create Project">
-                    </FORM>
+                            value="Create Project"> -->
+                        <button class="button-align" (click)="openModal()">Create Project</button>
+                    <!-- </form> -->
                 </div>
+
             </div>
         </td>
     </tr>
