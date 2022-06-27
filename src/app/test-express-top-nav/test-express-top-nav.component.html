@@ -1,24 +1,19 @@
-<table width="100%" height="50px">
+<table width="100%" height="50px" class="headerStyles">
     <tr>
         <td>
             <div class="text">
-                <label class="projectsCount"> My Projects (20) </label>
+                <label class="projectsCount"> My Projects ({{totalProjects}}) </label>
 
                 <div class="align-items">
-                    <!-- <form name="mapform1" method="POST"> -->
-                        <select class="select-plotform" name="jump1" size="1">
-                            <option value="" selected>All Platform</option>
-                            <option value="manual">Manual</option>
-                        </select>
-                            <input class="search-style" type="text" placeholder="Search" name="search">
-                            <i id="filtersubmit" class="fa-solid fa-magnifying-glass"></i>
-                        <!-- <input class="button-align" type=button
-                            onClick="location = '' + document.mapform1.jump1.options[ document.mapform1.jump1.selectedIndex ].value;"
-                            value="Create Project"> -->
-                        <button class="button-align" (click)="openModal()">Create Project</button>
-                    <!-- </form> -->
-                </div>
+                    <select class="select-plotform" name="jump1" size="1">
+                        <option value="" selected>All Platform</option>
+                        <option value="manual">Manual</option>
+                    </select>
+                        <input class="search-style" type="text" placeholder="Search" name="search">
+                        <i id="filtersubmit" class="fa-solid fa-magnifying-glass"></i>
 
+                    <button class="createButton" (click)="openModal()">Create Project</button>
+                </div>
             </div>
         </td>
     </tr>

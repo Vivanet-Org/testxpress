@@ -4,38 +4,22 @@
         <div class="close">
             <label class="closeModel" (click)="closeModal()" for="close">&times;</label>
         </div>
-        <!-- <img style="float: right;" src="https://richardmiddleton.me/comic-100.png" alt="close"> -->
-
-
-        <form action=example-server.com>
-            <!-- <fieldset> -->
-                <!-- <legend>Create a new project</legend> -->
+        <form #createNewProjectForm="ngForm" (submit)="createNewProject(createNewProjectForm)">
                 <label class="projectHeading"><b>Create a new project</b></label>
                 <hr class="hrStyle">
                 <div class="form-control data-error-sorry, that name is taken.">
-                    <label class="projectDetails" for="project name">Project Name</label>
-                    <input class="inputStyles" type="Project Name" id="name" placeholder="Web List Operations" required maxlength="25"
-                        minlength="1" />
+                    <label class="projectDetails">Project Name</label>
+                    <input class="inputStyles" id="name" type="text" name="projectName" 
+                    placeholder="Web List Operations" required ngModel maxlength="25" minlength="1" />
                 </div>
-
                 <div class="control">
-                    <label class="projectDetails" for="Description">Description</label>
-                    <input class="inputStyles" type="Description" id="Description" placeholder="Action to automate HTML" required
-                        maxlength="150" minlength="1" />
+                    <label class="projectDetails">Description</label><br />
+                    <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
+                    placeholder="Action to automate HTML" ngModel maxlength="150" minlength="1"> </textarea>
                 </div>
                 <hr class="hrStyle">
-                <!-- <button class="button" onclick="javascript:window.close()">cancel</button> -->
-                    <!-- <a href="#" class="button">Cancel</a> -->
-                <!-- <button class="button" onclick="window.open()">Create</button> -->
-                        <!-- <a href="#" class="button">Create</a> -->
-                        <!-- partial -->
-                        <!-- <script src="./script.js"></script> -->
-                <div class="btnAlign">
-                    <button class="btnClose" (click)="closeModal()">Cancel</button>
-                    <button class="btnCreate">Create</button>
-                </div>
-                
-            <!-- </fieldset> -->
+                <button class="btnCreate" [disabled]="!createNewProjectForm.valid">Create</button>
         </form>
+        <button class="btnClose" (click)="closeModal()">Cancel</button>
     </div>
 </div>

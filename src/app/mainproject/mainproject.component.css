@@ -20,39 +20,30 @@
     backface-visibility: hidden;
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     display: none;
     justify-content: center;
     align-items: center;
-    
-    /* position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%; */
-
-    /* position: fixed; */
-    /* display: grid; */
 }
 
 .modal-contents {
-    height: 300px;
+    height: 320px;
     width: 500px;
     background-color: white;
-    /* text-align: center; */
     padding: 20px;
     position: relative;
     border-radius: 4px;
 }
 
 input {
-    /* margin: 15px auto; */
-    /* display: block; */
+
     width: 100%;
     height: 30px;
-    /* padding: 8px; */
     border: 1px solid gray;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font: normal normal 18px Segoe UI;
 }
 
 .close {
@@ -61,7 +52,6 @@ input {
     right: 10px;
     font-size: 42px;
     color: #333;
-    /* transform: rotate(45deg); */
     cursor: pointer;
     font-weight: 600;
 }
@@ -69,10 +59,12 @@ input {
 .close:hover {
     color: red;
 }
+.closeModel:hover{
+    cursor: pointer;
+}
 
 .projectHeading{
     font: normal normal 600 18px Segoe UI;
-    /* margin-bottom: 20px; */
 }
 .hrStyle{
     margin-top: 20px;
@@ -84,14 +76,18 @@ input {
     font: normal normal 18px Segoe UI;
     margin-bottom: 10px;
 }
-.inputStyles{
+.textareaStyles{
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid gray;
+    font: normal normal 18px Segoe UI;
+
 }
-.btnAlign{
-    float: right;
-}
+
 .btnClose{
+    float: right;
     width: 100px;
     height: 32px;
     font: normal normal 18px Segoe UI;
@@ -101,6 +97,7 @@ input {
     border-radius: 2px;
 }
 .btnCreate{
+    float: right;
     margin-left: 20px;
     width: 100px;
     height: 32px;
@@ -110,7 +107,11 @@ input {
     border: none;
     border-radius: 2px;
 }
+.btnCreate:hover{
+    cursor: pointer;
+}
 .btnClose:hover{
+    cursor: pointer;
     background-color: red;
     color: white;
     border: none;
