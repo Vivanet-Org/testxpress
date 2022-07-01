@@ -43,7 +43,7 @@ export class CardComponent implements OnInit{
       this.data = data;
 
       for (let index = 0; index < this.data.length; index++) {
-        if(this.data[index].isDeleted == 0){
+        if(this.data[index].isDeleted == 'false'){
           this.uiData = [...this.uiData, {
             projectID:this.data[index].projectID,
             projectName: this.data[index].projectName,
@@ -75,9 +75,9 @@ export class CardComponent implements OnInit{
   flag: any = false;
 
   closeModal() {
-    $('.updateContainer').css({
-      'display': 'none'
-    });
+    // $('.updateContainer').css({
+    //   'display': 'none'
+    // });
     this.editId = null;
     this.editFlag = false;
     this.duplicateFlag = false;
@@ -85,29 +85,29 @@ export class CardComponent implements OnInit{
   }
 
   editModal(id: any) {
-    console.log("editModel");
-    $('.updateContainer').css({
-      'display': 'grid'
-    });
+    // console.log("editModel");
+    // $('.updateContainer').css({
+    //   'display': 'grid'
+    // });
     this.editId = id;
     this.editFlag = true;
     this.oldData = false;
 
   }
   duplicateModal(id: any) {
-    console.log("duplicateModel");
-    $('.updateContainer').css({
-      'display': 'grid'
-    });
+    // console.log("duplicateModel");
+    // $('.updateContainer').css({
+    //   'display': 'grid'
+    // });
     this.editId = id;
     this.duplicateFlag = true;
 
   }
   deleteModal(id: any) {
-    console.log("deleteModel");
-    $('.updateContainer').css({
-      'display': 'grid'
-    });
+    // console.log("deleteModel");
+    // $('.updateContainer').css({
+    //   'display': 'grid'
+    // });
     this.editId = id;
     this.deleteFlag = true;
 
@@ -122,6 +122,7 @@ export class CardComponent implements OnInit{
 
       for (let index = 0; index < this.totalProjects; index++) {
         if (this.data1[index].projectName === form.value.projectName){
+          alert("The project name '" + this.data[index].projectName + "' has already been Reported");
           this.flag = true;
           break;
         }
@@ -213,7 +214,7 @@ export class CardComponent implements OnInit{
           this.updatedFormData = {
             projectName: this.data2[index].projectName,
             projectDescription:this.data2[index].projectDescription,
-            isDeleted:1,
+            isDeleted:'true',
             createdBy:this.data2[index].createdBy,
             createdOn:this.data2[index].createdOn,
             updatedBy:this.data2[index].updatedBy,

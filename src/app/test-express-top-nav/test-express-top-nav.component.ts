@@ -37,7 +37,7 @@ export class TestExpressTopNavComponent implements OnInit {
       this.totalProjects = Object.keys(data).length;
       console.warn(this.totalProjects);
       for (let index = 0; index < this.data.length; index++) {
-        if(this.data[index].isDeleted == 1){
+        if(this.data[index].isDeleted == true){
           this.totalProjects--;
         }
       }
