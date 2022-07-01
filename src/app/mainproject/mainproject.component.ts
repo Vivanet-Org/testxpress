@@ -20,8 +20,8 @@ export class MainprojectComponent implements OnInit {
   dateTime = this.todayDate + " " + this.timeNow;
 	 
   data: any = {};
-  totalProjects: any = {} = 0;
-  flag: any = false;
+  totalProjects: number = {} = 0;
+  flag: boolean = false;
 
   closeModal() {
     $('.bg-modal').css({
@@ -34,7 +34,7 @@ export class MainprojectComponent implements OnInit {
     const newFormData = {
       projectName: form.value.projectName,
       projectDescription:form.value.projectDescription,
-      isDeleted:0,
+      isDeleted:false,
       createdBy:5,
       createdOn:this.dateTime,
       updatedBy:1,

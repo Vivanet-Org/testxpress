@@ -15,26 +15,23 @@ export class UsersService {
     return this.subject.asObservable();
   }
 
-  constructor(private http:HttpClient) { }
-
+  constructor(private http: HttpClient) { }
+  
   getData(){
-    let teProjectsUrl = "http://localhost:8080/getAllProjects";
-    return this.http.get(teProjectsUrl);
+    let teProjectsSpringbootUrl = "http://localhost:8080/getAllProjects";
+    // let getProjectsSreverlessUrl = "https://vv9w36rgwi.execute-api.us-east-1.amazonaws.com/dev/getProjects";
+    return this.http.get(teProjectsSpringbootUrl);
   }
 
   createProject(createBody: any){
-    let createProjectsUrl = "http://localhost:8080/createProject";
-    return this.http.post(createProjectsUrl, createBody);
+    let createProjectsSpringbootUrl = "http://localhost:8080/createProject";
+    // let createProjectServerlessUrl = "https://vv9w36rgwi.execute-api.us-east-1.amazonaws.com/dev/createProject";
+    return this.http.post(createProjectsSpringbootUrl, createBody);
   }
 
   updateProject(projectId: any, updatedBody: any){
-    let updateProjectsUrl = "http://localhost:8080/updateproject/" + projectId;
-    return this.http.put(updateProjectsUrl, updatedBody);
+    let updateProjectsSpringbootUrl = "http://localhost:8080/updateproject/" + projectId;
+    return this.http.put(updateProjectsSpringbootUrl, updatedBody);
   }
-  
-  deleteProject(projectId: any){
-    let deleteProjectUrl = 'http://localhost:8080/deleteProject/' + projectId;
-    return this.http.delete(deleteProjectUrl);
-  }
-  
+    
 }
