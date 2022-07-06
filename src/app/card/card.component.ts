@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
-import * as $ from "jquery";
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -214,7 +213,6 @@ export class CardComponent implements OnInit{
         console.log(data);
         this.user.sendClickEvent();
         this.closeModal();
-
         
       });
     });

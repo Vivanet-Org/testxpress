@@ -26,9 +26,10 @@ describe('UsersService', () => {
     httpClientSpy = jasmine.createSpyObj('HttpClient', ['get', 'post', 'put']);
     service = new UsersService(httpClientSpy);
 
-    // Instantiates HttpClient and HttpTestingController
+    // Instantiates HttpClient, HttpTestingController and UserService
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
+    // service = TestBed.inject(UsersService);
 
   });
   
@@ -42,7 +43,7 @@ describe('UsersService', () => {
   });
 
   // Test case 2 get projects
-  it('should return expected projects(HttpClient called once)', (done: DoneFn) => {
+  it('should return expected projects called once', (done: DoneFn) => {
     const expectedProjects: any[] =[
       {
         projectID:1,
@@ -117,8 +118,8 @@ describe('UsersService', () => {
     service.createProject(newProject).subscribe({
       next:data => {
         expect(data)
-        .withContext('expected project').
-        toEqual(newProject);
+        .withContext('expected project')
+        .toEqual(newProject);
         done();
       },
       error:done. fail
