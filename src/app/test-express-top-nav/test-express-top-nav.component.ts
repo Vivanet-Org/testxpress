@@ -17,7 +17,7 @@ export class TestExpressTopNavComponent implements OnInit {
   totalProjects: any = {} = 0;
 
   constructor(private user:UsersService) {
-    this.clickEventSubscription =this.user.getClickEvent().subscribe(() => {
+    this.clickEventSubscription = this.user.getClickEvent().subscribe(() => {
       this.loadTotalProjectsNum();
     });
      this.loadTotalProjectsNum();

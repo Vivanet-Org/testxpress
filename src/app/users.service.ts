@@ -18,20 +18,18 @@ export class UsersService {
   constructor(private http: HttpClient) { }
   
   getData(){
-    let teProjectsSpringbootUrl = "http://localhost:8080/getAllProjects";
-    // let getProjectsSreverlessUrl = "https://vv9w36rgwi.execute-api.us-east-1.amazonaws.com/dev/getProjects";
-    return this.http.get(teProjectsSpringbootUrl);
+    let getProjectsSreverlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/getAllProjects";
+    return this.http.get(getProjectsSreverlessUrl);
   }
 
   createProject(createBody: any){
-    let createProjectsSpringbootUrl = "http://localhost:8080/createProject";
-    // let createProjectServerlessUrl = "https://vv9w36rgwi.execute-api.us-east-1.amazonaws.com/dev/createProject";
-    return this.http.post(createProjectsSpringbootUrl, createBody);
+    let createProjectServerlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/addProject";
+    return this.http.post(createProjectServerlessUrl, createBody);
   }
 
   updateProject(projectId: any, updatedBody: any){
-    let updateProjectsSpringbootUrl = "http://localhost:8080/updateproject/" + projectId;
-    return this.http.put(updateProjectsSpringbootUrl, updatedBody);
+    let updateProjectServerlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/updateProject/" + projectId;
+    return this.http.put(updateProjectServerlessUrl, updatedBody);
   }
-    
+  
 }
