@@ -47,8 +47,6 @@ describe('MainprojectComponent', () => {
   it('should create a project and return it', (done: DoneFn) => {
     let fixture = TestBed.createComponent(MainprojectComponent);
     let component = fixture.debugElement.componentInstance;
-    // let data: any = {};
-    // let newProjectData: any = [];
     const newProject: any = { 
       value: {
         projectName:"abc",
@@ -67,7 +65,6 @@ describe('MainprojectComponent', () => {
       updatedBy:2,
       updatedOn:"2022-06-27T12:05:02.614+00:00"
     };
-    // expect(component.uiData).toEqual(newProject);
     service.createProject(newProjectData).subscribe({
       next:projects => {
         expect(projects)

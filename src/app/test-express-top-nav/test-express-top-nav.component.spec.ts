@@ -7,7 +7,6 @@ import { delay, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UsersService } from '../users.service';
 import { By } from '@angular/platform-browser';
-// import { MainprojectComponent } from '../mainproject/mainproject.component';
 
 
 describe('TestExpressTopNavComponent', () => {
@@ -16,7 +15,6 @@ describe('TestExpressTopNavComponent', () => {
 
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
   let service: UsersService;
-  // let mainproject: MainprojectComponent;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -38,15 +36,6 @@ describe('TestExpressTopNavComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
-  // it('should call closeModal and its update display none', () => {
-  //   // let fixture = TestBed.createComponent(MainprojectComponent);
-  //   // let mainComponent = fixture.debugElement.componentInstance;
-    
-  //   const e = fixture.debugElement.query(By.css(".bg-modal")).nativeElement;
-  //   component.openModal()
-  //   expect(getComputedStyle(e).display).toEqual('grid');
-  // });
 
   it('should call loadTotalProjectsNum and update totalProjects value', (done: DoneFn) => {
     let fixture = TestBed.createComponent(TestExpressTopNavComponent);
