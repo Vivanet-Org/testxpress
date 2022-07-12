@@ -10,15 +10,7 @@ import { UsersService } from '../users.service';
 export class MainprojectComponent implements OnInit {
 
   constructor(public usersService:UsersService) { }
-
-  today = new Date();
-  date = this.today.setDate(this.today.getDate()); 
-  todayDate = new Date(this.date).toISOString().slice(0,10);
-
-  timeNow = new Date().toLocaleString().slice(10);
-
-  dateTime = this.todayDate + " " + this.timeNow;
-	 
+ 
   data: any = {};
   totalProjects: number = {} = 0;
   flag: boolean = false;
@@ -34,11 +26,11 @@ export class MainprojectComponent implements OnInit {
     const newFormData = {
       projectName: form.value.projectName,
       projectDescription:form.value.projectDescription,
-      isDeleted:false,
+      deleted:false,
       createdBy:5,
-      createdOn:this.dateTime,
+      createdOn:Date.now(),
       updatedBy:1,
-      updatedOn:this.dateTime
+      updatedOn:Date.now()
     };
 
     this.usersService.getData().subscribe(data => {

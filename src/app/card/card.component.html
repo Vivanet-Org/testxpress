@@ -9,9 +9,9 @@
                         <div class="dots">
                             <i class='fa-solid fa-ellipsis-vertical dotsDropdown'></i>
                             <div class="task-menu">
-                                <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectID)">Edit</p>
-                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectID)">Duplicate</p>
-                                <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectID)">Delete</p>
+                                <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
+                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
+                                <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectid)">Delete</p>
                             </div>
                         </div>
                         <div class="existingData">
@@ -62,13 +62,13 @@
                 </div>
 
             <!-- Edit popup start -->
-            <div class="editModal" *ngIf="teProjectsData.projectID === editId && editFlag">
+            <div class="editModal" *ngIf="teProjectsData.projectid === editId && editFlag">
                 <div class="modal-contents">
             
                     <div class="close">
                         <label class="closeEdit" (click)="closeModal()" for="close">&times;</label>
                     </div>
-                    <form #updateProjectForm="ngForm" (submit)="updateExistingProject(updateProjectForm, teProjectsData.projectID)">
+                    <form #updateProjectForm="ngForm" (submit)="updateExistingProject(updateProjectForm, teProjectsData.projectid)">
                             <label class="projectHeading"><b>Edit {{ teProjectsData.projectName }}</b></label>
                             <hr class="hrStyle">
                             <div class="form-control">
@@ -96,13 +96,13 @@
             <!-- Edit popup End -->
 
             <!-- Duplicate popup Start -->
-            <div class="duplicateModal" *ngIf="teProjectsData.projectID === editId && duplicateFlag">
+            <div class="duplicateModal" *ngIf="teProjectsData.projectid === editId && duplicateFlag">
                 <div class="modal-contents">
             
                     <div class="close">
                         <label class="closeEdit" (click)="closeModal()" for="close">&times;</label>
                     </div>
-                    <form #duplicateProjectForm="ngForm" (submit)="duplicateProject(duplicateProjectForm, teProjectsData.projectID)">
+                    <form #duplicateProjectForm="ngForm" (submit)="duplicateProject(duplicateProjectForm, teProjectsData.projectid)">
                             <label class="projectHeading"><b>Duplicate Project</b></label>
                             <hr class="hrStyle">
                             <div class="form-control">
@@ -130,7 +130,7 @@
             <!-- Duplicate popup End-->
 
             <!-- Delete popup Start -->
-            <div class="deleteModal" *ngIf="teProjectsData.projectID === editId && deleteFlag">
+            <div class="deleteModal" *ngIf="teProjectsData.projectid === editId && deleteFlag">
                 <div class="modal-contents">
                     <label class="deleteProjectHeading"><b><i class="fa-solid fa-trash deleteIcon"></i> 
                         Do you Want to delete these items?</b>
@@ -139,7 +139,7 @@
                         <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>
                     </div>
                     
-                    <button class="btnCreate" (click)="deleteExistingProject(teProjectsData.projectID)">OK</button>
+                    <button class="btnCreate" (click)="deleteExistingProject(teProjectsData.projectid)">OK</button>
                     <button class="btnClose" (click)="closeModal()">Cancel</button>
                 </div>
             </div>

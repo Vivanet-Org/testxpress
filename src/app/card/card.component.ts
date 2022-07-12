@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import * as $ from "jquery";
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -37,17 +38,16 @@ export class CardComponent implements OnInit{
     this.uiData = [];
     console.log(this.uiData);
     this.imagePath = '/assets/images/android.png';
-
     this.user.getData().subscribe(data => {
       this.data = data;
-
       for (let index = 0; index < this.data.length; index++) {
-        if(this.data[index].isDeleted == false){
+        console.log(this.data[index].deleted);
+        if(this.data[index].deleted == false){
           this.uiData = [...this.uiData, {
-            projectID:this.data[index].projectID,
+            projectid:this.data[index].projectid,
             projectName: this.data[index].projectName,
             projectDescription:this.data[index].projectDescription,
-            isDeleted:this.data[index].isDeleted,
+            deleted:this.data[index].deleted,
             createdBy:this.data[index].createdBy,
             createdOn:this.data[index].createdOn,
             updatedBy:this.data[index].updatedBy,
@@ -56,18 +56,10 @@ export class CardComponent implements OnInit{
         }
       }
       console.log(this.uiData);
-      console.log(this.uiData[0].projectID);
+      console.log(this.uiData[0].projectid);
     });
   }
   
-  today = new Date();
-  date = this.today.setDate(this.today.getDate()); 
-  todayDate = new Date(this.date).toISOString().slice(0,10);
-
-  timeNow = new Date().toLocaleString().slice(10);
-
-  dateTime = this.todayDate + " " + this.timeNow;
-	 
   data1: any = {};
   data2: any = {};
   totalProjects: any = {} = 0;
@@ -94,7 +86,6 @@ export class CardComponent implements OnInit{
   deleteModal(id: any) {
     this.editId = id;
     this.deleteFlag = true;
-
   }
 
   updateExistingProject(form: any, id: any){
@@ -114,15 +105,15 @@ export class CardComponent implements OnInit{
 
       if(this.flag == false){
         for (let index = 0; index < this.totalProjects; index++) {
-          if (this.data1[index].projectID === id){
+          if (this.data1[index].projectid === id){
             this.updatedFormData = {
               projectName: form.value.projectName,
               projectDescription:form.value.projectDescription,
-              isDeleted:this.data1[index].isDeleted,
+              deleted:this.data1[index].deleted,
               createdBy:this.data1[index].createdBy,
               createdOn:this.data1[index].createdOn,
               updatedBy:this.data1[index].updatedBy,
-              updatedOn:this.dateTime
+              updatedOn:Date.now()
             };
             break;
           }
@@ -134,25 +125,19 @@ export class CardComponent implements OnInit{
           this.loadData();
         });
         this.closeModal();
-
-
       }
       else{
         this.flag = false;
       }
-
     });
   }
 
   duplicateProject(form: any, id: any){
-
     let flag = true;
-   
     this.user.getData().subscribe(data => {
       this.data = data;
       this.totalProjects = Object.keys(data).length;
       console.log(form.value.projectName);
-
       for (let index = 0; index < this.totalProjects; index++) {
         if(this.data[index].projectName == form.value.projectName){
           alert("The project name '" + this.data[index].projectName + "' has already been Duplicated");
@@ -162,15 +147,15 @@ export class CardComponent implements OnInit{
       }
       if(flag){
         for (let index = 0; index < this.totalProjects; index++) {
-          if (this.data[index].projectID === id){
+          if (this.data[index].projectid === id){
             this.duplicateData = {
               projectName: form.value.projectName,
               projectDescription:this.data[index].projectDescription,
-              isDeleted:this.data[index].isDeleted,
+              deleted:this.data[index].deleted,
               createdBy:this.data[index].createdBy,
-              createdOn:this.dateTime,
+              createdOn:Date.now(),
               updatedBy:this.data[index].updatedBy,
-              updatedOn:this.dateTime
+              updatedOn:Date.now()
             };
             break;
           }
@@ -183,26 +168,23 @@ export class CardComponent implements OnInit{
         this.closeModal();
       }
     });
-
   }
   
   deleteExistingProject(id:any){
     this.uiData = [];
-
     this.user.getData().subscribe(data => {
       this.data2 = data;
       this.totalProjects = Object.keys(data).length;
-    
       for (let index = 0; index < this.totalProjects; index++) {
-        if (this.data2[index].projectID === id){
+        if (this.data2[index].projectid === id){
           this.updatedFormData = {
             projectName: this.data2[index].projectName,
             projectDescription:this.data2[index].projectDescription,
-            isDeleted:true,
+            deleted:true,
             createdBy:this.data2[index].createdBy,
             createdOn:this.data2[index].createdOn,
             updatedBy:this.data2[index].updatedBy,
-            updatedOn:this.dateTime
+            updatedOn:Date.now()
           };
           break;
         }
@@ -213,13 +195,10 @@ export class CardComponent implements OnInit{
         console.log(data);
         this.user.sendClickEvent();
         this.closeModal();
-        
       });
     });
     console.log(id);
   }
-
   ngOnInit(): void {
   }
-
 }
