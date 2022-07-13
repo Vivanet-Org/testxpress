@@ -8,7 +8,6 @@
         </div>
     </div>
 
-
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>            
     <ul class="nav">
         <div class="icon-background">
@@ -19,37 +18,32 @@
             </li>
         </div>
 
-        <div class="icon-background">
+        <div class="icon-background folderBg" (click)="projectsModal()">
             <li> 
-                <a href="#">
-                <i class='fa fa-folder-open-o'></i>
-                </a>
+                <i class='fa fa-folder-open-o folderIcon'></i>
             </li>
         </div>
 
-        <!-- <div class="icon-background">
+        <div class="icon-background windowsBg" (click)="applicationsModal()">
             <li> 
-                <a href="#">
-                    <i class="fa-solid fa-window-frame"></i>
-                </a>
+                <i class=" fa fa-brands fa-windows windowsIcon"></i>
             </li>
-        </div> -->
+        </div>
+
+        <div class="icon-background rocketBg">
+            <li> 
+                <i class="fa fa-rocket rocketIcon"></i>
+            </li>
+        </div>
 
         <div class="icon-background">
             <li> 
                 <a href="#">
-                    <i class="fa fa-rocket"></i>
+                    <i class="fa fa-light fa-file-lines"></i>
+                    <!-- <i class="fa fa-thin fa-square-poll-horizontal"></i> -->
                 </a>
             </li>
         </div>
-
-        <!-- <div class="icon-background">
-            <li> 
-                <a href="#">
-                    <i class="fa-regular fa-memo-pad"></i>
-                </a>
-            </li>
-        </div> -->
 
         <div class="icon-background">
             <li> 
@@ -84,5 +78,6 @@
             </li>
         </div>
     </ul>
+    
 
 </div>

@@ -18,17 +18,17 @@ export class UsersService {
   constructor(private http: HttpClient) { }
   
   getData(){
-    let getProjectsSreverlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/getAllProjects";
+    let getProjectsSreverlessUrl = "https://fmo5pxshx5.execute-api.us-east-1.amazonaws.com/dev/project/getAllProjects";
     return this.http.get(getProjectsSreverlessUrl);
   }
 
   createProject(createBody: any){
-    let createProjectServerlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/addProject";
+    let createProjectServerlessUrl = "https://fmo5pxshx5.execute-api.us-east-1.amazonaws.com/dev/project/addProject";
     return this.http.post(createProjectServerlessUrl, createBody);
   }
 
   updateProject(projectId: any, updatedBody: any){
-    let updateProjectServerlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/updateProject/" + projectId;
+    let updateProjectServerlessUrl = "https://fmo5pxshx5.execute-api.us-east-1.amazonaws.com/dev/project/updateProject/" + projectId;
     return this.http.put(updateProjectServerlessUrl, updatedBody);
   }
   
