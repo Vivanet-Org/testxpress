@@ -336,3 +336,11 @@ body.dark .home .text{
 .folderIcon{
     color: white;
 }
+.appImg{
+    width: 27px;
+    margin-top: -10px;
+    background-color: gray;
+}
+.appImg:hover{
+    background-color: white;
+}

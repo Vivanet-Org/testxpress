@@ -9,7 +9,15 @@ import { UsersService } from '../users.service';
 })
 export class TestExpressNavComponent implements OnInit {
 
-  constructor(public usersService:UsersService) { }
+  appImgPath: any;
+
+  constructor(public usersService:UsersService) { 
+    this.loadData();
+  }
+
+  loadData(){
+    this.appImgPath = '/assets/images/applications.png';
+  }
 
   projectsModal() {
     $('.topNav').css({
@@ -31,8 +39,8 @@ export class TestExpressNavComponent implements OnInit {
     $('.windowsBg').css({
       'background-color': 'rgb(42, 42, 42)'
     });
-    $('.windowsIcon').css({
-      'color': 'grey'
+    $('.appImg').css({
+      'background-color': ''
     });
 
     this.usersService.sendClickEvent();
@@ -60,8 +68,8 @@ export class TestExpressNavComponent implements OnInit {
     $('.windowsBg').css({
       'background-color': 'rgb(95, 93, 93)'
     });
-    $('.windowsIcon').css({
-      'color': 'white'
+    $('.appImg').css({
+      'background-color': 'white'
     });
   }
 

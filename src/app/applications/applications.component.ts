@@ -8,14 +8,16 @@ import * as $ from "jquery";
 })
 export class ApplicationsComponent implements OnInit {
 
-  imagePath: any;
+  androidPath: any;
+  appImgPath: any;
 
   constructor() {
     this.loadData();
   }
 
   loadData(){
-    this.imagePath = '/assets/images/android.png';
+    this.androidPath = '/assets/images/android.png';
+    this.appImgPath = '/assets/images/applications.png';
   }
   
   data1: any = {};

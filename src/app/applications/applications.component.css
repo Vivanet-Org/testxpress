@@ -376,6 +376,10 @@ input {
   float: left;
   margin-right: 10px;
 }
+.applicationImg{
+  width: 27px;
+  /* background-color: rgba(40, 40, 245, 0.685); */
+}
 .appTopAlign{
   margin-left: 50px;
   padding-top: 10px;
