@@ -16,20 +16,22 @@ export class UsersService {
   }
 
   constructor(private http: HttpClient) { }
-  
+
+  serverlesUrl : string = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/";
+
   getData(){
-    let getProjectsSreverlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/getAllProjects";
-    return this.http.get(getProjectsSreverlessUrl);
+    let getUrl = this.serverlesUrl + "getAllProjects";
+    return this.http.get(getUrl);
   }
 
   createProject(createBody: any){
-    let createProjectServerlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/addProject";
-    return this.http.post(createProjectServerlessUrl, createBody);
+    let createUrl = this.serverlesUrl + "addProject";
+    return this.http.post(createUrl, createBody);
   }
 
   updateProject(projectId: any, updatedBody: any){
-    let updateProjectServerlessUrl = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project/updateProject/" + projectId;
-    return this.http.put(updateProjectServerlessUrl, updatedBody);
+    let updateUrl = this.serverlesUrl + "updateProject/" + projectId;
+    return this.http.put(updateUrl, updatedBody);
   }
-  
+ 
 }

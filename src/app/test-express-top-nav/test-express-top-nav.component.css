@@ -1,4 +1,4 @@
-/* .headerStyles{
+/* .topNav{
     overflow: hidden;
     background-color:white;
     position: fixed;
@@ -6,6 +6,9 @@
     width: 100%;
     z-index:1;
 } */
+.topNav{
+    display: block;
+}
 .text {
     text-indent: 70px;
 }
@@ -33,7 +36,7 @@
     border: 1px solid grey;
     border-radius: 2px;
 }
-#filtersubmit {
+#filterSubmit {
     position: relative;
     z-index: 1;
     left: -95px;

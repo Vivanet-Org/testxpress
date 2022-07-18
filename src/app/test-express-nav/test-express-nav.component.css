@@ -48,16 +48,11 @@ body.dark{
     left: 0;
     height: 100%;
     width: 60px;
-    /* padding: 10px 14px; */
     background: rgb(42, 42, 42);
     transition: var(--tran-05);
     z-index: 100;
-
     display: flex;
-    /* justify-content: space-around; */
-    /* align-items: center; */
     justify-content: center;
-
 }
 .sidebar.close{
     width: 88px;
@@ -318,30 +313,34 @@ body.dark .home .text{
     margin-top: -10px;
 }
 .nav{
-    margin-top: 50px;
-    
+    margin-top: 50px; 
 }
 .icon-background{
-    /* display: none; */
-    /* background-color: rgb(95, 93, 93); */
     width: 40px;
     height: 40px;
     border-radius: 5px;
-
     display:flex;
-    /* justify-content: space-around; */
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
-
-    /* display: block; */
-    /* margin-left: auto;
-    margin-right: auto; */
-    
+    margin-bottom: 20px;    
 }
 .icon-background:hover{
     background-color: rgb(95, 93, 93);
 }
 .fa:hover{
     color: white;
+}
+.folderBg{
+    background-color: rgb(95, 93, 93);
+}
+.folderIcon{
+    color: white;
+}
+.appImg{
+    width: 27px;
+    margin-top: -10px;
+    background-color: gray;
+}
+.appImg:hover{
+    background-color: white;
 }
