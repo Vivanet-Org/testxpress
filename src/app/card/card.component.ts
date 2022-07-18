@@ -12,7 +12,7 @@ export class CardComponent implements OnInit{
 
   clickEventSubscription:Subscription;
 
-  imagePath: any;
+  andriodImagePath: string = '/assets/images/android.png';
 
   editId:any = null;
   oldData:any = true;
@@ -37,7 +37,6 @@ export class CardComponent implements OnInit{
   loadData(){
     this.uiData = [];
     console.log(this.uiData);
-    this.imagePath = '/assets/images/android.png';
     this.user.getData().subscribe(data => {
       this.data = data;
       for (let index = 0; index < this.data.length; index++) {

@@ -356,8 +356,14 @@ input {
 /* Edit, Duplicate and Delete popup end */
 
 /* Application Start */
+
+.appHeader{
+  margin-right:-36px;
+  background-color: white;
+  margin-top: -8px;
+}
 .appHeading{
-  margin-top: 20px;
+  padding-top: 10px;
   margin-left: 50px;
   color: rgb(71, 71, 71);
   font: normal normal 16px Segoe UI;
@@ -394,11 +400,12 @@ input {
   color: white;
   border: none;
   border-radius: 2px;
-  margin-right: 23px;
+  /* margin-right: 78px; */
+  margin-right: 54px;
 }
 .appData{
   margin-right: -34px;
-  background-color: rgba(212, 212, 212, 0.335);
+  /* background-color: rgba(212, 212, 212, 0.335); */
 }
 /* .appDataAlign{
   margin-top: 20px;
