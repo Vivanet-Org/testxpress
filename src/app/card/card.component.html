@@ -1,65 +1,66 @@
 <section class="home">
     <div class="grid-container">
         <div *ngFor="let teProjectsData of uiData">
-                <div class="grid-item" >
-                    <div>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                            crossorigin="anonymous" referrerpolicy="no-referrer" />
-                        <div class="dots">
-                            <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                            <div class="task-menu">
-                                <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
-                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
-                                <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectid)">Delete</p>
-                            </div>
+            <div class="grid-item" >
+                <div>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+                        crossorigin="anonymous" referrerpolicy="no-referrer" />
+                    <div class="dots">
+                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openTaskMenu(teProjectsData.projectid)"></em>
+                        <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">
+                            <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
+                            <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
+                            <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectid)">Delete</p>
                         </div>
-                        <div class="existingData">
-                            <label class="projectHeading">{{ teProjectsData.projectName }}</label>
-                            <p class="projectDetails">{{ teProjectsData.projectDescription }}</p>
+                    </div>
+                    <div class="existingData">
+                        <label class="projectHeading">{{ teProjectsData.projectName }}</label>
+                        <textarea type="text" name="projectDescription" class="textareaStylesCard"
+                        ngModel="{{ teProjectsData.projectDescription }}" disabled> </textarea>
+                    </div>
+                </div>
+
+                <div class="girdFooter">
+                    <div class="icon-bar">
+                        <a href="#"><em style="font-size:30px" class="fa-solid fa-globe"></em></a>
+                        <a href="#"><em style="font-size:36px" class="fa-brands fa-apple"></em></a>
+                        <a href="#"><img [src] ="andriodImagePath" style="width: 36px;" alt="Android Image" /></a>
+                        <a href="#"><em style="font-size:30px" class="fa fa-desktop"></em></a>
+                        <div class="projDetails">
+                            <label class="projDetails">5 Test Suites 9 Apps</label>
                         </div>
                     </div>
 
-                    <div class="girdFooter">
-                        <div class="icon-bar">
-                            <a href="#"><em style="font-size:30px" class="fa-solid fa-globe"></em></a>
-                            <a href="#"><em style="font-size:36px" class="fa-brands fa-apple"></em></a>
-                            <a href="#"><img [src] ="andriodImagePath" style="width: 36px;"></a>
-                            <a href="#"><em style="font-size:30px" class="fa fa-desktop"></em></a>
-                            <div class="projDetails">
-                                <label class="projDetails">5 Test Suites 9 Apps</label>
-                            </div>
+                    <div class="avatar-group">
+                        <div class="avatar">
+                            <span class="avatar-name">Someone 1</span>
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                alt="Image" />
                         </div>
-
-                        <div class="avatar-group">
-                            <div class="avatar">
-                                <span class="avatar-name">Someone 1</span>
-                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                    alt="Image">
-                            </div>
-                            <div class="avatar">
-                                <span class="avatar-name">Someone 2</span>
-                                <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                    alt="Image">
-                            </div>
-                            <div class="avatar">
-                                <span class="avatar-name">Someone 3</span>
-                                <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                    alt="Image">
-                            </div>
-                            <div class="avatar">
-                                <span class="avatar-name">Someone 4</span>
-                                <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                                    alt="Image">
-                            </div>
-                            <div class="avatar">
-                                <span class="avatar-name">Someone 5</span>
-                                <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                                    alt="Image">
-                            </div>
+                        <div class="avatar">
+                            <span class="avatar-name">Someone 2</span>
+                            <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                alt="Image" />
+                        </div>
+                        <div class="avatar">
+                            <span class="avatar-name">Someone 3</span>
+                            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                                alt="Image" />
+                        </div>
+                        <div class="avatar">
+                            <span class="avatar-name">Someone 4</span>
+                            <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                alt="Image" />
+                        </div>
+                        <div class="avatar">
+                            <span class="avatar-name">Someone 5</span>
+                            <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+                                alt="Image" />
                         </div>
                     </div>
                 </div>
+            </div>
 
             <!-- Edit popup start -->
             <div class="editModal" *ngIf="teProjectsData.projectid === editId && editFlag">
@@ -69,7 +70,7 @@
                         <label class="closeEdit" (click)="closeModal()" for="close">&times;</label>
                     </div>
                     <form #updateProjectForm="ngForm" (submit)="updateExistingProject(updateProjectForm, teProjectsData.projectid)">
-                            <label class="projectHeading"><b>Edit {{ teProjectsData.projectName }}</b></label>
+                            <label class="projectHeading"><strong>Edit {{ teProjectsData.projectName }}</strong></label>
                             <hr class="hrStyle">
                             <div class="form-control">
                                 <label class="popupProjectDetails">Project Name</label>
@@ -103,7 +104,7 @@
                         <label class="closeEdit" (click)="closeModal()" for="close">&times;</label>
                     </div>
                     <form #duplicateProjectForm="ngForm" (submit)="duplicateProject(duplicateProjectForm, teProjectsData.projectid)">
-                            <label class="projectHeading"><b>Duplicate Project</b></label>
+                            <label class="projectHeading"><strong>Duplicate Project</strong></label>
                             <hr class="hrStyle">
                             <div class="form-control">
                                 <label class="popupProjectDetails">Project Name</label>
@@ -132,8 +133,8 @@
             <!-- Delete popup Start -->
             <div class="deleteModal" *ngIf="teProjectsData.projectid === editId && deleteFlag">
                 <div class="modal-contents">
-                    <label class="deleteProjectHeading"><b><i class="fa-solid fa-trash deleteIcon"></i> 
-                        Do you Want to delete these items?</b>
+                    <label class="deleteProjectHeading"><strong><em class="fa-solid fa-trash deleteIcon"></em> 
+                        Do you Want to delete these items?</strong>
                     </label>
                     <div>
                         <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>

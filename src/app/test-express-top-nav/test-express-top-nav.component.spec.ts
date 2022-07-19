@@ -6,7 +6,6 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { delay, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { UsersService } from '../users.service';
-import { By } from '@angular/platform-browser';
 
 describe('TestExpressTopNavComponent', () => {
   let component: TestExpressTopNavComponent;

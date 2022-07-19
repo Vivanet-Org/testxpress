@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
+import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-test-express-nav',
@@ -9,8 +10,9 @@ import * as $ from "jquery";
 export class TestExpressNavComponent implements OnInit {
 
   appImgPath: string = '/assets/images/applications.png';
+  testXpressImg: string = '/assets/images/App.png';
 
-  constructor () { }
+  constructor(public usersService:UsersService) { }
 
   projectsModal() {
     $('.topNav').css({
@@ -35,11 +37,8 @@ export class TestExpressNavComponent implements OnInit {
     $('.appImg').css({
       'background-color': ''
     });
-    $('body').css({
-      'background-color': ''
-    });
 
-    // this.usersService.sendClickEvent();
+    this.usersService.sendClickEvent();
 
   }
 
@@ -67,9 +66,7 @@ export class TestExpressNavComponent implements OnInit {
     $('.appImg').css({
       'background-color': 'white'
     });
-    $('body').css({
-      'background-color':'rgba(212, 212, 212, 0.335)'
-    });
+ 
   }
 
   ngOnInit(): void {
