@@ -190,7 +190,6 @@ body.dark .sidebar header .toggle{
     background-color: transparent;
     display: flex;
     align-items: center;
-    height: 100%;
     width: 100%;
     border-radius: 6px;
     text-decoration: none;
@@ -284,7 +283,6 @@ body.dark .switch::before{
 .home{
     position: absolute;
     top: 0;
-    top: 0;
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
@@ -312,8 +310,12 @@ body.dark .home .text{
     font-size: 20px;
     margin-top: -10px;
 }
-.nav{
-    margin-top: 50px; 
+.logo{
+    margin-top: -5px;
+    margin-bottom: 40px;
+}
+.tsImg{
+    width: 40px;
 }
 .icon-background{
     width: 40px;
@@ -322,7 +324,7 @@ body.dark .home .text{
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px;    
+    margin-bottom: 15px;    
 }
 .icon-background:hover{
     background-color: rgb(95, 93, 93);
