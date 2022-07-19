@@ -4,7 +4,7 @@
         <div class="appTopAlign">
             <label class="appLabel">
                 <div class="windowsIconBg">
-                    <img class="applicationImg" [src] ="appImgPath"> 
+                    <img class="applicationImg" [src] ="appImgPath" alt="Application Image" /> 
                 </div>
                 Applications
             </label>
@@ -28,9 +28,9 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="dots">
+                    <div class="appDots">
                         <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                        <div class="task-menu">
+                        <div class="app-task-menu">
                             <p class="menuItems menuEdit">Edit</p>
                             <p class="menuItems menuDuplicate">Duplicate</p>
                             <p class="menuItems menuDelete">Delete</p>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="existingData">
                         <label class="projectHeading">
-                            <i style="font-size:23px; color: blue;" class="fa fa-desktop"></i>
+                            <em style="font-size:23px; color: blue;" class="fa fa-desktop"></em>
                             &nbsp; TestXpress
                         </label>
                         <p class="projectDetails">Whirlpool's Application (Android) for QA to identify defects.</p>
@@ -59,9 +59,9 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="dots">
-                        <i class='fa-solid fa-ellipsis-vertical dotsDropdown'></i>
-                        <div class="task-menu">
+                    <div class="appDots">
+                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
+                        <div class="app-task-menu">
                             <p class="menuItems menuEdit">Edit</p>
                             <p class="menuItems menuDuplicate">Duplicate</p>
                             <p class="menuItems menuDelete">Delete</p>
@@ -90,9 +90,9 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="dots">
-                        <i class='fa-solid fa-ellipsis-vertical dotsDropdown'></i>
-                        <div class="task-menu">
+                    <div class="appDots">
+                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
+                        <div class="app-task-menu">
                             <p class="menuItems menuEdit">Edit</p>
                             <p class="menuItems menuDuplicate">Duplicate</p>
                             <p class="menuItems menuDelete">Delete</p>
@@ -121,9 +121,9 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="dots">
+                    <div class="appDots">
                         <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                        <div class="task-menu">
+                        <div class="app-task-menu">
                             <p class="menuItems menuEdit">Edit</p>
                             <p class="menuItems menuDuplicate">Duplicate</p>
                             <p class="menuItems menuDelete">Delete</p>
@@ -131,7 +131,7 @@
                     </div>
                     <div class="existingData">
                         <label class="projectHeading">
-                            <img [src] ="androidPath" style="width: 24px;">
+                            <img [src] ="androidPath" style="width: 24px;" alt="Android Image" />
                             &nbsp; Prodigio (Android)
                         </label>
                         <p class="projectDetails">Whirlpool's Application (Android) for QA to identify defects.</p>
@@ -156,7 +156,7 @@
                     <label class="closeModel" (click)="closeModal()" for="close">&times;</label>
                 </div>
                 <form>
-                        <label class="projectHeading"><b>Create new Application</b></label>
+                        <label class="projectHeading"><strong>Create new Application</strong></label>
                         <hr class="hrStyle">
                         <div>
                             <label class="projectDetails">Application Name</label>

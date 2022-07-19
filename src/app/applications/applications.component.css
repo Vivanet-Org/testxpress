@@ -12,7 +12,7 @@
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
   border: 1px solid rgb(199, 199, 199);
   padding: 10px;
   font-size: 20px;
@@ -61,13 +61,13 @@ font-size: 36px;
 .icon-bar a:hover {
 color: rgb(250, 6, 6);
 }
-img:hover{
+/* img:hover{
   background-color: rgb(250, 6, 6);;
   border-radius: 50px;
-}
+} */
 
 .projDetails{
-  font: normal normal 500 16px Segoe UI,sans-serif;
+  font: normal normal 500 16px Segoe UI, sans-serif;
   padding-left: 10px;
   padding-top: 15px;
 }
@@ -75,12 +75,12 @@ img:hover{
 
 /*vertical ellipsis */
 
-.dots{
+.appDots{
   float:right;
   cursor:pointer;
   position:relative;
 }
-.dots .task-menu{
+.appDots .app-task-menu{
   position:absolute;
   padding:10px;
   right: 0px;
@@ -94,21 +94,21 @@ img:hover{
   box-shadow:2px 5px 6px gray;
 
 }
-.dots:hover .task-menu{
+.appDots:hover .app-task-menu{
   transform:scale(1);
 }
-.task-menu .menuItems{
+.app-task-menu .menuItems{
   height:25px;
   margin-bottom:2px;
   justify-content:flex-start;
 
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
 }
-.task-menu:last-child{
+.app-task-menu:last-child{
   margin-bottom:0;
 }
 
-.task-menu .menuItems i{
+.app-task-menu .menuItems i{
   padding-right:8px;
 }
 /*end vertical ellipsis*/
@@ -120,19 +120,19 @@ img:hover{
 .menuDuplicate:hover{
   color: blue;
   background-color: rgba(192, 192, 192, 0.301);
-  font: normal normal 600 20px Segoe UI,sans-serif;
+  font: normal normal 600 20px Segoe UI, sans-serif;
 }
 .menuDelete:hover{
   color: red;
   background-color: rgba(192, 192, 192, 0.301);
-  font: normal normal 600 20px Segoe UI,sans-serif;
+  font: normal normal 600 20px Segoe UI, sans-serif;
 }
 
 .projectHeading{
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
 }
 .projectDetails{
-  font: normal normal 16px Segoe UI,sans-serif;
+  font: normal normal 16px Segoe UI, sans-serif;
   color: rgb(104, 104, 104);
 }
 .girdFooter{
@@ -152,7 +152,7 @@ img:hover{
 }
 
 .projectHeadings{
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
   margin-bottom: 10px;
 }
 
@@ -162,7 +162,7 @@ img:hover{
   border: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
 }
@@ -172,7 +172,7 @@ img:hover{
   width: 100%;
   height: 75px;
   border: 1px solid gray;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
 
@@ -183,7 +183,7 @@ img:hover{
   margin-left: 20px;
   width: 100px;
   height: 32px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   background-color: blue;
   color: white;
   border: none;
@@ -199,7 +199,7 @@ img:hover{
   float: right;
   width: 100px;
   height: 32px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   background-color: white;
   color: black;
   border: 1px solid gray;
@@ -260,10 +260,10 @@ input {
   border: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
 }
 .deleteInfo{
-  font: normal normal 400 18px Segoe UI,sans-serif;
+  font: normal normal 400 18px Segoe UI, sans-serif;
   margin-left: 55px;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -289,7 +289,7 @@ input {
 }
 
 .projectHeading{
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
 }
 .deleteIcon{
   color: red;
@@ -299,7 +299,7 @@ input {
   margin-left: 15px;
 }
 .deleteProjectHeading{
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
   color: rgb(41, 41, 41);
 }
 .hrStyle{
@@ -309,7 +309,7 @@ input {
   margin-bottom: 20px;
 }
 .popupProjectDetails{
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
   margin-bottom: 10px;
 }
 .textareaStyles{
@@ -318,7 +318,7 @@ input {
   width: 100%;
   height: 50px;
   border: 1px solid gray;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
 
 }
 
@@ -326,7 +326,7 @@ input {
   float: right;
   width: 100px;
   height: 32px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   background-color: white;
   color: black;
   border: 1px solid gray;
@@ -337,7 +337,7 @@ input {
   margin-left: 20px;
   width: 100px;
   height: 32px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   background-color: blue;
   color: white;
   border: none;
@@ -366,10 +366,10 @@ input {
   padding-top: 10px;
   margin-left: 50px;
   color: rgb(71, 71, 71);
-  font: normal normal 16px Segoe UI,sans-serif;
+  font: normal normal 16px Segoe UI, sans-serif;
 }
 .appLabel{
-  font: normal normal 600 24px Segoe UI,sans-serif;
+  font: normal normal 600 24px Segoe UI, sans-serif;
 }
 .windowsIconBg{
   width: 36px;
@@ -414,7 +414,7 @@ input {
   margin-top: 20px;
   display: inline-block;
   margin-left: 50px;
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
 }
 .projectsDropdown{
   margin-top: 20px;
@@ -422,7 +422,7 @@ input {
   float: right;
   width: 250px;
   height: 32px;
-  font: normal normal 16px Segoe UI,sans-serif;
+  font: normal normal 16px Segoe UI, sans-serif;
   border: 1px solid gray;
   border-radius: 2px;
 }
@@ -458,7 +458,7 @@ input {
   border: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
 }
 
 .close {
@@ -479,7 +479,7 @@ input {
 }
 
 .projectHeading{
-  font: normal normal 600 18px Segoe UI,sans-serif;
+  font: normal normal 600 18px Segoe UI, sans-serif;
 }
 .hrStyle{
   margin-top: 20px;
@@ -488,7 +488,7 @@ input {
   margin-bottom: 20px;
 }
 .projectDetails{
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   margin-bottom: 10px;
 }
 .textareaStyles{
@@ -497,7 +497,7 @@ input {
   width: 100%;
   height: 50px;
   border: 1px solid gray;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
 
 }
 
@@ -505,7 +505,7 @@ input {
   float: right;
   width: 100px;
   height: 32px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   background-color: white;
   color: black;
   border: 1px solid gray;
@@ -516,7 +516,7 @@ input {
   margin-left: 20px;
   width: 100px;
   height: 32px;
-  font: normal normal 18px Segoe UI,sans-serif;
+  font: normal normal 18px Segoe UI, sans-serif;
   background-color: blue;
   color: white;
   border: none;

@@ -58,6 +58,32 @@ export class CardComponent implements OnInit{
       console.log(this.uiData[0].projectid);
     });
   }
+
+  dots: boolean = true;
+  taskMenuId: any = null;
+  taskMenuFlag = true;
+
+  openTaskMenu(id: any){
+    this.taskMenuId = id;
+    if(this.dots){
+      this.taskMenuFlag = false;
+      $('.dots, .task-menu').css({
+        'transform':'scale(1)',
+        'z-index': '2'
+      });
+      this.dots = false;
+    }
+    else if(!this.dots){
+      this.taskMenuId = null;
+      this.taskMenuFlag = true;
+      $('.dots, .task-menu').css({
+        'transform':'',
+        'z-index': ''
+      });
+      this.dots = true;
+    }
+
+  } 
   
   data1: any = {};
   data2: any = {};
@@ -75,16 +101,22 @@ export class CardComponent implements OnInit{
     this.editId = id;
     this.editFlag = true;
     this.oldData = false;
-
+    this.openTaskMenu(this.taskMenuId = null);
+    this.taskMenuFlag = true;
   }
   duplicateModal(id: any) {
     this.editId = id;
     this.duplicateFlag = true;
+    this.openTaskMenu(this.taskMenuId = null);
+    this.taskMenuFlag = true;
 
   }
   deleteModal(id: any) {
     this.editId = id;
     this.deleteFlag = true;
+    this.openTaskMenu(this.taskMenuId = null);
+    this.taskMenuFlag = true;
+
   }
 
   updateExistingProject(form: any, id: any){
@@ -139,7 +171,7 @@ export class CardComponent implements OnInit{
       console.log(form.value.projectName);
       for (let index = 0; index < this.totalProjects; index++) {
         if(this.data[index].projectName == form.value.projectName){
-          alert("The project name '" + this.data[index].projectName + "' has already been Duplicated");
+          alert("The project name '" + this.data[index].projectName + "' has already been Reported");
           flag = false;
           break;
         }        
@@ -149,7 +181,8 @@ export class CardComponent implements OnInit{
           if (this.data[index].projectid === id){
             this.duplicateData = {
               projectName: form.value.projectName,
-              projectDescription:this.data[index].projectDescription,
+              projectDescription:form.value.projectDescription,
+              // projectDescription:this.data[index].projectDescription,
               deleted:this.data[index].deleted,
               createdBy:this.data[index].createdBy,
               createdOn:Date.now(),

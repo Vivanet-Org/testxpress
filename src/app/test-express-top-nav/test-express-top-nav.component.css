@@ -9,12 +9,26 @@
 .topNav{
     display: block;
 }
+.projHeadingBg{
+    margin-right:-8px;
+    background-color: white;
+    margin-top: -8px;
+    height: 60px;
+}
+.projHeading{
+    padding-top: 12px;
+    /* margin-top: 50px; */
+    font: normal normal 600 23px Segoe UI, sans-serif;
+    margin-left: 100px;
+    /* margin-bottom: 20px; */
+}
 .text {
+    margin-top: 20px;
     text-indent: 70px;
 }
 .projectsCount{
-    font: normal normal 600 20px Segoe UI;
-    margin-left: 32px;
+    font: normal normal 500 20px Segoe UI, sans-serif;
+    margin-left: 30px;
 }
 .align-items{
     float: right;

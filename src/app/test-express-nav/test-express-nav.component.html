@@ -1,15 +1,19 @@
 
 <div class="sidebar">
     <div class=" logo_content">
-        <div class="logo">
-            <h3 class="logo-name">
-                
-            </h3>
-        </div>
+        <!-- <div class="logo"> -->
+            <!-- <img class="tsImg" [src] ="testXpressImg" alt="Application Image" /> -->
+        <!-- </div> -->
     </div>
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>            
     <ul class="nav">
+        <div class="logo">
+            <li> 
+                <img class="tsImg" [src] ="testXpressImg" alt="Application Image" />
+            </li>
+        </div>
+
         <div class="icon-background">
             <li> 
                 <a href="#">
@@ -26,7 +30,7 @@
 
         <div class="icon-background windowsBg" (click)="applicationsModal()">
             <li> 
-                <img class="appImg" [src] ="appImgPath">
+                <img class="appImg" [src] ="appImgPath" alt="Application Image" />
             </li>
         </div>
 
@@ -60,7 +64,7 @@
                 </a>
             </li>
         </div>
-        <hr style="color: rgb(65, 63, 63); margin-bottom: 30px; margin-top: 30px;">
+        <hr style="color: rgb(46, 46, 46); margin-bottom: 30px; margin-top: 30px;">
 
         <div class="icon-background">
             <li> 
