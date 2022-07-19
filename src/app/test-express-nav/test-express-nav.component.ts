@@ -40,12 +40,6 @@ export class TestExpressNavComponent implements OnInit {
 
     this.usersService.sendClickEvent();
     
-    // $('body').css({
-    //   'background-color': ''
-    // });
-
-    // this.usersService.sendClickEvent();
-
   }
 
   applicationsModal() {
@@ -72,9 +66,7 @@ export class TestExpressNavComponent implements OnInit {
     $('.appImg').css({
       'background-color': 'white'
     });
-    // $('body').css({
-    //   'background-color':'rgba(212, 212, 212, 0.335)'
-    // });
+
   }
 
   ngOnInit(): void {

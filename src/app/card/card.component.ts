@@ -182,7 +182,6 @@ export class CardComponent implements OnInit{
             this.duplicateData = {
               projectName: form.value.projectName,
               projectDescription:form.value.projectDescription,
-              // projectDescription:this.data[index].projectDescription,
               deleted:this.data[index].deleted,
               createdBy:this.data[index].createdBy,
               createdOn:Date.now(),
