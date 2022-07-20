@@ -29,7 +29,6 @@ describe('UsersService', () => {
     // Instantiates HttpClient, HttpTestingController and UserService
     httpClient = TestBed.inject(HttpClient);
     httpTestingController = TestBed.inject(HttpTestingController);
-    // service = TestBed.inject(UsersService);
 
   });
   
