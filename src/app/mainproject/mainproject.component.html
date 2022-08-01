@@ -10,12 +10,12 @@
                 <div class="form-control data-error-sorry, that name is taken.">
                     <label class="projectDetails">Project Name</label>
                     <input class="inputStyles" id="name" type="text" name="projectName" 
-                    placeholder="Web List Operations" required ngModel maxlength="25" minlength="1" />
+                    placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
                 </div>
                 <div class="control">
                     <label class="projectDetails">Description</label><br />
                     <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
-                    placeholder="Action to automate HTML" ngModel maxlength="150" minlength="1"> </textarea>
+                    placeholder="Enter Project Description" ngModel maxlength="150" minlength="1"> </textarea>
                 </div>
                 <hr class="hrStyle">
                 <button class="btnCreate" [disabled]="!createNewProjectForm.valid">Create</button>

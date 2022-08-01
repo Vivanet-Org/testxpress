@@ -17,22 +17,42 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  serverlesUrl : string = "http://localhost:8080/project";
+  projectsUrl : string = "http://localhost:8090/project";
+  applicationsUrl : string = "http://localhost:8090/application";
   // serverlesUrl : string = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project";
 
-  getData(){
-    let getUrl = this.serverlesUrl + "/getAllProjects";
+  // Project functions start
+  getProjectsData(){
+    let getUrl = this.projectsUrl + "/getAllProjects";
     return this.http.get(getUrl);
   }
 
   createProject(createBody: any){
-    let createUrl = this.serverlesUrl + "/addProject";
+    let createUrl = this.projectsUrl + "/createProject";
     return this.http.post(createUrl, createBody);
   }
 
   updateProject(projectId: any, updatedBody: any){
-    let updateUrl = this.serverlesUrl + "/updateProject/" + projectId;
+    let updateUrl = this.projectsUrl + "/updateProject/" + projectId;
     return this.http.put(updateUrl, updatedBody);
   }
- 
+  // Project functions end
+
+  // Application functions start
+  getApplicationsData(){
+    let getUrl = this.applicationsUrl + "/getAllApplications";
+    return this.http.get(getUrl);
+  }
+
+  createApplication(createBody: any){
+    let createUrl = this.applicationsUrl + "/createApplication";
+    return this.http.post(createUrl, createBody);
+  }
+
+  updateApplication(appId: any, updatedBody: any){
+    let updateUrl = this.applicationsUrl + "/updateApplication/" + appId;
+    return this.http.put(updateUrl, updatedBody);
+  }
+  // Application functions end
+   
 }

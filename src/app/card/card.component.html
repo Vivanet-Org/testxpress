@@ -18,6 +18,7 @@
                         <label class="projectHeading">{{ teProjectsData.projectName }}</label>
                         <textarea type="text" name="projectDescription" class="textareaStylesCard"
                         ngModel="{{ teProjectsData.projectDescription }}" disabled> </textarea>
+                        <!-- <p class="projectDetails">{{ teProjectsData.projectDescription }}</p> -->
                     </div>
                 </div>
 
@@ -33,18 +34,18 @@
                     </div>
 
                     <div class="avatar-group">
-                        <div class="avatar">
+                        <!-- <div class="avatar">
                             <span class="avatar-name">Someone 1</span>
                             <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                                 alt="Image" />
-                        </div>
-                        <div class="avatar">
+                        </div> -->
+                        <!-- <div class="avatar">
                             <span class="avatar-name">Someone 2</span>
                             <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                                 alt="Image" />
-                        </div>
+                        </div> -->
                         <div class="avatar">
-                            <span class="avatar-name">Someone 3</span>
+                            <span class="avatar-name">Someone 2</span>
                             <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
                                 alt="Image" />
                         </div>
@@ -53,10 +54,13 @@
                             <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                                 alt="Image" />
                         </div>
-                        <div class="avatar">
+                        <!-- <div class="avatar">
                             <span class="avatar-name">Someone 5</span>
                             <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
                                 alt="Image" />
+                        </div> -->
+                        <div class="avatar">
+                            <span class="avatar-name">All</span> <span class="endImg" (click)="membersModal(teProjectsData.projectid)">+5</span>
                         </div>
                     </div>
                 </div>
@@ -133,8 +137,12 @@
             <!-- Delete popup Start -->
             <div class="deleteModal" *ngIf="teProjectsData.projectid === editId && deleteFlag">
                 <div class="modal-contents">
-                    <label class="deleteProjectHeading"><strong><em class="fa-solid fa-trash deleteIcon"></em> 
-                        Do you Want to delete these items?</strong>
+                    <label class="deleteProjectHeading">
+                        <p class="deleteIconAlign">
+                            <img [src] ="deleteRedImagePath" alt="close Image" class="deleteIcon"/>
+                        </p>                        
+                        <!-- <em class="fa-solid fa-trash deleteIcon"></em>  -->
+                        <strong>Do you Want to delete these items?</strong>
                     </label>
                     <div>
                         <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>
@@ -145,6 +153,49 @@
                 </div>
             </div>
             <!-- Delete popup End -->
+
+            <!-- Manage members popup start -->
+            <div class="membersModal" *ngIf="teProjectsData.projectid === editId && membersFlag">
+                <div class="members-modal-contents">
+            
+                    <div class="close">
+                        <!-- <label class="closeEdit" (click)="closeModal()" for="close">&times;</label> -->
+                        <img [src] ="closeImagePath" alt="close Image" class="members-close" (click)="closeModal()" />
+                    </div>
+                    <form #updateProjectForm="ngForm" (submit)="manageMembers(updateProjectForm, teProjectsData.projectid)">
+                            <label class="membersProjectHeading"><strong>Manage Member</strong></label>
+                            <hr class="hrStyle">
+                            <div class="form-control">
+                                <label class="manageMembersDetails">Email <span style="color: #F5222D;">*</span></label><br>
+
+                                 <div class="members-inputStyles">
+                                     <button class="members-mail"> Jerome Bell <img [src] ="buttonCloseImagePath" alt="close Image" class="button-close"/></button>
+                                     <button class="members-mail"> Kathryn Murphy <img [src] ="buttonCloseImagePath" alt="close Image" class="button-close"/></button>
+                                 </div>
+
+                                 <button class="membersSend" [disabled]="!updateProjectForm.valid">Send Invite</button>
+                                 
+                            </div><br>
+                            <div class="control">
+                                <label class="members-content">Manage Member</label><br />
+                                <div *ngFor="let manageMembers of manageMembersData">
+                                    <div class="members-group" *ngIf="!manageMembers.memberIsDeleted">
+                                        <img class="members" src={{manageMembers.memberImg}} alt="Image" />
+                                        <label class="members-font">{{manageMembers.memberName}}</label>
+                                        <label class="members-email">{{manageMembers.memberEmail}}</label>
+                                        <label class="members-email">{{manageMembers.memberRole}}</label>
+                                        <img [src] ="deleteImagePath" alt="delete Image" class="members-deleteIcon" (click)="deleteManageMembersData(manageMembers.memberId)" />
+                                        <!-- <em class="fa-solid fa-trash members-deleteIcon" (click)="deleteManageMembersData(manageMembers.memberId)"></em> -->
+                                    </div>
+                                    <hr *ngIf="!manageMembers.memberIsDeleted && manageMembers.memberId != manageMembersLastId" />
+                                </div>
+            
+                            </div>
+                            
+                    </form>
+                </div>
+            </div>
+            <!-- Manage members popup End -->
 
         </div>
     </div>

@@ -61,6 +61,10 @@ font-size: 36px;
 .icon-bar a:hover {
 color: rgb(250, 6, 6);
 }
+/* img:hover{
+  background-color: rgb(250, 6, 6);
+  border-radius: 50px;
+} */
 
 .projDetails{
   font: normal normal 500 16px Segoe UI, sans-serif;
@@ -71,12 +75,12 @@ color: rgb(250, 6, 6);
 
 /*vertical ellipsis */
 
-.appDots{
+.app-dots{
   float:right;
   cursor:pointer;
   position:relative;
 }
-.appDots .app-task-menu{
+.app-dots .app-task-menu{
   position:absolute;
   padding:10px;
   right: 0px;
@@ -90,9 +94,9 @@ color: rgb(250, 6, 6);
   box-shadow:2px 5px 6px gray;
 
 }
-.appDots:hover .app-task-menu{
+/* .app-dots:hover .app-task-menu{
   transform:scale(1);
-}
+} */
 .app-task-menu .menuItems{
   height:25px;
   margin-bottom:2px;
@@ -127,9 +131,10 @@ color: rgb(250, 6, 6);
 .projectHeading{
   font: normal normal 600 18px Segoe UI, sans-serif;
 }
-.projectDetails{
+.AppDetails{
   font: normal normal 16px Segoe UI, sans-serif;
   color: rgb(104, 104, 104);
+  margin-bottom: 10px;
 }
 .girdFooter{
   background-color: rgba(192, 192, 192, 0.301);
@@ -180,7 +185,7 @@ color: rgb(250, 6, 6);
   width: 100px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
-  background-color: blue;
+  background-color: #3E38D5;
   color: white;
   border: none;
   border-radius: 2px;
@@ -334,7 +339,7 @@ input {
   width: 100px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
-  background-color: blue;
+  background-color: #3E38D5;
   color: white;
   border: none;
   border-radius: 2px;
@@ -380,6 +385,7 @@ input {
 }
 .applicationImg{
   width: 27px;
+  /* background-color: rgba(40, 40, 245, 0.685); */
 }
 .appTopAlign{
   margin-left: 50px;
@@ -395,12 +401,16 @@ input {
   color: white;
   border: none;
   border-radius: 2px;
+  /* margin-right: 78px; */
   margin-right: 54px;
 }
 .appData{
   margin-right: -34px;
+  /* background-color: rgba(212, 212, 212, 0.335); */
 }
-
+/* .appDataAlign{
+  margin-top: 20px;
+} */
 .appHead{
   margin-top: 20px;
   display: inline-block;
@@ -419,6 +429,7 @@ input {
 }
 
 /* Create Application Popup Start */
+
 
 .create-app-modal {
   background-color: rgba(0, 0, 0, 0.8);
@@ -442,6 +453,7 @@ input {
 }
 
 input {
+
   width: 100%;
   height: 30px;
   border: 1px solid gray;
@@ -476,10 +488,10 @@ input {
   margin-right: -20px;
   margin-bottom: 20px;
 }
-.projectDetails{
+/* .AppDetails{
   font: normal normal 18px Segoe UI, sans-serif;
   margin-bottom: 10px;
-}
+} */
 .textareaStyles{
   margin-top: 10px;
   margin-bottom: 10px;
@@ -487,6 +499,7 @@ input {
   height: 50px;
   border: 1px solid gray;
   font: normal normal 18px Segoe UI, sans-serif;
+
 }
 
 .btnClose{
@@ -505,7 +518,7 @@ input {
   width: 100px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
-  background-color: blue;
+  background-color: #3E38D5;
   color: white;
   border: none;
   border-radius: 2px;
