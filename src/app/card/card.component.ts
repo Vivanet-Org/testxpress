@@ -13,12 +13,53 @@ export class CardComponent implements OnInit{
   clickEventSubscription:Subscription;
 
   andriodImagePath: string = '/assets/images/android.png';
+  deleteImagePath: string = '/assets/images/delete.png';
+  closeImagePath: string = '/assets/images/close.png';
+  buttonCloseImagePath: string = '/assets/images/buttonClose.png';
+  deleteRedImagePath: string = '/assets/images/delete-red.png';
+
+  manageMembersData:any = [
+    {
+      memberId: 1,
+      memberImg: '/assets/images/avatar-1.png',
+      memberName: "John Doe",
+      memberEmail: "johndoe@gmail.com",
+      memberRole: "Admin",
+      memberIsDeleted: false
+    },
+    {
+      memberId: 2,
+      memberImg: '/assets/images/avatar-2.png',
+      memberName: "Jacob Jones",
+      memberEmail: "jacob.j@gmail.com",
+      memberRole: "Leader",
+      memberIsDeleted: false
+    },
+    {
+      memberId: 3,
+      memberImg: '/assets/images/avatar-3.png',
+      memberName: "Theresa Webb",
+      memberEmail: "theresa.webb@gmail.com",
+      memberRole: "Tester",
+      memberIsDeleted: false
+    },
+    {
+      memberId: 4,
+      memberImg: '/assets/images/avatar-4.png',
+      memberName: "Courtney Henry",
+      memberEmail: "courtney@gmail.com",
+      memberRole: "QA",
+      memberIsDeleted: false
+    }
+  ];
+  manageMembersLastId:number = this.manageMembersData.slice(-1)[0].memberId;
 
   editId:any = null;
   oldData:any = true;
   editFlag:any = false;
   duplicateFlag:any = false;
   deleteFlag:any = false;
+  membersFlag:any = false;
   updatedFormData = {};
   duplicateData = {};
   
@@ -28,16 +69,16 @@ export class CardComponent implements OnInit{
   constructor(private user:UsersService) {
 
     this.clickEventSubscription =this.user.getClickEvent().subscribe(() => {
-      this.loadData();
+      this.loadProjectData();
     });
 
-    this.loadData();
+    this.loadProjectData();
   }
 
-  loadData(){
+  loadProjectData(){
     this.uiData = [];
     console.log(this.uiData);
-    this.user.getData().subscribe(data => {
+    this.user.getProjectsData().subscribe(data => {
       this.data = data;
       for (let index = 0; index < this.data.length; index++) {
         console.log(this.data[index].deleted);
@@ -57,6 +98,21 @@ export class CardComponent implements OnInit{
       console.log(this.uiData);
       console.log(this.uiData[0].projectid);
     });
+  }
+
+  deleteManageMembersData(id: any){
+    for (let index = 0; index < this.manageMembersData.length; index++) {
+      if(this.manageMembersData[index].memberId === id){
+        this.manageMembersData[index] = {
+          memberId: this.manageMembersData[index].memberId,
+          memberImg: this.manageMembersData[index].memberImg,
+          memberName: this.manageMembersData[index].memberName,
+          memberEmail: this.manageMembersData[index].memberEmail,
+          memberRole: this.manageMembersData[index].memberRole,
+          memberIsDeleted:true
+        };
+      }
+    }
   }
 
   dots: boolean = true;
@@ -82,7 +138,6 @@ export class CardComponent implements OnInit{
       });
       this.dots = true;
     }
-
   } 
   
   data1: any = {};
@@ -95,6 +150,19 @@ export class CardComponent implements OnInit{
     this.editFlag = false;
     this.duplicateFlag = false;
     this.deleteFlag = false;
+    this.membersFlag = false;
+
+    for (let index = 0; index < this.manageMembersData.length; index++) {
+      this.manageMembersData[index] = {
+        memberId: this.manageMembersData[index].memberId,
+        memberImg: this.manageMembersData[index].memberImg,
+        memberName: this.manageMembersData[index].memberName,
+        memberEmail: this.manageMembersData[index].memberEmail,
+        memberRole: this.manageMembersData[index].memberRole,
+        memberIsDeleted:false
+      };
+    }
+
   }
 
   editModal(id: any) {
@@ -118,10 +186,14 @@ export class CardComponent implements OnInit{
     this.taskMenuFlag = true;
 
   }
+  membersModal(id: any) {
+    this.editId = id;
+    this.membersFlag = true;
+  }
 
   updateExistingProject(form: any, id: any){
    
-    this.user.getData().subscribe(data => {
+    this.user.getProjectsData().subscribe(data => {
       this.data1 = data;
       this.totalProjects = Object.keys(data).length;
 
@@ -153,7 +225,7 @@ export class CardComponent implements OnInit{
         console.log(this.updatedFormData);
         this.user.updateProject(id, this.updatedFormData).subscribe(data => {
           console.log(data);
-          this.loadData();
+          this.loadProjectData();
         });
         this.closeModal();
       }
@@ -165,7 +237,7 @@ export class CardComponent implements OnInit{
 
   duplicateProject(form: any, id: any){
     let flag = true;
-    this.user.getData().subscribe(data => {
+    this.user.getProjectsData().subscribe(data => {
       this.data = data;
       this.totalProjects = Object.keys(data).length;
       console.log(form.value.projectName);
@@ -182,6 +254,7 @@ export class CardComponent implements OnInit{
             this.duplicateData = {
               projectName: form.value.projectName,
               projectDescription:form.value.projectDescription,
+              // projectDescription:this.data[index].projectDescription,
               deleted:this.data[index].deleted,
               createdBy:this.data[index].createdBy,
               createdOn:Date.now(),
@@ -203,7 +276,7 @@ export class CardComponent implements OnInit{
   
   deleteExistingProject(id:any){
     this.uiData = [];
-    this.user.getData().subscribe(data => {
+    this.user.getProjectsData().subscribe(data => {
       this.data2 = data;
       this.totalProjects = Object.keys(data).length;
       for (let index = 0; index < this.totalProjects; index++) {
@@ -230,6 +303,8 @@ export class CardComponent implements OnInit{
     });
     console.log(id);
   }
+
+  manageMembers(form: any, id: any){}
   ngOnInit(): void {
   }
 }

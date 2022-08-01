@@ -15,137 +15,46 @@
         <div class="appDataAlign">
             <label class="appHead">Applications</label>
             <select class="projectsDropdown">
-                <option>Kraft Heinz Project</option>
-                <option>TestXpress Project</option>
-                <option>Amir Peleg</option>
-                <option selected>Whirlpool Project</option>
-                <option>Web List Operations</option>
+                <option *ngFor="let teProjectsData of projectUiData">
+                    {{teProjectsData.projectName}}
+                </option>
             </select>
         </div><br>
         <div class="app-grid-container">
-            <div class="grid-item" >
-                <div>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="appDots">
-                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                        <div class="app-task-menu">
-                            <p class="menuItems menuEdit">Edit</p>
-                            <p class="menuItems menuDuplicate">Duplicate</p>
-                            <p class="menuItems menuDelete">Delete</p>
+            <div *ngFor="let teAppData of appUiData">
+                <div class="grid-item" >
+                    <div>
+                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+                            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+                            crossorigin="anonymous" referrerpolicy="no-referrer" />
+                        <div class="app-dots">
+                            <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openAppTaskMenu(teAppData.appid)"></em>
+                            <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
+                                <p class="menuItems menuEdit">Edit</p>
+                                <p class="menuItems menuDuplicate">Duplicate</p>
+                                <p class="menuItems menuDelete">Delete</p>
+                            </div>
+                        </div>
+                        <div class="existingData">
+                            <label class="projectHeading">
+                                <em style="font-size:23px; color: blue;" class="fa fa-desktop"></em>
+                                &nbsp; {{teAppData.appName}}
+                            </label>
+                            <p class="AppDetails">{{teAppData.appDescription}}</p>
                         </div>
                     </div>
-                    <div class="existingData">
-                        <label class="projectHeading">
-                            <em style="font-size:23px; color: blue;" class="fa fa-desktop"></em>
-                            &nbsp; TestXpress
-                        </label>
-                        <p class="projectDetails">Whirlpool's Application (Android) for QA to identify defects.</p>
+
+                    <div class="girdFooter">
+                        <div class="icon-bar">
+                            <div class="projDetails">
+                                <label class="projDetails">3 Releases &nbsp;&nbsp; 8 Test Plans</label>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="girdFooter">
-                    <div class="icon-bar">
-                        <div class="projDetails">
-                            <label class="projDetails">3 Releases &nbsp;&nbsp; 8 Test Plans</label>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="grid-item" >
-                <div>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="appDots">
-                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                        <div class="app-task-menu">
-                            <p class="menuItems menuEdit">Edit</p>
-                            <p class="menuItems menuDuplicate">Duplicate</p>
-                            <p class="menuItems menuDelete">Delete</p>
-                        </div>
-                    </div>
-                    <div class="existingData">
-                        <label class="projectHeading">
-                            <em style="font-size:24px; color: blue;" class="fa-brands fa-apple"></em>
-                            &nbsp; Prodigio (iOS)
-                        </label>
-                        <p class="projectDetails">Whirlpool's Application (iOS) for QA to identify defects.</p>
-                    </div>
-                </div>
-
-                <div class="girdFooter">
-                    <div class="icon-bar">
-                        <div class="projDetails">
-                            <label class="projDetails">3 Releases &nbsp;&nbsp; 4 Test Plans</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item" >
-                <div>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="appDots">
-                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                        <div class="app-task-menu">
-                            <p class="menuItems menuEdit">Edit</p>
-                            <p class="menuItems menuDuplicate">Duplicate</p>
-                            <p class="menuItems menuDelete">Delete</p>
-                        </div>
-                    </div>
-                    <div class="existingData">
-                        <label class="projectHeading">
-                            <em style="font-size:23px; color: blue;" class="fa-solid fa-globe"></em>
-                            &nbsp; WTAF
-                        </label>
-                        <p class="projectDetails">Whirlpool's Mobile Application for QA to identify defects.</p>
-                    </div>
-                </div>
-
-                <div class="girdFooter">
-                    <div class="icon-bar">
-                        <div class="projDetails">
-                            <label class="projDetails">17 Releases &nbsp;&nbsp; 11 Test Plans</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item" >
-                <div>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer" />
-                    <div class="appDots">
-                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown'></em>
-                        <div class="app-task-menu">
-                            <p class="menuItems menuEdit">Edit</p>
-                            <p class="menuItems menuDuplicate">Duplicate</p>
-                            <p class="menuItems menuDelete">Delete</p>
-                        </div>
-                    </div>
-                    <div class="existingData">
-                        <label class="projectHeading">
-                            <img [src] ="androidPath" style="width: 24px;" alt="Android Image" />
-                            &nbsp; Prodigio (Android)
-                        </label>
-                        <p class="projectDetails">Whirlpool's Application (Android) for QA to identify defects.</p>
-                    </div>
-                </div>
-
-                <div class="girdFooter">
-                    <div class="icon-bar">
-                        <div class="projDetails">
-                            <label class="projDetails">8 Releases &nbsp;&nbsp; 9 Test Plans</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
         <!-- Create Application Popup Start -->
@@ -155,31 +64,30 @@
                 <div class="close">
                     <label class="closeModel" (click)="closeModal()" for="close">&times;</label>
                 </div>
-                <form>
+                <form #createNewApplicationForm="ngForm" (submit)="createNewApplication(createNewApplicationForm)">
                         <label class="projectHeading"><strong>Create new Application</strong></label>
                         <hr class="hrStyle">
                         <div>
-                            <label class="projectDetails">Application Name</label>
-                            <input class="inputStyles" id="name" type="text" name="projectName" 
-                            placeholder="SEP" required ngModel maxlength="25" minlength="1" />
+                            <label class="AppDetails">Application Name</label>
+                            <input class="inputStyles" id="name" type="text" name="appName" 
+                            placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" />
                         </div>
                         <div>
-                            <label class="projectDetails">Project Name</label><br>
-                            <select class="createProjectsDropdown">
-                                <option>Kraft Heinz Project</option>
-                                <option>TestXpress Project</option>
-                                <option selected>Whirlpool Project</option>
-                                <option>Kraft Heinz Project</option>
-                                <option>Web List Operations</option>
+                            <label class="AppDetails">Project Name</label><br>
+                            <select class="createProjectsDropdown" (change)="selected($event)">
+                                <option value="">Select Project</option>
+                                <option *ngFor="let teProjectsData of projectUiData" value={{teProjectsData.projectName}}>
+                                    {{teProjectsData.projectName}}
+                                </option>
                             </select>
                         </div>
                         <div class="control">
-                            <label class="projectDetails">Application Description</label><br />
-                            <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
-                            placeholder="Whirlpool's Application (iOS) for QA to identify defects." ngModel maxlength="150" minlength="1"> </textarea>
+                            <label class="AppDetails">Application Description</label><br />
+                            <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
+                            placeholder="Enter Application Description" ngModel maxlength="150" minlength="1"> </textarea>
                         </div>
                         <hr class="hrStyle">
-                        <button class="btnCreate">Create</button>
+                        <button class="btnCreate" [disabled]="!createNewApplicationForm.valid">Create</button>
                 </form>
                 <button class="btnClose" (click)="closeModal()">Cancel</button>
             </div>

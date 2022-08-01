@@ -33,7 +33,7 @@ export class MainprojectComponent implements OnInit {
       updatedOn:Date.now()
     };
 
-    this.usersService.getData().subscribe(data => {
+    this.usersService.getProjectsData().subscribe(data => {
       this.data = data;
       this.totalProjects = Object.keys(data).length;
 
