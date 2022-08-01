@@ -53,11 +53,11 @@
 
 .createButton{
     margin-left: 20px;
-    width: 150px;
+    width: 120px;
     height: 32px;
     font-size: 16px;
     font-weight: 500;
-    background-color: blue;
+    background-color: #3E38D5;
     color: white;
     border: none;
     border-radius: 2px;

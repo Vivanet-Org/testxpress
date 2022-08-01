@@ -12,7 +12,9 @@
 }
 
 .grid-item {
-  background-color:white;
+  width: 424px;
+  height: 82px;
+  background-color: #FFFFFF;
   border: 1px solid rgb(199, 199, 199);
   padding: 10px;
   font-size: 20px;
@@ -393,7 +395,7 @@ input {
   width: 100px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
-  background-color: blue;
+  background-color: #3E38D5;
   color: white;
   border: none;
   border-radius: 2px;
