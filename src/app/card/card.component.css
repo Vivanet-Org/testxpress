@@ -214,7 +214,7 @@ color: rgb(250, 6, 6);
   font: normal normal 600 20px Segoe UI, sans-serif;
 }
 .menuDelete:hover{
-  color: red;
+  color:blue;
   background-color: rgba(192, 192, 192, 0.301);
   font: normal normal 600 20px Segoe UI, sans-serif;
 }
@@ -272,7 +272,7 @@ color: rgb(250, 6, 6);
 .btnCreate{
   float: right;
   margin-left: 20px;
-  width: 100px;
+  width: 53px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
   background-color: blue;
@@ -288,17 +288,17 @@ color: rgb(250, 6, 6);
 }
 .btnClose{
   float: right;
-  width: 100px;
+  width: 74px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
-  background-color: white;
+  background-color: #FFFFFF;
   color: black;
-  border: 1px solid gray;
+  border: 1px solid #cdcad6;
   border-radius: 2px;
 }
 .btnClose:hover{
   cursor: pointer;
-  background-color: red;
+  background-color: grey;
   color: white;
   border: none;
 }
