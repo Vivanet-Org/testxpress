@@ -422,7 +422,7 @@ input {
 
 .btnClose{
   float: right;
-  width: 100px;
+  width: 74px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
   background-color: white;
@@ -433,7 +433,7 @@ input {
 .btnCreate{
   float: right;
   margin-left: 20px;
-  width: 100px;
+  width: 53px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
   background-color: blue;
@@ -446,7 +446,7 @@ input {
 }
 .btnClose:hover{
   cursor: pointer;
-  background-color: red;
+  background-color: grey;
   color: white;
   border: none;
 }
