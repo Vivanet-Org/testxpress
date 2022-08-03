@@ -17,8 +17,8 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  projectsUrl : string = "http://localhost:8090/project";
-  applicationsUrl : string = "http://localhost:8090/application";
+  projectsUrl : string = "http://localhost:8080/project";
+  applicationsUrl : string = "http://localhost:8080/application";
   // serverlesUrl : string = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project";
 
   // Project functions start
