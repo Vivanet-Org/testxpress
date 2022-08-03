@@ -53,6 +53,7 @@ body.dark{
     z-index: 100;
     display: flex;
     justify-content: center;
+    /* overflow: auto; */
 }
 .sidebar.close{
     width: 88px;
@@ -324,7 +325,7 @@ body.dark .home .text{
     display:flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 15px;    
+    margin-bottom: 5px;    
 }
 .icon-background:hover{
     background-color: rgb(95, 93, 93);

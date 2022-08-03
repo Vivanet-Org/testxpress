@@ -83,6 +83,7 @@ input {
     height: 50px;
     border: 1px solid gray;
     font: normal normal 18px Segoe UI, sans-serif;
+    resize: none;
 
 }
 

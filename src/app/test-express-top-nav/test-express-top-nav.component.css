@@ -1,3 +1,11 @@
+/* .topNav{
+    overflow: hidden;
+    background-color:white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:1;
+} */
 .topNav{
     display: block;
 }
@@ -9,8 +17,10 @@
 }
 .projHeading{
     padding-top: 12px;
+    /* margin-top: 50px; */
     font: normal normal 600 23px Segoe UI, sans-serif;
     margin-left: 100px;
+    /* margin-bottom: 20px; */
 }
 .text {
     margin-top: 20px;
@@ -58,7 +68,7 @@
     font-size: 16px;
     font-weight: 500;
     background-color: #3E38D5;
-    color: white;
+    color: #FFFFFF;
     border: none;
     border-radius: 2px;
 }

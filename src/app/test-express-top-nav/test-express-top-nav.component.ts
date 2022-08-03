@@ -3,6 +3,7 @@ import * as $ from "jquery";
 import { UsersService } from '../users.service';
 import { Subscription } from 'rxjs';
 
+
 @Component({
   selector: 'app-test-express-top-nav',
   templateUrl: './test-express-top-nav.component.html',
@@ -31,7 +32,7 @@ export class TestExpressTopNavComponent implements OnInit {
   }
 
   loadTotalProjectsNum(){
-    this.user.getData().subscribe(data => {
+    this.user.getProjectsData().subscribe(data => {
       this.data = data;
       this.totalProjects = Object.keys(data).length;
       console.warn(this.totalProjects);
