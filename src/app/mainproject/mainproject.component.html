@@ -2,7 +2,8 @@
     <div class="modal-contents">
 
         <div class="close">
-            <label class="closeModel" (click)="closeModal()" for="close">&times;</label>
+            <img class="closeModel" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
+            <!-- <label class="closeModel" (click)="closeModal()" for="close">&times;</label> -->
         </div>
         <form #createNewProjectForm="ngForm" (submit)="createNewProject(createNewProjectForm)">
                 <label class="projectHeading"><strong>Create a new project</strong></label>
