@@ -39,8 +39,11 @@
     /* color: #333; */
     cursor: pointer;
     /* font-weight: 600; */
-    width: 18px;
+    /* width: 18px; */
     margin-right: 10px;
+}
+.closeModel{
+    width: 18px;
 }
 
 .closeModel:hover{

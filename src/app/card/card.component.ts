@@ -15,12 +15,12 @@ export class CardComponent implements OnInit{
   andriodImagePath: string = '/assets/images/android.png';
   deleteImagePath: string = '/assets/images/delete.png';
   closeImagePath: string = '/assets/images/close.png';
-  buttonCloseImagePath: string = '/assets/images/buttonClose.png';
+  // buttonCloseImagePath: string = '/assets/images/close.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
-  moreImgPath: string = '/assets/images/Vector.png';
-  webImgPath: string = '/assets/images/web.png';
+  moreImgPath: string = '/assets/images/more.png';
+  webImgPath: string = '/assets/images/web.png';  
   appleImgPath: string = '/assets/images/apple.png';
-  desktopGreyImgPath: string = '/assets/images/destop-grey.png';
+  desktopGreyImgPath: string = '/assets/images/desktop-grey.png';
   avatarImg1Path: string = '/assets/images/avatar-photo4px-1.png';
   avatarImg2Path: string = '/assets/images/avatar-photo4px-2.png';
   textImgPath: string = '/assets/images/text-4px.png';
@@ -30,7 +30,7 @@ export class CardComponent implements OnInit{
   manageMembersData:any = [
     {
       memberId: 1,
-      memberImg: '/assets/images/avatar-1.png',
+      memberImg: '/assets/images/photo1.png',
       memberName: "John Doe",
       memberEmail: "johndoe@gmail.com",
       memberRole: "Admin",
@@ -38,7 +38,7 @@ export class CardComponent implements OnInit{
     },
     {
       memberId: 2,
-      memberImg: '/assets/images/avatar-2.png',
+      memberImg: '/assets/images/photo2.png',
       memberName: "Jacob Jones",
       memberEmail: "jacob.j@gmail.com",
       memberRole: "Leader",
@@ -46,7 +46,7 @@ export class CardComponent implements OnInit{
     },
     {
       memberId: 3,
-      memberImg: '/assets/images/avatar-3.png',
+      memberImg: '/assets/images/photo3.png',
       memberName: "Theresa Webb",
       memberEmail: "theresa.webb@gmail.com",
       memberRole: "Tester",
@@ -54,7 +54,7 @@ export class CardComponent implements OnInit{
     },
     {
       memberId: 4,
-      memberImg: '/assets/images/avatar-4.png',
+      memberImg: '/assets/images/photo4.png',
       memberName: "Courtney Henry",
       memberEmail: "courtney@gmail.com",
       memberRole: "QA",

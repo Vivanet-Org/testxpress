@@ -78,9 +78,10 @@ color: rgb(250, 6, 6);
   position:relative;
   /* width: 20px; */
 }
-/* .appMoreImg{
-  margin-left: 9px;
-} */
+.appMoreImg{
+  /* margin-left: 9px; */
+  width: 24px;
+}
 .app-dots .app-task-menu{
   position:absolute;
   padding:10px;
@@ -409,9 +410,12 @@ input {
   font: normal normal 18px Segoe UI, sans-serif;
 }
 .close {
-  width: 18px;
+  /* width: 18px; */
   cursor: pointer;
   margin-right: 10px;
+}
+.closeModel{
+  width: 18px;
 }
 .closeModel:hover{
   cursor: pointer;

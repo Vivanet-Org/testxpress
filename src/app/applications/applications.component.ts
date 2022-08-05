@@ -16,7 +16,7 @@ export class ApplicationsComponent implements OnInit {
   androidPath: string = '/assets/images/android.png';
   appImgPath: string = '/assets/images/applications.png';
   desktopImgPath: string = '/assets/images/destop.png';
-  moreImgPath: string = '/assets/images/Vector.png';
+  moreImgPath: string = '/assets/images/more.png';
   closeImgPath: string = '/assets/images/close.png';
 
   constructor(private user:UsersService) {

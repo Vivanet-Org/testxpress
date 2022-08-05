@@ -204,9 +204,11 @@ color: rgb(250, 6, 6);
 .dots:hover{
   cursor: pointer;
 }
-/* .moreImg{
-  margin-left: 9px;
-} */
+.moreImg{
+  /* margin-left: 9px; */
+  width: 24px;
+
+}
 /* .dots:hover .task-menu{
   transform:scale(1);
 } */
@@ -429,7 +431,7 @@ input {
 .deleteIcon{
   /* margin-right: 15px; */
   /* margin-top: 15px; */
-  font-size:24px;
+  width:24px;
   /* margin-left: 15px; */
 }
 .deleteProjectHeading{

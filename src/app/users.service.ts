@@ -54,7 +54,7 @@ export class UsersService {
     let createUrl = this.applicationsUrl + "/createApplication";
     return this.http.post(createUrl, createBody);
   }
-  
+
   // Application functions end
    
 }

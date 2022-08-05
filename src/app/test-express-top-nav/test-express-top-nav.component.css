@@ -50,7 +50,7 @@
 .search-style{
     width: 236px;
     height: 32px;
-    font-size: 16px;
+    /* font-size: 16px; */
     border: 1px solid grey;
     border-radius: 2px;
     padding-left: 10px;
@@ -58,15 +58,18 @@
     font: normal normal 400 14px Segoe UI, sans-serif;
 
 }
+.searchImg{
+    width: 16px;
+}
 #filterSubmit {
     position: relative;
-    z-index: 1;
-    left: -95px;
-    top: 1px;
-    color: #7B7B7B;
+    /* z-index: 1; */
+    left: -25px;
+    top: 2px;
+    /* color: #7B7B7B; */
     cursor: pointer;
-    width: 0;
-    font-size: 16px;
+    /* width: 0; */
+    /* font-size: 16px; */
 }
 
 .createButton{

@@ -11,6 +11,8 @@ import { Subscription } from 'rxjs';
 })
 export class TestExpressTopNavComponent implements OnInit {
 
+  srarchImagePath: string = '/assets/images/search.png';
+
   clickEventSubscription:Subscription;
 
   data: any = {};
