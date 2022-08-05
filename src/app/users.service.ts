@@ -17,8 +17,8 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  projectsUrl : string = "http://localhost:8080/project";
-  applicationsUrl : string = "http://localhost:8080/application";
+  projectsUrl : string = "http://localhost:8090/project";
+  applicationsUrl : string = "http://localhost:8090/application";
   // serverlesUrl : string = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA/project";
 
   // Project functions start
@@ -36,6 +36,12 @@ export class UsersService {
     let updateUrl = this.projectsUrl + "/updateProject/" + projectId;
     return this.http.put(updateUrl, updatedBody);
   }
+
+  getProjectIdProjectName(){
+    let getUrl = this.projectsUrl + "/getProjectIdProjectName";
+    return this.http.get(getUrl);
+  }
+
   // Project functions end
 
   // Application functions start
@@ -48,11 +54,7 @@ export class UsersService {
     let createUrl = this.applicationsUrl + "/createApplication";
     return this.http.post(createUrl, createBody);
   }
-
-  updateApplication(appId: any, updatedBody: any){
-    let updateUrl = this.applicationsUrl + "/updateApplication/" + appId;
-    return this.http.put(updateUrl, updatedBody);
-  }
+  
   // Application functions end
    
 }

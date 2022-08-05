@@ -9,6 +9,8 @@ import { UsersService } from '../users.service';
 })
 export class MainprojectComponent implements OnInit {
 
+  closeImagePath: string = '/assets/images/close.png';
+
   constructor(public usersService:UsersService) { }
  
   data: any = {};

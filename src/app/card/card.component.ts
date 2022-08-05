@@ -17,6 +17,15 @@ export class CardComponent implements OnInit{
   closeImagePath: string = '/assets/images/close.png';
   buttonCloseImagePath: string = '/assets/images/buttonClose.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
+  moreImgPath: string = '/assets/images/Vector.png';
+  webImgPath: string = '/assets/images/web.png';
+  appleImgPath: string = '/assets/images/apple.png';
+  desktopGreyImgPath: string = '/assets/images/destop-grey.png';
+  avatarImg1Path: string = '/assets/images/avatar-photo4px-1.png';
+  avatarImg2Path: string = '/assets/images/avatar-photo4px-2.png';
+  textImgPath: string = '/assets/images/text-4px.png';
+
+
 
   manageMembersData:any = [
     {
@@ -59,7 +68,7 @@ export class CardComponent implements OnInit{
   editFlag:any = false;
   duplicateFlag:any = false;
   deleteFlag:any = false;
-  membersFlag:any = false;
+
   updatedFormData = {};
   duplicateData = {};
   
@@ -121,6 +130,8 @@ export class CardComponent implements OnInit{
 
   openTaskMenu(id: any){
     this.taskMenuId = id;
+    console.log(id);
+    console.log(this.taskMenuId);
     if(this.dots){
       this.taskMenuFlag = false;
       $('.dots, .task-menu').css({
@@ -150,6 +161,7 @@ export class CardComponent implements OnInit{
     this.editFlag = false;
     this.duplicateFlag = false;
     this.deleteFlag = false;
+    this.membersId = null;
     this.membersFlag = false;
 
     for (let index = 0; index < this.manageMembersData.length; index++) {
@@ -186,8 +198,11 @@ export class CardComponent implements OnInit{
     this.taskMenuFlag = true;
 
   }
+
+  membersId: any = null;
+  membersFlag:any = false;
   membersModal(id: any) {
-    this.editId = id;
+    this.membersId = id;
     this.membersFlag = true;
   }
 

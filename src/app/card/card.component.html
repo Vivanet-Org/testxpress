@@ -7,7 +7,8 @@
                         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
                         crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="dots">
-                        <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openTaskMenu(teProjectsData.projectid)"></em>
+                        <img class="moreImg" [src] ="moreImgPath" alt="more Image" (click)="openTaskMenu(teProjectsData.projectid)" />
+                        <!-- <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openTaskMenu(teProjectsData.projectid)"></em> -->
                         <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">
                             <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
                             <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
@@ -24,10 +25,13 @@
 
                 <div class="girdFooter">
                     <div class="icon-bar">
-                        <a href="#"><em style="font-size:30px" class="fa-solid fa-globe"></em></a>
-                        <a href="#"><em style="font-size:36px" class="fa-brands fa-apple"></em></a>
-                        <a href="#"><img [src] ="andriodImagePath" style="width: 36px;" alt="Android Image" /></a>
-                        <a href="#"><em style="font-size:30px" class="fa fa-desktop"></em></a>
+                        <a href="#"><img class="webImg footerImg" [src] ="webImgPath" alt="web Image" /></a>
+                        <a href="#"><img class="appleImg footerImg" [src] ="appleImgPath" alt="apple Image" /></a>
+                        <!-- <a href="#"><em style="font-size:30px" class="fa-solid fa-globe"></em></a> -->
+                        <!-- <a href="#"><em style="font-size:36px" class="fa-brands fa-apple"></em></a> -->
+                        <a href="#"><img class="androidImg footerImg" [src] ="andriodImagePath" alt="Android Image" /></a>
+                        <a href="#"><img class="desktopGreyImg footerImg" [src] ="desktopGreyImgPath" alt="desktopGrey Image" /></a>
+                        <!-- <a href="#"><em style="font-size:30px" class="fa fa-desktop"></em></a> -->
                         <div class="projDetails">
                             <label class="projDetails">5 Test Suites 9 Apps</label>
                         </div>
@@ -45,36 +49,34 @@
                                 alt="Image" />
                         </div> -->
                         <div class="avatar">
-                            <span class="avatar-name">Someone 2</span>
-                            <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Image" />
+                            <span class="avatar-name">Someone 1</span>
+                            <img class="avatarImg1" [src] ="avatarImg1Path" alt="avatar1 Image" />
                         </div>
                         <div class="avatar">
-                            <span class="avatar-name">Someone 4</span>
-                            <img src="https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Image" />
+                            <span class="avatar-name">Someone 2</span>
+                            <img class="avatarImg2" [src] ="avatarImg2Path" alt="avatar2 Image" />                            
+                        </div>
+                        <div class="avatar">
+                            <span class="avatar-name">Someone 5</span>
+                            <img class="textImg" [src] ="textImgPath" alt="text Image" (click)="membersModal(teProjectsData.projectid)" />
                         </div>
                         <!-- <div class="avatar">
-                            <span class="avatar-name">Someone 5</span>
-                            <img src="https://images.unsplash.com/photo-1504593811423-6dd665756598?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Image" />
-                        </div> -->
-                        <div class="avatar">
                             <span class="avatar-name">All</span> <span class="endImg" (click)="membersModal(teProjectsData.projectid)">+5</span>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
 
             <!-- Edit popup start -->
             <div class="editModal" *ngIf="teProjectsData.projectid === editId && editFlag">
-                <div class="modal-contents">
+                <div class="edit-modal-contents">
             
                     <div class="close">
-                        <label class="closeEdit" (click)="closeModal()" for="close">&times;</label>
+                        <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
+                        <!-- <label class="closeEdit" (click)="closeModal()" for="close">&times;</label> -->
                     </div>
                     <form #updateProjectForm="ngForm" (submit)="updateExistingProject(updateProjectForm, teProjectsData.projectid)">
-                            <label class="projectHeading"><strong>Edit {{ teProjectsData.projectName }}</strong></label>
+                            <label class="projectHeading">Edit {{ teProjectsData.projectName }}</label>
                             <hr class="hrStyle">
                             <div class="form-control">
                                 <label class="popupProjectDetails">Project Name</label>
@@ -102,13 +104,14 @@
 
             <!-- Duplicate popup Start -->
             <div class="duplicateModal" *ngIf="teProjectsData.projectid === editId && duplicateFlag">
-                <div class="modal-contents">
+                <div class="duplicate-modal-contents">
             
                     <div class="close">
-                        <label class="closeEdit" (click)="closeModal()" for="close">&times;</label>
+                        <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
+                        <!-- <label class="closeEdit" (click)="closeModal()" for="close">&times;</label> -->
                     </div>
                     <form #duplicateProjectForm="ngForm" (submit)="duplicateProject(duplicateProjectForm, teProjectsData.projectid)">
-                            <label class="projectHeading"><strong>Duplicate Project</strong></label>
+                            <label class="projectHeading">Duplicate Project</label>
                             <hr class="hrStyle">
                             <div class="form-control">
                                 <label class="popupProjectDetails">Project Name</label>
@@ -127,7 +130,7 @@
                                 ngModel="{{ teProjectsData.projectDescription }}" maxlength="150" minlength="1"> </textarea>
                             </div>
                             <hr class="hrStyle">
-                            <button class="btnCreate" [disabled]="!duplicateProjectForm.valid">Duplicate</button>
+                            <button class="btnDuplicate" [disabled]="!duplicateProjectForm.valid">Duplicate</button>
                     </form>
                     <button class="btnClose" (click)="closeModal()">Cancel</button>
                 </div>
@@ -136,26 +139,26 @@
 
             <!-- Delete popup Start -->
             <div class="deleteModal" *ngIf="teProjectsData.projectid === editId && deleteFlag">
-                <div class="modal-contents">
+                <div class="delete-modal-contents">
                     <label class="deleteProjectHeading">
                         <p class="deleteIconAlign">
                             <img [src] ="deleteRedImagePath" alt="close Image" class="deleteIcon"/>
                         </p>                        
                         <!-- <em class="fa-solid fa-trash deleteIcon"></em>  -->
-                        <strong>Do you Want to delete these items?</strong>
+                        Do you Want to delete these items?
                     </label>
                     <div>
                         <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>
                     </div>
                     
-                    <button class="btnCreate" (click)="deleteExistingProject(teProjectsData.projectid)">OK</button>
+                    <button class="btnDelete" (click)="deleteExistingProject(teProjectsData.projectid)">OK</button>
                     <button class="btnClose" (click)="closeModal()">Cancel</button>
                 </div>
             </div>
             <!-- Delete popup End -->
 
             <!-- Manage members popup start -->
-            <div class="membersModal" *ngIf="teProjectsData.projectid === editId && membersFlag">
+            <div class="membersModal" *ngIf="teProjectsData.projectid === membersId && membersFlag">
                 <div class="members-modal-contents">
             
                     <div class="close">
