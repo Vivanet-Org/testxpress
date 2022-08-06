@@ -11,62 +11,72 @@
 }
 .projHeadingBg{
     margin-right:-8px;
-    background-color: white;
+    background-color: #FFFFFF;
     margin-top: -8px;
-    height: 60px;
+    height: 64px;
 }
 .projHeading{
-    padding-top: 12px;
+    padding-top: 16px;
     /* margin-top: 50px; */
-    font: normal normal 600 23px Segoe UI, sans-serif;
+    font: normal normal 700 20px Segoe UI, sans-serif;
     margin-left: 100px;
     /* margin-bottom: 20px; */
+    color: #000000;
 }
 .text {
     margin-top: 20px;
     text-indent: 70px;
 }
 .projectsCount{
-    font: normal normal 500 20px Segoe UI, sans-serif;
+    font: normal normal 700 16px Segoe UI, sans-serif;
     margin-left: 30px;
+    color: #232324;
 }
 .align-items{
     float: right;
-    margin-right: 50px;
+    margin-right: 40px;
 }
 .select-plotform{
     margin-right: 20px;
-    width: 160px;
-    height: 32px;
+    width: 148px;
+    height: 36px;
     font-size: 16px;
-    color: grey;
     border: 1px solid grey;
     border-radius: 2px;
+    color: #525156;
+    font: normal normal 400 14px Segoe UI, sans-serif;
+    padding-left: 10px;
 }
 .search-style{
-    width: 250px;
-    height: 28px;
-    font-size: 16px;
+    width: 236px;
+    height: 32px;
+    /* font-size: 16px; */
     border: 1px solid grey;
     border-radius: 2px;
+    padding-left: 10px;
+    color: #B1B0BC;
+    font: normal normal 400 14px Segoe UI, sans-serif;
+
+}
+.searchImg{
+    width: 16px;
 }
 #filterSubmit {
     position: relative;
-    z-index: 1;
-    left: -95px;
-    top: 1px;
-    color: #7B7B7B;
+    /* z-index: 1; */
+    left: -25px;
+    top: 2px;
+    /* color: #7B7B7B; */
     cursor: pointer;
-    width: 0;
-    font-size: 16px;
+    /* width: 0; */
+    /* font-size: 16px; */
 }
 
 .createButton{
     margin-left: 20px;
     width: 120px;
     height: 32px;
-    font-size: 16px;
-    font-weight: 500;
+    font: normal normal 400 14px Segoe UI, sans-serif;
     background-color: #3E38D5;
     color: #FFFFFF;
     border: none;

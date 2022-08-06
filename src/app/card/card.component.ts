@@ -15,13 +15,22 @@ export class CardComponent implements OnInit{
   andriodImagePath: string = '/assets/images/android.png';
   deleteImagePath: string = '/assets/images/delete.png';
   closeImagePath: string = '/assets/images/close.png';
-  buttonCloseImagePath: string = '/assets/images/buttonClose.png';
+  // buttonCloseImagePath: string = '/assets/images/close.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
+  moreImgPath: string = '/assets/images/more.png';
+  webImgPath: string = '/assets/images/web.png';  
+  appleImgPath: string = '/assets/images/apple.png';
+  desktopGreyImgPath: string = '/assets/images/desktop-grey.png';
+  avatarImg1Path: string = '/assets/images/avatar-photo4px-1.png';
+  avatarImg2Path: string = '/assets/images/avatar-photo4px-2.png';
+  textImgPath: string = '/assets/images/text-4px.png';
+
+
 
   manageMembersData:any = [
     {
       memberId: 1,
-      memberImg: '/assets/images/avatar-1.png',
+      memberImg: '/assets/images/photo1.png',
       memberName: "John Doe",
       memberEmail: "johndoe@gmail.com",
       memberRole: "Admin",
@@ -29,7 +38,7 @@ export class CardComponent implements OnInit{
     },
     {
       memberId: 2,
-      memberImg: '/assets/images/avatar-2.png',
+      memberImg: '/assets/images/photo2.png',
       memberName: "Jacob Jones",
       memberEmail: "jacob.j@gmail.com",
       memberRole: "Leader",
@@ -37,7 +46,7 @@ export class CardComponent implements OnInit{
     },
     {
       memberId: 3,
-      memberImg: '/assets/images/avatar-3.png',
+      memberImg: '/assets/images/photo3.png',
       memberName: "Theresa Webb",
       memberEmail: "theresa.webb@gmail.com",
       memberRole: "Tester",
@@ -45,7 +54,7 @@ export class CardComponent implements OnInit{
     },
     {
       memberId: 4,
-      memberImg: '/assets/images/avatar-4.png',
+      memberImg: '/assets/images/photo4.png',
       memberName: "Courtney Henry",
       memberEmail: "courtney@gmail.com",
       memberRole: "QA",
@@ -59,7 +68,7 @@ export class CardComponent implements OnInit{
   editFlag:any = false;
   duplicateFlag:any = false;
   deleteFlag:any = false;
-  membersFlag:any = false;
+
   updatedFormData = {};
   duplicateData = {};
   
@@ -121,6 +130,8 @@ export class CardComponent implements OnInit{
 
   openTaskMenu(id: any){
     this.taskMenuId = id;
+    console.log(id);
+    console.log(this.taskMenuId);
     if(this.dots){
       this.taskMenuFlag = false;
       $('.dots, .task-menu').css({
@@ -150,6 +161,7 @@ export class CardComponent implements OnInit{
     this.editFlag = false;
     this.duplicateFlag = false;
     this.deleteFlag = false;
+    this.membersId = null;
     this.membersFlag = false;
 
     for (let index = 0; index < this.manageMembersData.length; index++) {
@@ -186,8 +198,11 @@ export class CardComponent implements OnInit{
     this.taskMenuFlag = true;
 
   }
+
+  membersId: any = null;
+  membersFlag:any = false;
   membersModal(id: any) {
-    this.editId = id;
+    this.membersId = id;
     this.membersFlag = true;
   }
 

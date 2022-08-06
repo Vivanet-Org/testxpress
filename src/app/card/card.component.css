@@ -1,8 +1,8 @@
 .home {
-  width: 94%;
-  margin-left: 54px;
-  /* width: 91.5%;
+  /* width: 94%;
   margin-left: 54px; */
+  width: 91.9%;
+  margin-left: 54px;
   display: block;
 }
 .grid-container {
@@ -10,16 +10,14 @@
   display: grid;
   gap: 30px 30px;
   /* grid-template-columns: auto auto; */
-  /* grid-template-columns: 33.333333% 33.333333% 33.333333%; */
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 33.333333% 33.333333% 33.333333%;
+  /* grid-template-columns: 50% 50%; */
 
   padding: 5px 50px 20px 45px;
 }
 
 .grid-item {
-  width: 424px;
-  height: 82px;
-  background-color: #FFFFFF;
+  background-color:white;
   border: 1px solid rgb(199, 199, 199);
   padding: 10px;
   font-size: 20px;
@@ -59,31 +57,43 @@ background: #3498d8;
 
 .icon-bar a {
 float: left;
-padding-top: 18px;
-padding-left: 10px;
+/* padding-top: 18px;
+padding-left: 10px; */
 transition: all 0.3s ease;
 color: #555;
 font-size: 36px;
+margin-top: 7px;
+margin-left: 5px;
 }
-.icon-bar a:hover {
+.webImg{
+  margin-left: 5px;
+}
+.footerImg{
+  width: 24px;
+  /* margin-top: 18px; */
+
+}
+/* .icon-bar a:hover {
 color: rgb(250, 6, 6);
-}
+} */
 /* img:hover{
   background-color: rgb(250, 6, 6);;
   border-radius: 50px;
 } */
 
 .projDetails{
-  font: normal normal 500 16px Segoe UI, sans-serif;
+  font: normal normal 400 14px Segoe UI, sans-serif;
   padding-left: 10px;
-  padding-top: 27px;
+  padding-top: 18px;
+  color: #232324;
 }
 
 /* start: Avatar */
+
 .avatar-group {
   display: flex;
   justify-content:end;
-  margin-top: -30px;
+  margin-top: -20px;
   margin-right: 14px;
 }
 
@@ -93,8 +103,8 @@ color: rgb(250, 6, 6);
 }
 
 .avatar:not(:first-child) {
-  margin-left: -1.5rem;
-  /* margin-left: -2.5rem; */
+  /* margin-left: -1.5rem; */
+  margin-left: -1rem;
 }
 
 .avatar:hover {
@@ -136,19 +146,23 @@ color: rgb(250, 6, 6);
 .avatar img {
   /* width: 3.4rem;
   height: 3.4rem; */
-  width: 2.5rem;
-  height: 2.5rem;
+  /* width: 2.5rem;
+  height: 2.5rem; */
+  width: 24px;
+  height: 24px;
   display: block;
   object-fit: cover;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   /* border: 10px solid #fff; */
-  border: 2px solid rgb(199, 199, 199);
-  box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .1);
+  /* border: 2px solid rgb(199, 199, 199); */
+  /* box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .1); */
 }
 
 .endImg{
-  width: 2.5rem;
-  height: 2.5rem;
+  /* width: 2.5rem;
+  height: 2.5rem; */
+  width: 24px;
+  height: 24px;
   display: block;
   object-fit: cover;
   border-radius: 50%;
@@ -171,6 +185,7 @@ color: rgb(250, 6, 6);
   float:right;
   cursor:pointer;
   position:relative;
+  /* width: 20px; */
 }
 .dots .task-menu{
   position:absolute;
@@ -184,6 +199,14 @@ color: rgb(250, 6, 6);
   transform-origin:top right;
   transition:transform 0.2s ease;
   box-shadow:2px 5px 6px gray;
+
+}
+.dots:hover{
+  cursor: pointer;
+}
+.moreImg{
+  /* margin-left: 9px; */
+  width: 24px;
 
 }
 /* .dots:hover .task-menu{
@@ -216,65 +239,57 @@ color: rgb(250, 6, 6);
   font: normal normal 600 20px Segoe UI, sans-serif;
 }
 .menuDelete:hover{
-  color:blue;
+  color: blue;
   background-color: rgba(192, 192, 192, 0.301);
   font: normal normal 600 20px Segoe UI, sans-serif;
 }
 
 .projectHeading{
-  font: normal normal 600 18px Segoe UI, sans-serif;
+  font: normal normal 700 16px Segoe UI, sans-serif;
+  color: #232324;
 }
 .projectDetails{
   font: normal normal 16px Segoe UI, sans-serif;
   color: rgb(104, 104, 104);
 }
 .girdFooter{
-  background-color: rgba(192, 192, 192, 0.301);
-  height: 75px;
+  background-color: #F6F6F9;
+  height: 56px;
   margin-left: -10px;
   margin-right: -10px;
   margin-bottom: -10px;
 }
 
-.dotsDropdown{
-  float: right;
-}
-.dotsDropdown:hover{
-  color: blue;
-}
-
-.projectHeadings{
-  font: normal normal 600 18px Segoe UI, sans-serif;
-  margin-bottom: 10px;
-}
-
 .inputStyles{
-  width: 100%;
-  height: 36px;
+  width: 474px;
+  height: 32px;
   border: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
-  font: normal normal 18px Segoe UI, sans-serif;
+  font: normal normal 400 14px Segoe UI, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
+  color: #525156;
 }
 .textareaStyles{
   margin-top: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  height: 50px;
+  /* margin-bottom: 10px; */
+  width: 474px;
+  height: 32px;
   border: 1px solid gray;
-  font: normal normal 18px Segoe UI, sans-serif;
+  font: normal normal 400 14px Segoe UI, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
   resize: none;
+  color: #525156;
+
 
 
 }
-.btnCreate{
+/* .btnCreate{
   float: right;
   margin-left: 20px;
-  width: 53px;
+  width: 100px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
   background-color: blue;
@@ -284,26 +299,26 @@ color: rgb(250, 6, 6);
 }
 .btnCreate:hover{
   cursor: pointer;
-}
+} */
 .closeBtn{
   margin-bottom: 45px;
 }
-.btnClose{
+/* .btnClose{
   float: right;
-  width: 74px;
+  width: 100px;
   height: 32px;
   font: normal normal 18px Segoe UI, sans-serif;
-  background-color: #FFFFFF;
+  background-color: white;
   color: black;
-  border: 1px solid #cdcad6;
+  border: 1px solid gray;
   border-radius: 2px;
 }
 .btnClose:hover{
   cursor: pointer;
-  background-color: grey;
+  background-color: red;
   color: white;
   border: none;
-}
+} */
 
 /* Edit, Duplicate and Delete popup start */
 
@@ -338,7 +353,30 @@ color: rgb(250, 6, 6);
 
   z-index: 3;
 }
-
+.edit-modal-contents{
+  width: 522px;
+  height: 288px;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 2px;
+}
+.duplicate-modal-contents{
+  width: 522px;
+  height: 288px;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 2px;
+}
+.delete-modal-contents{
+  width: 423px;
+  height: 180px;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 2px;
+}
 .modal-contents {
   width: 500px;
   background-color: white;
@@ -356,11 +394,11 @@ input {
   font: normal normal 18px Segoe UI, sans-serif;
 }
 .deleteInfo{
-  font: normal normal 400 18px Segoe UI, sans-serif;
-  margin-left: 41px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  margin-left: 40px;
   margin-top: 20px;
   margin-bottom: 30px;
-  color: rgb(56, 56, 56);
+  color: #525156;
 
 }
 
@@ -369,11 +407,14 @@ input {
   top: 0;
   right: 10px;
   font-size: 42px;
-  color: #333;
+  /* color: #333; */
   cursor: pointer;
-  font-weight: 600;
+  /* font-weight: 600; */
+  margin-right: 10px;
 }
-
+.closeEdit{
+  width: 18px;
+}
 .close:hover {
   color: red;
 }
@@ -381,9 +422,6 @@ input {
   cursor: pointer;
 }
 
-.projectHeading{
-  font: normal normal 600 18px Segoe UI, sans-serif;
-}
 .deleteIconAlign{
   /* margin-top: 15px; */
   float: left;
@@ -393,64 +431,103 @@ input {
 .deleteIcon{
   /* margin-right: 15px; */
   /* margin-top: 15px; */
-  font-size:24px;
+  width:24px;
   /* margin-left: 15px; */
 }
 .deleteProjectHeading{
-  font: normal normal 600 18px Segoe UI, sans-serif;
-  color: rgb(41, 41, 41);
+  font: normal normal 700 16px Segoe UI, sans-serif;
+  color: #232324;
 }
 .hrStyle{
-  margin-top: 20px;
+  margin-top: 18px;
   margin-left: -20px;
   margin-right: -20px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .popupProjectDetails{
-  font: normal normal 600 18px Segoe UI, sans-serif;
+  font: normal normal 400 14px Segoe UI, sans-serif;
   margin-bottom: 10px;
+  color: #232324;
 }
 .textareaStylesCard{
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
-  height: 50px;
-  font: normal normal 18px Segoe UI, sans-serif;
+  height: 32px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
   border: none;
   resize: none;
   background-color: white;
   scroll-behavior: smooth;
+  color: #818089;
 }
 
 .btnClose{
   float: right;
   width: 74px;
   height: 32px;
-  font: normal normal 18px Segoe UI, sans-serif;
-  background-color: white;
-  color: black;
-  border: 1px solid gray;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #FFFFFF;;
+  color: #525156;
+  border: 1px solid #CBCAD6;
   border-radius: 2px;
+  align-items: center;
+  /* padding: 5px 16px; */
+  margin-top: -5px;
 }
 .btnCreate{
   float: right;
-  margin-left: 20px;
-  width: 53px;
+  margin-left: 10px;
+  width: 61px;
   height: 32px;
-  font: normal normal 18px Segoe UI, sans-serif;
-  background-color: #3E38D5;
-  color: white;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #3E38D5;;
+  color:  #FFFFFF;
   border: none;
   border-radius: 2px;
+  align-items: center;
+  /* padding: 5px 16px; */
+  margin-top: -5px;
+}
+.btnDuplicate{
+  float: right;
+  margin-left: 10px;
+  width: 91px;
+  height: 32px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #3E38D5;;
+  color:  #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  align-items: center;
+  /* padding: 5px 16px; */
+  margin-top: -5px;
+}
+.btnDelete{
+  float: right;
+  margin-left: 10px;
+  width: 53px;
+  height: 32px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #3E38D5;;
+  color:  #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  align-items: center;
+  /* padding: 5px 16px; */
+  margin-top: -5px;
 }
 .btnCreate:hover{
   cursor: pointer;
 }
+.btnDuplicate:hover{
+  cursor: pointer;
+}
+.btnDelete:hover{
+  cursor: pointer;
+}
 .btnClose:hover{
   cursor: pointer;
-  background-color: grey;
-  color: white;
-  border: none;
 }
 
 /* Edit, Duplicate and Delete popup end */

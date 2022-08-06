@@ -12,24 +12,28 @@ export class ApplicationsComponent implements OnInit {
 
   clickEventSubscription:Subscription;
 
+  appsImgPath: string = '/assets/images/apps.png';
   androidPath: string = '/assets/images/android.png';
   appImgPath: string = '/assets/images/applications.png';
+  desktopImgPath: string = '/assets/images/destop.png';
+  moreImgPath: string = '/assets/images/more.png';
+  closeImgPath: string = '/assets/images/close.png';
 
   constructor(private user:UsersService) {
 
     this.clickEventSubscription =this.user.getClickEvent().subscribe(() => {
       this.loadApplicationData();
-      this.loadProjectData();
+      this.loadProjectName();
     });
     this.loadApplicationData();
-    this.loadProjectData();
+    this.loadProjectName();
   }
 
   openModal() {
     $('.create-app-modal').css({
       'display': 'grid'
     });
-    this.loadProjectData();
+    this.loadProjectName();
   }
 
   closeModal() {
@@ -45,6 +49,8 @@ export class ApplicationsComponent implements OnInit {
 
   openAppTaskMenu(id: any){
     this.appTaskMenuId = id;
+    console.log(id);
+    console.log(this.appTaskMenuId);
     if(this.appDots){
       this.appTaskMenuFlag = false;
       $('.app-dots, .app-task-menu').css({
@@ -64,30 +70,11 @@ export class ApplicationsComponent implements OnInit {
     }
   } 
  
-  projectUiData:any = [];
-  projectData: any = {};
-  loadProjectData(){
-    this.projectUiData = [];
-    console.log(this.projectUiData);
-    this.user.getProjectsData().subscribe(data => {
-      this.projectData = data;
-      for (let index = 0; index < this.projectData.length; index++) {
-        console.log(this.projectData[index].deleted);
-        if(this.projectData[index].deleted == false){
-          this.projectUiData = [...this.projectUiData, {
-            projectid:this.projectData[index].projectid,
-            projectName: this.projectData[index].projectName,
-            projectDescription:this.projectData[index].projectDescription,
-            deleted:this.projectData[index].deleted,
-            createdBy:this.projectData[index].createdBy,
-            createdOn:this.projectData[index].createdOn,
-            updatedBy:this.projectData[index].updatedBy,
-            updatedOn:this.projectData[index].updatedOn
-          }];
-        }
-      }
-      console.log(this.projectUiData);
-      console.log(this.projectUiData[0].projectid);
+  projectIdName: any = [];
+  loadProjectName(){
+    this.projectIdName = [];
+    this.user.getProjectIdProjectName().subscribe(data => {
+      this.projectIdName = data;
     });
   }
 
@@ -123,6 +110,7 @@ export class ApplicationsComponent implements OnInit {
   selectedLevel: string = '';
   selected(event: any){
     this.selectedLevel = event.target.value;
+    console.log(this.selectedLevel);
   }
   appData1: any = {};
   projectData1: any = {};
@@ -132,11 +120,11 @@ export class ApplicationsComponent implements OnInit {
       alert("Please select a project name");
     }
     else{
-      this.user.getProjectsData().subscribe(data => {
+      this.user.getProjectIdProjectName().subscribe(data => {
         this.projectData1 = data;
         for (let index = 0; index < this.projectData1.length; index++) {
-          console.log(this.projectData1[index].projectName);
-          if(this.projectData1[index].projectName == this.selectedLevel){
+          console.log(this.projectData1[index].projectname);
+          if(this.projectData1[index].projectname == this.selectedLevel){
 
             let newFormData = {
               appName: form.value.appName,
@@ -176,6 +164,7 @@ export class ApplicationsComponent implements OnInit {
             });
 
           }
+          break;
         }
       });
       

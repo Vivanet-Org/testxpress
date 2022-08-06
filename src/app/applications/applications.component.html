@@ -4,7 +4,7 @@
         <div class="appTopAlign">
             <label class="appLabel">
                 <div class="windowsIconBg">
-                    <img class="applicationImg" [src] ="appImgPath" alt="Application Image" /> 
+                    <img class="applicationImg" [src] ="appsImgPath" alt="Application Image" /> 
                 </div>
                 Applications
             </label>
@@ -15,8 +15,8 @@
         <div class="appDataAlign">
             <label class="appHead">Applications</label>
             <select class="projectsDropdown">
-                <option *ngFor="let teProjectsData of projectUiData">
-                    {{teProjectsData.projectName}}
+                <option *ngFor="let teProjectsName of projectIdName">
+                    {{teProjectsName.projectname}}
                 </option>
             </select>
         </div><br>
@@ -28,7 +28,8 @@
                             integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
                             crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <div class="app-dots">
-                            <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openAppTaskMenu(teAppData.appid)"></em>
+                            <img class="appMoreImg" [src] ="moreImgPath" alt="more Image" (click)="openAppTaskMenu(teAppData.appid)" />
+                            <!-- <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openAppTaskMenu(teAppData.appid)"></em> -->
                             <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
                                 <p class="menuItems menuEdit">Edit</p>
                                 <p class="menuItems menuDuplicate">Duplicate</p>
@@ -36,18 +37,22 @@
                             </div>
                         </div>
                         <div class="existingData">
-                            <label class="projectHeading">
-                                <em style="font-size:23px; color: blue;" class="fa fa-desktop"></em>
+                            <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" />
+                            <p class="appCardHeading">
+                                <!-- <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" /> -->
+                                <!-- <em style="font-size:23px; color: blue;" class="fa fa-desktop"></em> -->
                                 &nbsp; {{teAppData.appName}}
-                            </label>
-                            <p class="AppDetails">{{teAppData.appDescription}}</p>
+                            </p>
+                            <textarea type="text" name="projectDescription" class="textareaStylesCard"
+                            ngModel="{{teAppData.appDescription}}" disabled> </textarea>
+                            <!-- <p class="appDetails">{{teAppData.appDescription}}</p> -->
                         </div>
                     </div>
 
                     <div class="girdFooter">
                         <div class="icon-bar">
-                            <div class="projDetails">
-                                <label class="projDetails">3 Releases &nbsp;&nbsp; 8 Test Plans</label>
+                            <div class="appCardDetails">
+                                <label class="appCardDetails">3 Releases &nbsp;&nbsp; 8 Test Plans</label>
                             </div>
                         </div>
                     </div>
@@ -62,34 +67,35 @@
             <div class="modal-contents">
         
                 <div class="close">
-                    <label class="closeModel" (click)="closeModal()" for="close">&times;</label>
+                    <img class="closeModel" [src] ="closeImgPath" alt="close Image"  (click)="closeModal()" />
+                    <!-- <label class="closeModel" (click)="closeModal()" for="close">&times;</label> -->
                 </div>
                 <form #createNewApplicationForm="ngForm" (submit)="createNewApplication(createNewApplicationForm)">
-                        <label class="projectHeading"><strong>Create new Application</strong></label>
+                        <p class="createAppHeading">Create new Application</p>
                         <hr class="hrStyle">
                         <div>
-                            <label class="AppDetails">Application Name</label>
+                            <label class="appDetails">Application Name</label><br />
                             <input class="inputStyles" id="name" type="text" name="appName" 
                             placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" />
                         </div>
                         <div>
-                            <label class="AppDetails">Project Name</label><br>
+                            <label class="appDetails">Project Name</label><br>
                             <select class="createProjectsDropdown" (change)="selected($event)">
                                 <option value="">Select Project</option>
-                                <option *ngFor="let teProjectsData of projectUiData" value={{teProjectsData.projectName}}>
-                                    {{teProjectsData.projectName}}
+                                <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
+                                    {{teProjectsName.projectname}}
                                 </option>
                             </select>
                         </div>
                         <div class="control">
-                            <label class="AppDetails">Application Description</label><br />
+                            <label class="appDetails">Application Description</label><br />
                             <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
                             placeholder="Enter Application Description" ngModel maxlength="150" minlength="1"> </textarea>
                         </div>
                         <hr class="hrStyle">
                         <button class="btnCreate" [disabled]="!createNewApplicationForm.valid">Create</button>
                 </form>
-                <button class="btnClose" (click)="closeModal()">Cancel</button>
+                <button class="CreateProjBtnClose" (click)="closeModal()">Cancel</button>
             </div>
         </div>
         <!-- Create Application Popup End -->
