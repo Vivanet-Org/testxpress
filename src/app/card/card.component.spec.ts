@@ -1,8 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CardComponent } from './card.component';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
 import { UsersService } from '../users.service';
 import { of } from 'rxjs';
@@ -96,7 +95,7 @@ describe('CardComponent', () => {
       },
     ];
     httpClientSpy.get.and.returnValue(of(projectsData));
-    service.getData().subscribe({
+    service.getProjectsData().subscribe({
       next: projects => {
         data = projects;
         for (let index = 0; index < data.length; index++) {
@@ -113,7 +112,7 @@ describe('CardComponent', () => {
             }];
           }
         }
-        component.loadData()
+        component.loadProjectData()
         expect(component.uiData)
         .withContext('expected projects')
         .toEqual(expectedUiData);

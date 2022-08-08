@@ -63,7 +63,7 @@ describe('TestExpressTopNavComponent', () => {
       },
     ];
     httpClientSpy.get.and.returnValue(of(expectedProjects));
-    service.getData().subscribe({
+    service.getProjectsData().subscribe({
       next: projects => {
         expectedProjectsNumber = projects.valueOf.length,
         component.loadTotalProjectsNum()

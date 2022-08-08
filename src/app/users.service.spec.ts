@@ -67,7 +67,7 @@ describe('UsersService', () => {
       },
     ];
     httpClientSpy.get.and.returnValue(of(expectedProjects));
-    service.getData().subscribe({
+    service.getProjectsData().subscribe({
       next: projects => {
         expect(projects)
           .withContext('expected projects')
@@ -91,7 +91,7 @@ describe('UsersService', () => {
   
     httpClientSpy.get.and.returnValue(throwError(errorResponse));
   
-    service.getData().subscribe({
+    service.getProjectsData().subscribe({
         
       next: projects => done.fail('expected an error, not projects'),
       error: error  => {
