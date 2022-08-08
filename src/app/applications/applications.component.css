@@ -358,6 +358,9 @@ input {
   border-radius: 2px;
   margin-right: 54px;
 }
+.createAppBtn:hover{
+  cursor: pointer;
+}
 .appData{
   margin-right: -34px;
 }
