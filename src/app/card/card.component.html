@@ -8,7 +8,6 @@
                         crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="dots">
                         <img class="moreImg" [src] ="moreImgPath" alt="more Image" (click)="openTaskMenu(teProjectsData.projectid)" />
-                        <!-- <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openTaskMenu(teProjectsData.projectid)"></em> -->
                         <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">
                             <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
                             <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
@@ -19,7 +18,6 @@
                         <label class="projectHeading">{{ teProjectsData.projectName }}</label>
                         <textarea type="text" name="projectDescription" class="textareaStylesCard"
                         ngModel="{{ teProjectsData.projectDescription }}" disabled> </textarea>
-                        <!-- <p class="projectDetails">{{ teProjectsData.projectDescription }}</p> -->
                     </div>
                 </div>
 
@@ -27,27 +25,14 @@
                     <div class="icon-bar">
                         <a href="#"><img class="webImg footerImg" [src] ="webImgPath" alt="web Image" /></a>
                         <a href="#"><img class="appleImg footerImg" [src] ="appleImgPath" alt="apple Image" /></a>
-                        <!-- <a href="#"><em style="font-size:30px" class="fa-solid fa-globe"></em></a> -->
-                        <!-- <a href="#"><em style="font-size:36px" class="fa-brands fa-apple"></em></a> -->
                         <a href="#"><img class="androidImg footerImg" [src] ="andriodImagePath" alt="Android Image" /></a>
                         <a href="#"><img class="desktopGreyImg footerImg" [src] ="desktopGreyImgPath" alt="desktopGrey Image" /></a>
-                        <!-- <a href="#"><em style="font-size:30px" class="fa fa-desktop"></em></a> -->
                         <div class="projDetails">
                             <label class="projDetails">5 Test Suites 9 Apps</label>
                         </div>
                     </div>
 
                     <div class="avatar-group">
-                        <!-- <div class="avatar">
-                            <span class="avatar-name">Someone 1</span>
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Image" />
-                        </div> -->
-                        <!-- <div class="avatar">
-                            <span class="avatar-name">Someone 2</span>
-                            <img src="https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-                                alt="Image" />
-                        </div> -->
                         <div class="avatar">
                             <span class="avatar-name">Someone 1</span>
                             <img class="avatarImg1" [src] ="avatarImg1Path" alt="avatar1 Image" />
@@ -60,9 +45,6 @@
                             <span class="avatar-name">Someone 5</span>
                             <img class="textImg" [src] ="textImgPath" alt="text Image" (click)="membersModal(teProjectsData.projectid)" />
                         </div>
-                        <!-- <div class="avatar">
-                            <span class="avatar-name">All</span> <span class="endImg" (click)="membersModal(teProjectsData.projectid)">+5</span>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -73,7 +55,6 @@
             
                     <div class="close">
                         <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
-                        <!-- <label class="closeEdit" (click)="closeModal()" for="close">&times;</label> -->
                     </div>
                     <form #updateProjectForm="ngForm" (submit)="updateExistingProject(updateProjectForm, teProjectsData.projectid)">
                             <label class="projectHeading">Edit {{ teProjectsData.projectName }}</label>
@@ -108,7 +89,6 @@
             
                     <div class="close">
                         <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
-                        <!-- <label class="closeEdit" (click)="closeModal()" for="close">&times;</label> -->
                     </div>
                     <form #duplicateProjectForm="ngForm" (submit)="duplicateProject(duplicateProjectForm, teProjectsData.projectid)">
                             <label class="projectHeading">Duplicate Project</label>
@@ -144,7 +124,6 @@
                         <p class="deleteIconAlign">
                             <img [src] ="deleteRedImagePath" alt="close Image" class="deleteIcon"/>
                         </p>                        
-                        <!-- <em class="fa-solid fa-trash deleteIcon"></em>  -->
                         Do you Want to delete these items?
                     </label>
                     <div>
@@ -162,7 +141,6 @@
                 <div class="members-modal-contents">
             
                     <div class="close">
-                        <!-- <label class="closeEdit" (click)="closeModal()" for="close">&times;</label> -->
                         <img [src] ="closeImagePath" alt="close Image" class="members-close" (click)="closeModal()" />
                     </div>
                     <form #updateProjectForm="ngForm" (submit)="manageMembers(updateProjectForm, teProjectsData.projectid)">
@@ -188,7 +166,6 @@
                                         <label class="members-email">{{manageMembers.memberEmail}}</label>
                                         <label class="members-email">{{manageMembers.memberRole}}</label>
                                         <img [src] ="deleteImagePath" alt="delete Image" class="members-deleteIcon" (click)="deleteManageMembersData(manageMembers.memberId)" />
-                                        <!-- <em class="fa-solid fa-trash members-deleteIcon" (click)="deleteManageMembersData(manageMembers.memberId)"></em> -->
                                     </div>
                                     <hr *ngIf="!manageMembers.memberIsDeleted && manageMembers.memberId != manageMembersLastId" />
                                 </div>
