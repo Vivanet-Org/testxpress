@@ -40,17 +40,15 @@
     margin-right: 20px;
     width: 148px;
     height: 36px;
-    font-size: 16px;
-    font: normal normal 400 14px Segoe UI, sans-serif;
     border: 1px solid grey;
     border-radius: 2px;
     color: #525156;
+    font: normal normal 400 14px Segoe UI, sans-serif;
     padding-left: 10px;
 }
 .search-style{
     width: 236px;
     height: 32px;
-    /* font-size: 16px; */
     border: 1px solid grey;
     border-radius: 2px;
     padding-left: 10px;

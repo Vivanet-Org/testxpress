@@ -29,7 +29,6 @@
                             crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <div class="app-dots">
                             <img class="appMoreImg" [src] ="moreImgPath" alt="more Image" (click)="openAppTaskMenu(teAppData.appid)" />
-                            <!-- <em class='fa-solid fa-ellipsis-vertical dotsDropdown' (click)="openAppTaskMenu(teAppData.appid)"></em> -->
                             <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
                                 <p class="menuItems menuEdit">Edit</p>
                                 <p class="menuItems menuDuplicate">Duplicate</p>
@@ -39,13 +38,10 @@
                         <div class="existingData">
                             <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" />
                             <p class="appCardHeading">
-                                <!-- <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" /> -->
-                                <!-- <em style="font-size:23px; color: blue;" class="fa fa-desktop"></em> -->
                                 &nbsp; {{teAppData.appName}}
                             </p>
                             <textarea type="text" name="projectDescription" class="textareaStylesCard"
                             ngModel="{{teAppData.appDescription}}" disabled> </textarea>
-                            <!-- <p class="appDetails">{{teAppData.appDescription}}</p> -->
                         </div>
                     </div>
 
@@ -68,7 +64,6 @@
         
                 <div class="close">
                     <img class="closeModel" [src] ="closeImgPath" alt="close Image"  (click)="closeModal()" />
-                    <!-- <label class="closeModel" (click)="closeModal()" for="close">&times;</label> -->
                 </div>
                 <form #createNewApplicationForm="ngForm" (submit)="createNewApplication(createNewApplicationForm)">
                         <p class="createAppHeading">Create new Application</p>
