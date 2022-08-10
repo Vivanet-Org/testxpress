@@ -1,32 +1,10 @@
-.home {
-  /* width: 94%;
-  margin-left: 54px; */
+@import "../../styles.css";
+
+.card-home {
   width: 91.9%;
-  margin-left: 54px;
+  margin-left: 50px;
   display: block;
 }
-.grid-container {
-  margin: auto;
-  display: grid;
-  gap: 30px 30px;
-  /* grid-template-columns: auto auto; */
-  grid-template-columns: 33.333333% 33.333333% 33.333333%;
-  /* grid-template-columns: 50% 50%; */
-
-  padding: 5px 50px 20px 45px;
-}
-
-.grid-item {
-  background-color:white;
-  border: 1px solid rgb(199, 199, 199);
-  padding: 10px;
-  font-size: 20px;
-  text-align: Top-right;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
-
-
 
 /* start: Global */
 *,
@@ -37,51 +15,23 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Work Sans', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* end: Global */
-body {
-margin: 0;
-min-height: 20vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #3498d8;
-}
 
 .icon-bar a {
-float: left;
-/* padding-top: 18px;
-padding-left: 10px; */
-transition: all 0.3s ease;
-color: #555;
-font-size: 36px;
-margin-top: 7px;
-margin-left: 5px;
-}
-.webImg{
+  float: left;
+  transition: all 0.3s ease;
+  color: #555;
+  font-size: 36px;
+  margin-top: 7px;
   margin-left: 5px;
 }
-.footerImg{
-  width: 24px;
-  /* margin-top: 18px; */
-
+.webImg {
+  margin-left: 5px;
 }
-/* .icon-bar a:hover {
-color: rgb(250, 6, 6);
-} */
-/* img:hover{
-  background-color: rgb(250, 6, 6);
-  border-radius: 50px;
-} */
-
-.projDetails{
+.footerImg {
+  width: 24px;
+}
+.projDetails {
   font: normal normal 400 14px Segoe UI, sans-serif;
   padding-left: 10px;
   padding-top: 18px;
@@ -92,175 +42,74 @@ color: rgb(250, 6, 6);
 
 .avatar-group {
   display: flex;
-  justify-content:end;
+  justify-content: end;
   margin-top: -20px;
   margin-right: 14px;
 }
-
 .avatar {
   position: relative;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 .avatar:not(:first-child) {
-  /* margin-left: -1.5rem; */
   margin-left: -1rem;
 }
-
 .avatar:hover {
   z-index: 1;
-  transform: translateY(-.5rem);
+  transform: translateY(-0.5rem);
 }
-
 .avatar-name {
   position: absolute;
-  bottom: calc(100% + .5rem);
+  bottom: calc(100% + 0.5rem);
   left: 50%;
   transform: translateX(-50%);
-  padding: .5rem .75rem;
-  border-radius: .25rem;
-  background-color: rgba(0, 0, 0, .7);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.7);
   color: #fff;
-  font-size: .875rem;
+  font-size: 0.875rem;
   white-space: nowrap;
   opacity: 0;
   visibility: hidden;
-  transition: .2s;
+  transition: 0.2s;
 }
-
 .avatar-name::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border: .5rem solid;
-  border-color: rgba(0, 0, 0, .7) transparent transparent;
+  border: 0.5rem solid;
+  border-color: rgba(0, 0, 0, 0.7) transparent transparent;
 }
-
 .avatar:hover .avatar-name {
   opacity: 1;
   visibility: visible;
 }
-
 .avatar img {
-  /* width: 3.4rem;
-  height: 3.4rem; */
-  /* width: 2.5rem;
-  height: 2.5rem; */
   width: 24px;
   height: 24px;
   display: block;
   object-fit: cover;
-  /* border-radius: 50%; */
-  /* border: 10px solid #fff; */
-  /* border: 2px solid rgb(199, 199, 199); */
-  /* box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .1); */
 }
-
-.endImg{
-  /* width: 2.5rem;
-  height: 2.5rem; */
-  width: 24px;
-  height: 24px;
-  display: block;
-  object-fit: cover;
-  border-radius: 50%;
-  /* border: 10px solid #fff; */
-  border: 2px solid rgb(199, 199, 199);
-  box-shadow: 0 .25rem 1rem rgba(0, 0, 0, .1);
-
-  color: rgb(11, 64, 223);
-  font: normal normal 500 20px Segoe UI, sans-serif;
-  background-color: rgb(223, 223, 255);
+.textImg:hover {
   cursor: pointer;
-  padding: 4px;
 }
-
 /*end avatar*/
 
-/*vertical ellipsis */
-
-.dots{
-  float:right;
-  cursor:pointer;
-  position:relative;
-  /* width: 20px; */
-}
-.dots .task-menu{
-  position:absolute;
-  padding:10px;
-  right: 0px;
-  bottom:-100px;
-  z-index:2;
-  transform:scale(0);
-  border-radius:2px;
-  background:#fff;
-  transform-origin:top right;
-  transition:transform 0.2s ease;
-  box-shadow:2px 5px 6px gray;
-
-}
-.dots:hover{
-  cursor: pointer;
-}
-.moreImg{
-  /* margin-left: 9px; */
-  width: 24px;
-
-}
-/* .dots:hover .task-menu{
-  transform:scale(1);
-} */
-
-.task-menu .menuItems{
-  height:25px;
-  margin-bottom:2px;
-  justify-content:flex-start;
-
-  font: normal normal 600 18px Segoe UI, sans-serif;
-}
-.task-menu:last-child{
-  margin-bottom:0;
-}
-
-.task-menu .menuItems i{
-  padding-right:8px;
-}
-/*end vertical ellipsis*/
-
-.menuEdit:hover{
-  color: blue;
-  background-color: rgba(192, 192, 192, 0.301);
-}
-.menuDuplicate:hover{
-  color: blue;
-  background-color: rgba(192, 192, 192, 0.301);
-  font: normal normal 600 20px Segoe UI, sans-serif;
-}
-.menuDelete:hover{
-  color: blue;
-  background-color: rgba(192, 192, 192, 0.301);
-  font: normal normal 600 20px Segoe UI, sans-serif;
-}
-
-.projectHeading{
+.projectHeading,
+.deleteProjectHeading,
+.membersProjectHeading {
   font: normal normal 700 16px Segoe UI, sans-serif;
   color: #232324;
 }
-.projectDetails{
-  font: normal normal 16px Segoe UI, sans-serif;
-  color: rgb(104, 104, 104);
-}
-.girdFooter{
-  background-color: #F6F6F9;
+.girdFooter {
+  background-color: #f6f6f9;
   height: 56px;
   margin-left: -10px;
   margin-right: -10px;
   margin-bottom: -10px;
 }
-
-.inputStyles{
+.inputStyles {
   width: 474px;
   height: 32px;
   border: 1px solid gray;
@@ -271,9 +120,8 @@ color: rgb(250, 6, 6);
   border-radius: 2px;
   color: #525156;
 }
-.textareaStyles{
+.textareaStyles {
   margin-top: 10px;
-  /* margin-bottom: 10px; */
   width: 474px;
   height: 32px;
   border: 1px solid gray;
@@ -282,64 +130,14 @@ color: rgb(250, 6, 6);
   border-radius: 2px;
   resize: none;
   color: #525156;
-
-
-
 }
-/* .btnCreate{
-  float: right;
-  margin-left: 20px;
-  width: 100px;
-  height: 32px;
-  font: normal normal 18px Segoe UI, sans-serif;
-  background-color: blue;
-  color: white;
-  border: none;
-  border-radius: 2px;
-}
-.btnCreate:hover{
-  cursor: pointer;
-} */
-.closeBtn{
-  margin-bottom: 45px;
-}
-/* .btnClose{
-  float: right;
-  width: 100px;
-  height: 32px;
-  font: normal normal 18px Segoe UI, sans-serif;
-  background-color: white;
-  color: black;
-  border: 1px solid gray;
-  border-radius: 2px;
-}
-.btnClose:hover{
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: none;
-} */
 
 /* Edit, Duplicate and Delete popup start */
 
-
-.card-container {
-  max-width: 800px;
-  margin: 50px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.card {
-  height: 300px;
-  width: 230px;
-  border: 1px solid darkgray;
-  border-radius: 3px;
-  margin: 10px;
-}
-
-.editModal, .duplicateModal, .deleteModal, .membersModal {
+.editModal,
+.duplicateModal,
+.deleteModal,
+.membersModal {
   background-color: rgba(0, 0, 0, 0.8);
   backface-visibility: hidden;
   width: 100%;
@@ -350,10 +148,10 @@ color: rgb(250, 6, 6);
   display: grid;
   justify-content: center;
   align-items: center;
-
   z-index: 3;
 }
-.edit-modal-contents{
+.edit-modal-contents,
+.duplicate-modal-contents {
   width: 522px;
   height: 288px;
   background-color: white;
@@ -361,15 +159,7 @@ color: rgb(250, 6, 6);
   position: relative;
   border-radius: 2px;
 }
-.duplicate-modal-contents{
-  width: 522px;
-  height: 288px;
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  border-radius: 2px;
-}
-.delete-modal-contents{
+.delete-modal-contents {
   width: 423px;
   height: 180px;
   background-color: white;
@@ -377,79 +167,32 @@ color: rgb(250, 6, 6);
   position: relative;
   border-radius: 2px;
 }
-.modal-contents {
-  width: 500px;
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  border-radius: 2px;
-}
-
-input {
-  width: 100%;
-  height: 30px;
-  border: 1px solid gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font: normal normal 18px Segoe UI, sans-serif;
-}
-.deleteInfo{
+.deleteInfo {
   font: normal normal 400 14px Segoe UI, sans-serif;
   margin-left: 40px;
   margin-top: 20px;
   margin-bottom: 30px;
   color: #525156;
-
 }
-
-.close {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 42px;
-  /* color: #333; */
-  cursor: pointer;
-  /* font-weight: 600; */
-  margin-right: 10px;
-}
-.closeEdit{
-  width: 18px;
-}
-.close:hover {
-  color: red;
-}
-.closeEdit:hover{
-  cursor: pointer;
-}
-
-.deleteIconAlign{
-  /* margin-top: 15px; */
+.deleteIconAlign {
   float: left;
   margin-right: 15px;
-
 }
-.deleteIcon{
-  /* margin-right: 15px; */
-  /* margin-top: 15px; */
-  width:24px;
-  /* margin-left: 15px; */
+.deleteIcon {
+  width: 24px;
 }
-.deleteProjectHeading{
-  font: normal normal 700 16px Segoe UI, sans-serif;
-  color: #232324;
-}
-.hrStyle{
+.hrStyle {
   margin-top: 18px;
   margin-left: -20px;
   margin-right: -20px;
   margin-bottom: 15px;
 }
-.popupProjectDetails{
+.popupProjectDetails {
   font: normal normal 400 14px Segoe UI, sans-serif;
   margin-bottom: 10px;
   color: #232324;
 }
-.textareaStylesCard{
+.textareaStylesCard {
   margin-top: 5px;
   margin-bottom: 5px;
   width: 100%;
@@ -461,93 +204,57 @@ input {
   scroll-behavior: smooth;
   color: #818089;
 }
-
-.btnClose{
-  float: right;
-  width: 74px;
-  height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #FFFFFF;
-  color: #525156;
-  border: 1px solid #CBCAD6;
-  border-radius: 2px;
-  align-items: center;
-  /* padding: 5px 16px; */
-  margin-top: -5px;
-}
-.btnCreate{
+.btnCreate {
   float: right;
   margin-left: 10px;
   width: 61px;
   height: 32px;
   font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3E38D5;
-  color:  #FFFFFF;
+  background-color: #3e38d5;
+  color: #ffffff;
   border: none;
   border-radius: 2px;
   align-items: center;
-  /* padding: 5px 16px; */
   margin-top: -5px;
 }
-.btnDuplicate{
+.btnDuplicate {
   float: right;
   margin-left: 10px;
   width: 91px;
   height: 32px;
   font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3E38D5;
-  color:  #FFFFFF;
+  background-color: #3e38d5;
+  color: #ffffff;
   border: none;
   border-radius: 2px;
   align-items: center;
-  /* padding: 5px 16px; */
   margin-top: -5px;
 }
-.btnDelete{
+.btnDelete {
   float: right;
   margin-left: 10px;
   width: 53px;
   height: 32px;
   font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3E38D5;
-  color:  #FFFFFF;
+  background-color: #3e38d5;
+  color: #ffffff;
   border: none;
   border-radius: 2px;
   align-items: center;
-  /* padding: 5px 16px; */
   margin-top: -5px;
-}
-.btnCreate:hover{
-  cursor: pointer;
-}
-.btnDuplicate:hover{
-  cursor: pointer;
-}
-.btnDelete:hover{
-  cursor: pointer;
-}
-.btnClose:hover{
-  cursor: pointer;
 }
 
 /* Edit, Duplicate and Delete popup end */
 
 .members-modal-contents {
   width: 522px;
-  /* height: 455px; */
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   padding: 20px;
   position: relative;
   border-radius: 2px;
   overflow: auto;
 }
-.membersProjectHeading{
-  color: #232324;
-  font: normal normal 700 16px Segoe UI, sans-serif;
-}
-.members-inputStyles{
-  /* width: 75%;
-  height: 36px; */
+.members-inputStyles {
   width: 357px;
   height: 32px;
   border: 1px solid gray;
@@ -558,30 +265,20 @@ input {
   border-radius: 2px;
   float: left;
 }
-.members-mail{
+.members-mail {
   padding-left: 5px;
   margin-left: 5px;
 }
-.button-close{
+.button-close {
   width: 12px;
-  /* padding-top: 5px; */
 }
-.membersSend{
-  /* float: none; */
-  /* margin: 10px 0px 0px 0px; */
-  /* margin-left: 20px; */
-  /* width: 120px;
-  height: 36px; */
-  /* width: 101px;
-  height: 32px; */
+.membersSend {
   font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3E38D5;
-  color: #FFFFFF;
+  background-color: #3e38d5;
+  color: #ffffff;
   border: none;
   border-radius: 2px;
   padding-top: 5px;
-
-  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -590,53 +287,46 @@ input {
   margin-top: 10px;
   margin-left: 370px;
 }
-.members-content{
+.members-content {
   font: normal normal 400 14px Segoe UI, sans-serif;
   margin-bottom: 20px;
   color: #232324;
 }
-
-.members-group{
+.members-group {
   width: 100%;
   margin-top: 5px;
   display: grid;
   grid-template-columns: 10% 30% 40% 15% 5%;
   padding: 10px 0px 10px 0px;
 }
-.members{
+.members {
   width: 32px;
   height: 32px;
-  /* display: block;
-  object-fit: cover; */
-  /* border-radius: 50%; */
   flex: none;
   order: 0;
   align-self: flex-start;
   flex-grow: 0;
 }
-.members-font{
+.members-font {
   font: normal normal 700 14px Segoe UI, sans-serif;
   padding-top: 7px;
   color: #232324;
 }
-.members-email{
+.members-email {
   font: normal normal 400 14px Segoe UI, sans-serif;
   padding-top: 7px;
   color: #525156;
 }
-.members-deleteIcon{
-  /* color: #818089; */
-  /* font-size: 18px; */
+.members-deleteIcon {
   padding-top: 9px;
   cursor: pointer;
   width: 16px;
-  /* height: 16px; */
 }
-.members-close{
+.members-close {
   cursor: pointer;
   width: 18px;
 }
-.manageMembersDetails{
+.manageMembersDetails {
   font: normal normal 400 14px Segoe UI, sans-serif;
   margin-bottom: 10px;
   color: #232324;

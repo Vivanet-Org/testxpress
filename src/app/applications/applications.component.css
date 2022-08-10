@@ -1,32 +1,16 @@
+@import "../../styles.css";
+
 .appHome {
   width: 93.75%;
   margin-left: 50px;
-  /* width: 93.85%; */
-  /* margin-left: 54px; */
   display: none;
 }
 .app-grid-container {
   width: 95%;
-  /* margin: auto; */
-  display: grid;
-  gap: 30px 30px;
-  /* grid-template-columns: auto auto auto; */
-  grid-template-columns: 33.333333% 33.333333% 33.333333%;
-
-  padding: 10px 50px 20px 50px;
-  /* padding: 5px 50px 20px 45px; */  
 }
-.grid-item {
-  background-color: white;
-  border: 1px solid rgb(199, 199, 199);
-  padding: 10px;
-  font-size: 20px;
-  text-align: Top-right;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 /* start: Global */
+
 *,
 *::before,
 *::after {
@@ -35,103 +19,22 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Work Sans', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /* end: Global */
-body {
-margin: 0;
-min-height: 20vh;
-display: flex;
-justify-content: center;
-align-items: center;
-background: #3498d8;
-}
-.icon-bar a {
-float: left;
-padding-top: 18px;
-padding-left: 10px;
-transition: all 0.3s ease;
-color: #555;
-font-size: 36px;
-}
-.icon-bar a:hover {
-color: rgb(250, 6, 6);
-}
-.appCardDetails{
+
+.appCardDetails {
   font: normal normal 400 14px Segoe UI, sans-serif;
   color: #232324;
   padding-left: 5px;
   padding-top: 15px;
 }
 
-/*vertical ellipsis */
-
-.app-dots{
-  float:right;
-  cursor:pointer;
-  position:relative;
-  /* width: 20px; */
-}
-.appMoreImg{
-  /* margin-left: 9px; */
-  width: 24px;
-}
-.app-dots .app-task-menu{
-  position:absolute;
-  padding:10px;
-  right: 0px;
-  bottom:-100px;
-  z-index:2;
-  transform:scale(0);
-  border-radius:2px;
-  background:#fff;
-  transform-origin:top right;
-  transition:transform 0.2s ease;
-  box-shadow:2px 5px 6px gray;
-}
-.app-task-menu .menuItems{
-  height:25px;
-  margin-bottom:2px;
-  justify-content:flex-start;
-
-  font: normal normal 600 18px Segoe UI, sans-serif;
-}
-.app-task-menu:last-child{
-  margin-bottom:0;
-}
-.app-task-menu .menuItems i{
-  padding-right:8px;
-}
-
-/*end vertical ellipsis*/
-
-.menuEdit:hover{
-  color: blue;
-  background-color: rgba(192, 192, 192, 0.301);
-}
-.menuDuplicate:hover{
-  color: blue;
-  background-color: rgba(192, 192, 192, 0.301);
-  font: normal normal 600 20px Segoe UI, sans-serif;
-}
-.menuDelete:hover{
-  color: blue;
-  background-color: rgba(192, 192, 192, 0.301);
-  font: normal normal 600 20px Segoe UI, sans-serif;
-}
-.appCardHeading{
+.appCardHeading {
   font: normal normal 700 16px Segoe UI, sans-serif;
   color: #232324;
   margin-top: -32px;
   margin-left: 40px;
 }
-.textareaStylesCard{
+.textareaStylesCard {
   margin-top: 5px;
   width: 100%;
   height: 50px;
@@ -143,25 +46,22 @@ color: rgb(250, 6, 6);
   scroll-behavior: smooth;
   color: #818089;
 }
-.appDetails{
+.appDetails {
   font: normal normal 400 14px Segoe UI, sans-serif;
   color: #232324;
 }
-.girdFooter{
-  background-color: #F6F6F9;
+.girdFooter {
+  background-color: #f6f6f9;
   height: 50px;
   margin-left: -10px;
   margin-right: -10px;
   margin-bottom: -10px;
 }
-.dotsDropdown{
-  float: right;
-}
-.projectHeadings{
+.projectHeadings {
   font: normal normal 600 18px Segoe UI, sans-serif;
   margin-bottom: 10px;
 }
-.inputStyles{
+.inputStyles {
   width: 349px;
   height: 32px;
   border: 1px solid gray;
@@ -172,7 +72,7 @@ color: rgb(250, 6, 6);
   border-radius: 2px;
   color: #525156;
 }
-.createProjectsDropdown{
+.createProjectsDropdown {
   width: 225px;
   height: 32px;
   border: 1px solid gray;
@@ -182,144 +82,25 @@ color: rgb(250, 6, 6);
   padding-left: 10px;
   border-radius: 2px;
   color: #525156;
-}
-.closeBtn{
-  margin-bottom: 45px;
-}
-.btnClose{
-  float: right;
-  width: 100px;
-  height: 32px;
-  font: normal normal 18px Segoe UI, sans-serif;
-  background-color: white;
-  color: black;
-  border: 1px solid gray;
-  border-radius: 2px;
-}
-.btnClose:hover{
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: none;
-}
-
-/* Edit, Duplicate and Delete popup start */
-.card-container {
-  max-width: 800px;
-  margin: 50px auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.card {
-  height: 300px;
-  width: 230px;
-  border: 1px solid darkgray;
-  border-radius: 3px;
-  margin: 10px;
-}
-.editModal, .duplicateModal, .deleteModal {
-  background-color: rgba(0, 0, 0, 0.8);
-  backface-visibility: hidden;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display:none;
-  justify-content: center;
-  align-items: center;
-
-  z-index: 3;
-}
-.modal-contents {
-  width: 500px;
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  border-radius: 2px;
-}
-input {
-  width: 100%;
-  height: 30px;
-  border: 1px solid gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font: normal normal 18px Segoe UI, sans-serif;
-}
-.deleteInfo{
-  font: normal normal 400 18px Segoe UI, sans-serif;
-  margin-left: 55px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  color: rgb(56, 56, 56);
-
-}
-.close {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 42px;
-  color: #333;
-  cursor: pointer;
-  font-weight: 600;
-}
-.closeEdit:hover{
   cursor: pointer;
 }
-.deleteIcon{
-  color: red;
-  margin-right: 15px;
-  margin-top: 15px;
-  font-size:23px;
-  margin-left: 15px;
-}
-.deleteProjectHeading{
-  font: normal normal 600 18px Segoe UI, sans-serif;
-  color: rgb(41, 41, 41);
-}
-.popupProjectDetails{
-  font: normal normal 600 18px Segoe UI, sans-serif;
-  margin-bottom: 10px;
-}
-.btnClose{
-  float: right;
-  width: 100px;
-  height: 32px;
-  font: normal normal 18px Segoe UI, sans-serif;
-  background-color: white;
-  color: black;
-  border: 1px solid gray;
-  border-radius: 2px;
-}
-.btnClose:hover{
-  cursor: pointer;
-  background-color: red;
-  color: white;
-  border: none;
-}
-
-/* Edit, Duplicate and Delete popup end */
-
-/* Application Start */
-
-.appHeader{
-  margin-right:-36px;
+.appHeader {
+  margin-right: -36px;
   background-color: white;
   margin-top: -8px;
 }
-.appHeading{
+.appHeading {
   padding-top: 10px;
   margin-left: 50px;
   color: #818089;
   font: normal normal 400 14px Segoe UI, sans-serif;
 }
-.appLabel{
+.appLabel {
   font: normal normal 700 20px Segoe UI, sans-serif;
   color: #232324;
   margin-left: 42px;
 }
-.windowsIconBg{
+.windowsIconBg {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -328,50 +109,48 @@ input {
   position: absolute;
   width: 32px;
   height: 32px;
-  background: #F2F1FC;
+  background: #f2f1fc;
   border-radius: 2px;
-  
 }
-.applicationImg{
+.applicationImg {
   width: 20px;
 }
-.desktopImg{
+.desktopImg {
   width: 32px;
   height: 32px;
-  
-  background: #F2F1FC;
+  background: #f2f1fc;
   border-radius: 2px;
 }
-.appTopAlign{
+.appTopAlign {
   margin-left: 50px;
   padding-top: 10px;
 }
-.createAppBtn{
+.createAppBtn {
   float: right;
   width: 146px;
   height: 32px;
   font-size: 14px;
   font-weight: 400;
-  background-color: #3E38D5;
-  color: #FFFFFF;
+  background-color: #3e38d5;
+  color: #ffffff;
   border: none;
   border-radius: 2px;
   margin-right: 54px;
 }
-.createAppBtn:hover{
+.createAppBtn:hover {
   cursor: pointer;
 }
-.appData{
+.appData {
   margin-right: -34px;
 }
-.appHead{
+.appHead {
   margin-top: 25px;
   display: inline-block;
   margin-left: 50px;
   font: normal normal 700 16px Segoe UI, sans-serif;
   color: #232324;
 }
-.projectsDropdown{
+.projectsDropdown {
   margin-top: 20px;
   margin-right: 50px;
   float: right;
@@ -382,9 +161,11 @@ input {
   border-radius: 2px;
   color: #525156;
   padding-left: 10px;
+  cursor: pointer;
 }
 
 /* Create Application Popup Start */
+
 .create-app-modal {
   background-color: rgba(0, 0, 0, 0.8);
   backface-visibility: hidden;
@@ -392,11 +173,12 @@ input {
   height: 100%;
   position: fixed;
   top: 0;
+  left: 0;
   display: none;
   justify-content: center;
   align-items: center;
 }
-.modal-contents {
+.create-modal-contents {
   height: 358px;
   width: 522px;
   background-color: white;
@@ -404,74 +186,40 @@ input {
   position: relative;
   border-radius: 2px;
 }
-input {
-  width: 100%;
-  height: 30px;
-  border: 1px solid gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font: normal normal 18px Segoe UI, sans-serif;
-}
-.close {
-  /* width: 18px; */
-  cursor: pointer;
-  margin-right: 10px;
-}
-.closeModel{
-  width: 18px;
-}
-.closeModel:hover{
-  cursor: pointer;
-}
-.createAppHeading{
+.createAppHeading {
   font: normal normal 700 16px Segoe UI, sans-serif;
   color: #232324;
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.hrStyle{
+.hrStyle {
   margin-top: 15px;
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 15px;
 }
-.textareaStyles{
+.textareaStyles {
   margin-top: 10px;
   width: 474px;
   height: 32px;
   border: 1px solid gray;
   font: normal normal 400 14px Segoe UI, sans-serif;
   color: #525156;
+  resize: none;
   padding-left: 10px;
   border-radius: 2px;
 }
-.CreateProjBtnClose{
-  float: right;
-  width: 74px;
-  height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: white;
-  color: #525156;
-  border: 1px solid gray;
-  border-radius: 2px;
-  margin-top: -5px;
-}
-.btnCreate{
+.btnCreate {
   float: right;
   margin-left: 10px;
   width: 73px;
   height: 32px;
   font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3E38D5;
-  color: #FFFFFF;
+  background-color: #3e38d5;
+  color: #ffffff;
   border: none;
   border-radius: 2px;
   margin-top: -5px;
 }
-.btnCreate:hover{
-  cursor: pointer;
-}
-.CreateProjBtnClose:hover{
-  cursor: pointer;
-}
+
 /* Create Application Popup End */
