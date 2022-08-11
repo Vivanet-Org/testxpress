@@ -18,9 +18,11 @@ export class TestExpressNavComponent implements OnInit {
     $('.topNav').css({
       'display': 'block'
     });
-    $('.home').css({
+
+    $('.card-home').css({
       'display': 'block'
     });
+
     $('.appHome').css({
       'display': 'none'
     });
@@ -28,23 +30,20 @@ export class TestExpressNavComponent implements OnInit {
     $('.folderBg').css({
       'background-color': 'rgb(95, 93, 93)'
     });
+
     $('.folderIcon').css({
       'color': 'white'
     });
+
     $('.windowsBg').css({
       'background-color': 'rgb(42, 42, 42)'
     });
+
     $('.appImg').css({
       'background-color': ''
     });
 
     this.usersService.sendClickEvent();
-    
-    // $('body').css({
-    //   'background-color': ''
-    // });
-
-    // this.usersService.sendClickEvent();
 
   }
 
@@ -52,9 +51,11 @@ export class TestExpressNavComponent implements OnInit {
     $('.topNav').css({
       'display': 'none'
     });
-    $('.home').css({
+
+    $('.card-home').css({
       'display': 'none'
     });
+
     $('.appHome').css({
       'display': 'block'
     });
@@ -62,6 +63,7 @@ export class TestExpressNavComponent implements OnInit {
     $('.folderBg').css({
       'background-color': 'rgb(42, 42, 42)'
     });
+
     $('.folderIcon').css({
       'color': 'grey'
     });
@@ -69,14 +71,13 @@ export class TestExpressNavComponent implements OnInit {
     $('.windowsBg').css({
       'background-color': 'rgb(95, 93, 93)'
     });
+
     $('.appImg').css({
       'background-color': 'white'
     });
-    // $('body').css({
-    //   'background-color':'rgba(212, 212, 212, 0.335)'
-    // });
 
     this.usersService.sendClickEvent();
+
   }
 
   ngOnInit(): void {

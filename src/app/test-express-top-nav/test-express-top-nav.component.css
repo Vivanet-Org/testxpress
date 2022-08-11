@@ -1,87 +1,68 @@
-/* .topNav{
-    overflow: hidden;
-    background-color:white;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:1;
-} */
-.topNav{
-    display: block;
+.topNav {
+  display: block;
 }
-.projHeadingBg{
-    margin-right:-8px;
-    background-color: #FFFFFF;
-    margin-top: -8px;
-    height: 64px;
+.projHeadingBg {
+  margin-right: -8px;
+  background-color: #ffffff;
+  margin-top: -8px;
+  height: 64px;
 }
-.projHeading{
-    padding-top: 16px;
-    /* margin-top: 50px; */
-    font: normal normal 700 20px Segoe UI, sans-serif;
-    margin-left: 100px;
-    /* margin-bottom: 20px; */
-    color: #000000;
+.projHeading {
+  padding-top: 16px;
+  font: normal normal 700 20px Segoe UI, sans-serif;
+  margin-left: 100px;
+  color: #000000;
 }
 .text {
-    margin-top: 20px;
-    text-indent: 70px;
+  margin-top: 20px;
+  text-indent: 70px;
 }
-.projectsCount{
-    font: normal normal 700 16px Segoe UI, sans-serif;
-    margin-left: 30px;
-    color: #232324;
+.projectsCount {
+  font: normal normal 700 16px Segoe UI, sans-serif;
+  margin-left: 30px;
+  color: #232324;
 }
-.align-items{
-    float: right;
-    margin-right: 40px;
+.align-items {
+  float: right;
+  margin-right: 45px;
 }
-.select-plotform{
-    margin-right: 20px;
-    width: 148px;
-    height: 36px;
-    border: 1px solid grey;
-    border-radius: 2px;
-    color: #525156;
-    font: normal normal 400 14px Segoe UI, sans-serif;
-    padding-left: 10px;
+.select-plotform {
+  margin-right: 20px;
+  width: 148px;
+  height: 32px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  color: #525156;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  padding-left: 10px;
+  cursor: pointer;
 }
-.search-style{
-    width: 236px;
-    height: 32px;
-    border: 1px solid grey;
-    border-radius: 2px;
-    padding-left: 10px;
-    color: #B1B0BC;
-    font: normal normal 400 14px Segoe UI, sans-serif;
-
+.search-style {
+  width: 236px;
+  height: 28px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding-left: 12px;
+  color: #b1b0bc;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  padding-right: 30px;
 }
-.searchImg{
-    width: 16px;
+.searchImg {
+  width: 16px;
 }
 #filterSubmit {
-    position: relative;
-    /* z-index: 1; */
-    left: -25px;
-    top: 2px;
-    /* color: #7B7B7B; */
-    cursor: pointer;
-    /* width: 0; */
-    /* font-size: 16px; */
+  position: relative;
+  left: -25px;
+  top: 2px;
+  cursor: pointer;
 }
-
-.createButton{
-    margin-left: 20px;
-    width: 120px;
-    height: 32px;
-    font: normal normal 400 14px Segoe UI, sans-serif;
-    background-color: #3E38D5;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 2px;
+.createButton {
+  width: 120px;
+  height: 32px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #3e38d5;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
 }
-.createButton:hover{
-    cursor: pointer;
-}
-
-
