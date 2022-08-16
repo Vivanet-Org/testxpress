@@ -61,7 +61,8 @@ body {
   right: 20px;
 }
 .closeEdit,
-.closeModel {
+.closeModel,
+.closeDuplicate {
   width: 18px;
   cursor: pointer;
 }
@@ -81,6 +82,41 @@ body {
 .btnDuplicate:hover,
 .btnDelete:hover,
 .btnClose:hover,
-.CreateProjBtnClose:hover {
+.CreateProjBtnClose:hover,
+.btnEdit:hover {
   cursor: pointer;
+}
+.delete-modal-contents {
+  width: 423px;
+  height: 180px;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 2px;
+}
+.deleteIconAlign {
+  float: left;
+  margin-right: 15px;
+}
+.deleteIcon {
+  width: 24px;
+}
+.deleteInfo {
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  margin-left: 40px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #525156;
+}
+.btnDelete {
+  float: right;
+  margin-left: 10px;
+  height: 32px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #3E38D5;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  align-items: center;
+  margin-top: -5px;
 }

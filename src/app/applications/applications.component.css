@@ -5,6 +5,7 @@
   margin-left: 50px;
   display: none;
 }
+
 .app-grid-container {
   width: 95%;
 }
@@ -34,6 +35,7 @@
   margin-top: -32px;
   margin-left: 40px;
 }
+
 .textareaStylesCard {
   margin-top: 5px;
   width: 100%;
@@ -46,10 +48,12 @@
   scroll-behavior: smooth;
   color: #818089;
 }
+
 .appDetails {
   font: normal normal 400 14px Segoe UI, sans-serif;
   color: #232324;
 }
+
 .girdFooter {
   background-color: #f6f6f9;
   height: 50px;
@@ -57,10 +61,12 @@
   margin-right: -10px;
   margin-bottom: -10px;
 }
+
 .projectHeadings {
   font: normal normal 600 18px Segoe UI, sans-serif;
   margin-bottom: 10px;
 }
+
 .inputStyles {
   width: 349px;
   height: 32px;
@@ -72,6 +78,7 @@
   border-radius: 2px;
   color: #525156;
 }
+
 .createProjectsDropdown {
   width: 225px;
   height: 32px;
@@ -84,22 +91,26 @@
   color: #525156;
   cursor: pointer;
 }
+
 .appHeader {
   margin-right: -36px;
   background-color: white;
   margin-top: -8px;
 }
+
 .appHeading {
   padding-top: 10px;
   margin-left: 50px;
   color: #818089;
   font: normal normal 400 14px Segoe UI, sans-serif;
 }
+
 .appLabel {
   font: normal normal 700 20px Segoe UI, sans-serif;
   color: #232324;
   margin-left: 42px;
 }
+
 .windowsIconBg {
   display: flex;
   flex-direction: row;
@@ -112,19 +123,23 @@
   background: #f2f1fc;
   border-radius: 2px;
 }
+
 .applicationImg {
   width: 20px;
 }
+
 .desktopImg {
   width: 32px;
   height: 32px;
   background: #f2f1fc;
   border-radius: 2px;
 }
+
 .appTopAlign {
   margin-left: 50px;
   padding-top: 10px;
 }
+
 .createAppBtn {
   float: right;
   width: 146px;
@@ -137,12 +152,15 @@
   border-radius: 2px;
   margin-right: 54px;
 }
+
 .createAppBtn:hover {
   cursor: pointer;
 }
+
 .appData {
   margin-right: -34px;
 }
+
 .appHead {
   margin-top: 25px;
   display: inline-block;
@@ -150,6 +168,7 @@
   font: normal normal 700 16px Segoe UI, sans-serif;
   color: #232324;
 }
+
 .projectsDropdown {
   margin-top: 20px;
   margin-right: 50px;
@@ -178,6 +197,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .create-modal-contents {
   height: 358px;
   width: 522px;
@@ -186,18 +206,21 @@
   position: relative;
   border-radius: 2px;
 }
+
 .createAppHeading {
   font: normal normal 700 16px Segoe UI, sans-serif;
   color: #232324;
   padding-top: 5px;
   padding-bottom: 5px;
 }
+
 .hrStyle {
   margin-top: 15px;
   margin-left: -15px;
   margin-right: -15px;
   margin-bottom: 15px;
 }
+
 .textareaStyles {
   margin-top: 10px;
   width: 474px;
@@ -209,6 +232,7 @@
   padding-left: 10px;
   border-radius: 2px;
 }
+
 .btnCreate {
   float: right;
   margin-left: 10px;
@@ -223,3 +247,91 @@
 }
 
 /* Create Application Popup End */
+
+/* Edit, Duplicate and Delete popup start */
+
+.edit-app-modal,
+.duplicate-app-modal,
+.delete-app-modal {
+  background-color: rgba(0, 0, 0, 0.8);
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+
+.edit-modal-contents,
+.duplicate-modal-contents {
+  width: 522px;
+  height: 358px;
+  background-color: white;
+  padding: 20px;
+  position: relative;
+  border-radius: 2px;
+}
+
+.editAppHeading,
+.duplicateAppHeading,
+.deleteAppHeading {
+  font: normal normal 700 16px Segoe UI, sans-serif;
+  color: #232324;
+}
+
+.hrStyleEdd {
+  margin-top: 18px;
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 15px;
+}
+
+.popupAppDetails {
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  color: #232324;
+}
+
+.inputStyles {
+  width: 349px;
+  height: 32px;
+  border: 1px solid gray;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  padding-left: 10px;
+  border-radius: 2px;
+  color: #525156;
+}
+
+.btnEdit,
+.btnDuplicate {
+  float: right;
+  margin-left: 10px;
+  /* width: 56px; */
+  height: 32px;
+  font: normal normal 400 14px Segoe UI, sans-serif;
+  background-color: #3E38D5;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  margin-top: -5px;
+
+}
+
+.btnEdit {
+  width: 56px;
+}
+
+.btnDuplicate {
+  width: 91px;
+}
+
+.btnDelete {
+  width: 73px;
+}
+
+/* Edit, Duplicate and Delete popup end */
