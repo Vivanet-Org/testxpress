@@ -54,6 +54,11 @@ export class UsersService {
     return this.http.post(createUrl, createBody);
   }
 
+  updateApplication(appId: any, updatedBody: any){
+    let updateUrl = this.serverlesUrl + "/application/updateApplication/" + appId;
+    return this.http.put(updateUrl, updatedBody);
+  }
+
   // Application functions end
    
 }
