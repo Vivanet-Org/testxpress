@@ -42,7 +42,7 @@
 
 .avatar-group {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: -20px;
   margin-right: 14px;
 }
@@ -159,28 +159,6 @@
   position: relative;
   border-radius: 2px;
 }
-.delete-modal-contents {
-  width: 423px;
-  height: 180px;
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  border-radius: 2px;
-}
-.deleteInfo {
-  font: normal normal 400 14px Segoe UI, sans-serif;
-  margin-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  color: #525156;
-}
-.deleteIconAlign {
-  float: left;
-  margin-right: 15px;
-}
-.deleteIcon {
-  width: 24px;
-}
 .hrStyle {
   margin-top: 18px;
   margin-left: -20px;
@@ -231,17 +209,7 @@
   margin-top: -5px;
 }
 .btnDelete {
-  float: right;
-  margin-left: 10px;
   width: 53px;
-  height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3e38d5;
-  color: #ffffff;
-  border: none;
-  border-radius: 2px;
-  align-items: center;
-  margin-top: -5px;
 }
 
 /* Edit, Duplicate and Delete popup end */
