@@ -32,7 +32,7 @@
   width: 24px;
 }
 .projDetails {
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   padding-left: 10px;
   padding-top: 18px;
   color: #232324;
@@ -42,7 +42,7 @@
 
 .avatar-group {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   margin-top: -20px;
   margin-right: 14px;
 }
@@ -99,7 +99,7 @@
 .projectHeading,
 .deleteProjectHeading,
 .membersProjectHeading {
-  font: normal normal 700 16px Segoe UI, sans-serif;
+  font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
 }
 .girdFooter {
@@ -115,7 +115,7 @@
   border: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
   color: #525156;
@@ -125,7 +125,7 @@
   width: 474px;
   height: 32px;
   border: 1px solid gray;
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
   resize: none;
@@ -159,28 +159,6 @@
   position: relative;
   border-radius: 2px;
 }
-.delete-modal-contents {
-  width: 423px;
-  height: 180px;
-  background-color: white;
-  padding: 20px;
-  position: relative;
-  border-radius: 2px;
-}
-.deleteInfo {
-  font: normal normal 400 14px Segoe UI, sans-serif;
-  margin-left: 40px;
-  margin-top: 20px;
-  margin-bottom: 30px;
-  color: #525156;
-}
-.deleteIconAlign {
-  float: left;
-  margin-right: 15px;
-}
-.deleteIcon {
-  width: 24px;
-}
 .hrStyle {
   margin-top: 18px;
   margin-left: -20px;
@@ -188,7 +166,7 @@
   margin-bottom: 15px;
 }
 .popupProjectDetails {
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   margin-bottom: 10px;
   color: #232324;
 }
@@ -197,7 +175,7 @@
   margin-bottom: 5px;
   width: 100%;
   height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   border: none;
   resize: none;
   background-color: white;
@@ -209,39 +187,27 @@
   margin-left: 10px;
   width: 61px;
   height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   background-color: #3e38d5;
   color: #ffffff;
   border: none;
   border-radius: 2px;
   align-items: center;
-  margin-top: -5px;
 }
 .btnDuplicate {
   float: right;
   margin-left: 10px;
   width: 91px;
   height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   background-color: #3e38d5;
   color: #ffffff;
   border: none;
   border-radius: 2px;
   align-items: center;
-  margin-top: -5px;
 }
 .btnDelete {
-  float: right;
-  margin-left: 10px;
   width: 53px;
-  height: 32px;
-  font: normal normal 400 14px Segoe UI, sans-serif;
-  background-color: #3e38d5;
-  color: #ffffff;
-  border: none;
-  border-radius: 2px;
-  align-items: center;
-  margin-top: -5px;
 }
 
 /* Edit, Duplicate and Delete popup end */
@@ -260,7 +226,7 @@
   border: 1px solid gray;
   margin-top: 10px;
   margin-bottom: 10px;
-  font: normal normal 18px Segoe UI, sans-serif;
+  font: normal normal 18px Lato, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
   float: left;
@@ -273,12 +239,12 @@
   width: 12px;
 }
 .membersSend {
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   background-color: #3e38d5;
   color: #ffffff;
   border: none;
   border-radius: 2px;
-  padding-top: 5px;
+  padding-top: 8px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -288,7 +254,7 @@
   margin-left: 370px;
 }
 .members-content {
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   margin-bottom: 20px;
   color: #232324;
 }
@@ -308,12 +274,12 @@
   flex-grow: 0;
 }
 .members-font {
-  font: normal normal 700 14px Segoe UI, sans-serif;
+  font: normal normal 700 14px Lato, sans-serif;
   padding-top: 7px;
   color: #232324;
 }
 .members-email {
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   padding-top: 7px;
   color: #525156;
 }
@@ -327,7 +293,7 @@
   width: 18px;
 }
 .manageMembersDetails {
-  font: normal normal 400 14px Segoe UI, sans-serif;
+  font: normal normal 400 14px Lato, sans-serif;
   margin-bottom: 10px;
   color: #232324;
 }

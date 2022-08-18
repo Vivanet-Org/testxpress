@@ -5,9 +5,9 @@
             <img class="closeModel" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
         </div>
         <form #createNewProjectForm="ngForm" (submit)="createNewProject(createNewProjectForm)">
-                <label class="projectHeading"><strong>Create a new project</strong></label>
+                <label class="projectHeading"><strong>Create a new Project</strong></label>
                 <hr class="hrStyle">
-                <div class="form-control data-error-sorry, that name is taken.">
+                <div class="form-control">
                     <label class="projectDetails">Project Name</label>
                     <input class="inputStyles" id="name" type="text" name="projectName" 
                     placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
