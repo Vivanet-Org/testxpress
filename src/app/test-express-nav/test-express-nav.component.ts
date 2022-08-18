@@ -9,12 +9,28 @@ import { UsersService } from '../users.service';
 })
 export class TestExpressNavComponent implements OnInit {
 
-  appImgPath: string = '/assets/images/applications.png';
   testXpressImg: string = '/assets/images/App.png';
+  pieChartImg: string = '/assets/images/inactive-pie-chart.png';
+  activeFolderImg: string = '/assets/images/active-folder.png';
+  inactiveAppImg: string = '/assets/images/inactive-app.png';
+  inactiveRocketImg: string = '/assets/images/inactive-rocket.png';
+  inactiveNotepadImg: string = '/assets/images/inactive-notepad.png';
+  inactivePlayImg: string = '/assets/images/inactive-play.png';
+  inactiveFileImg: string = '/assets/images/inactive-file.png';
+  Line6Img: string = '/assets/images/Line6.png';
+  inactiveGearImg: string = '/assets/images/inactive-gear.png';
+  inactiveBellImg: string = '/assets/images/inactive-bell.png';
+  inactiveQuestionImg: string = '/assets/images/inactive-question.png';
+  iconAccountImg: string = '/assets/images/icon-account.png';
+
+
 
   constructor(public usersService:UsersService) { }
 
   projectsModal() {
+    this.activeFolderImg = '/assets/images/active-folder.png';
+    this.inactiveAppImg = '/assets/images/inactive-app.png';
+
     $('.topNav').css({
       'display': 'block'
     });
@@ -31,16 +47,8 @@ export class TestExpressNavComponent implements OnInit {
       'background-color': 'rgb(95, 93, 93)'
     });
 
-    $('.folderIcon').css({
-      'color': 'white'
-    });
-
     $('.windowsBg').css({
       'background-color': 'rgb(42, 42, 42)'
-    });
-
-    $('.appImg').css({
-      'background-color': ''
     });
 
     this.usersService.sendClickEvent();
@@ -48,6 +56,9 @@ export class TestExpressNavComponent implements OnInit {
   }
 
   applicationsModal() {
+    this.activeFolderImg = '/assets/images/inactive-folder.png';
+    this.inactiveAppImg = '/assets/images/active-app.png';
+
     $('.topNav').css({
       'display': 'none'
     });
@@ -64,16 +75,8 @@ export class TestExpressNavComponent implements OnInit {
       'background-color': 'rgb(42, 42, 42)'
     });
 
-    $('.folderIcon').css({
-      'color': 'grey'
-    });
-
     $('.windowsBg').css({
       'background-color': 'rgb(95, 93, 93)'
-    });
-
-    $('.appImg').css({
-      'background-color': 'white'
     });
 
     this.usersService.sendClickEvent();
