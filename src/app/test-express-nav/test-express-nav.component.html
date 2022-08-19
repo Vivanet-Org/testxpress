@@ -7,78 +7,79 @@
     <ul class="nav">
         <div class="logo">
             <li> 
-                <img class="tsImg" [src] ="testXpressImg" alt="Application Image" />
+                <img class="tsImg" [src] ="testXpressImg" alt="testXpress Image" />
             </li>
         </div>
 
         <div class="icon-background">
-            <li> 
-                <a href="#">
-                <em class="fa fa-pie-chart"></em>
-                </a>
+            <li>
+                <img class="navIcons" [src] ="pieChartImg" alt="pieChart Image" /> 
             </li>
         </div>
 
         <div class="icon-background folderBg" (click)="projectsModal()">
             <li> 
-                <em class='fa fa-folder-open-o folderIcon'></em>
+                <img class="navIcons folderIcon" [src] ="activeFolderImg" alt="activeFolder Image" />
             </li>
         </div>
 
         <div class="icon-background windowsBg" (click)="applicationsModal()">
-            <li> 
-                <img class="appImg" [src] ="appImgPath" alt="Application Image" />
+            <li>
+                <img class="navIcons appImg" [src] ="inactiveAppImg" alt="inactiveApp Image" /> 
             </li>
         </div>
 
         <div class="icon-background rocketBg">
             <li> 
-                <em class="fa fa-rocket rocketIcon"></em>
+                <img class="inactiveRocket" [src] ="inactiveRocketImg" alt="inactiveRocket Image" />
             </li>
         </div>
 
         <div class="icon-background">
 
             <li> 
-                <a href="#">
-                    <em class="fa fa-thin fa-square-poll-horizontal"></em>
-                </a>
+                <img class="inactiveNotepad" [src] ="inactiveNotepadImg" alt="inactiveNotepad Image" />
             </li>
         </div>
 
         <div class="icon-background">
             <li> 
-                <a href="#">
-                <em class='fa fa-play-circle-o'></em>
-                </a>
+                <img class="navIcons" [src] ="inactivePlayImg" alt="inactivePlay Image" />
             </li>
         </div>
 
         <div class="icon-background">
             <li> 
-                <a href="#">
-                <em class='fa fa-file-text-o'></em>
-                </a>
-            </li>
-        </div>
-        <hr style="color: rgb(46, 46, 46); margin-bottom: 20px; margin-top: 20px;">
-
-        <div class="icon-background">
-            <li> 
-                <a href="#">
-                <em class='fa fa-solid fa-gear'></em>
-                </a>
+                <img class="navIcons" [src] ="inactiveFileImg" alt="inactiveFile Image" />
             </li>
         </div>
 
+        <hr style="color: rgb(55, 55, 55); margin-bottom: 10px; margin-top: 10px;">
+
         <div class="icon-background">
             <li> 
-                <a href="#">
-                <em class='fa fa-solid fa-bell'></em>
-                </a>
+                <img class="navIcons" [src] ="inactiveGearImg" alt="inactiveGear Image" />
             </li>
         </div>
-    </ul>
-    
+
+        <div class="icon-background">
+            <li> 
+                <img class="navIcons" [src] ="inactiveBellImg" alt="inactiveBell Image" />
+            </li>
+        </div>
+
+        <div class="footerIcons">
+            <div class="icon-background">
+                <li> 
+                    <img class="navIcons inactiveQuestion" [src] ="inactiveQuestionImg" alt="inactiveQuestion Image" />
+                </li>
+            </div>
+            <div class="icon-background">
+                <li> 
+                    <img class="navIcons" [src] ="iconAccountImg" alt="iconAccount Image" />
+                </li>
+            </div>
+        </div>
+    </ul>    
 
 </div>

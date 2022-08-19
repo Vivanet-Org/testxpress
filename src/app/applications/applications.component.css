@@ -294,18 +294,6 @@
   color: #232324;
 }
 
-.inputStyles {
-  width: 349px;
-  height: 32px;
-  border: 1px solid gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  font: normal normal 400 14px Lato, sans-serif;
-  padding-left: 10px;
-  border-radius: 2px;
-  color: #525156;
-}
-
 .btnEdit,
 .btnDuplicate {
   float: right;
