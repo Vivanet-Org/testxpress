@@ -44,6 +44,8 @@ body {
 }
 .task-menu .menuItems,
 .app-task-menu .menuItems {
+  /* width: 91px;
+  height: 96px; */
   /* height: 25px; */
   margin-bottom: 2px;
   justify-content: flex-start;
@@ -120,4 +122,8 @@ body {
   border-radius: 2px;
   align-items: center;
   /* margin-top: -5px; */
+}
+.errorMessage{
+  color: red;
+  font: normal normal 600 12px Lato, sans-serif;
 }

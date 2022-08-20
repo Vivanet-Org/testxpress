@@ -9,7 +9,13 @@
                 <hr class="hrStyle">
                 <div class="form-control">
                     <label class="projectDetails">Project Name</label>
-                    <input class="inputStyles" id="name" type="text" name="projectName" 
+                    <label *ngIf="uname.errors?.['minlength'] || (createNewProjectForm.controls['projectName']?.touched && createNewProjectForm.controls['projectName']?.invalid)" class="errorMessage">
+                        Application Name must be at least 1 character long.
+                    </label>
+                    <label *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                        Application Name maximum of 25 characters only.
+                    </label>
+                    <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                     placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
                 </div>
                 <div class="control">

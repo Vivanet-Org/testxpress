@@ -212,6 +212,8 @@ export class ApplicationsComponent implements OnInit {
   }
 
   updatedFormData = {};
+  updateFlag: boolean = false;
+  appNameCount: any = {} = 0;
   updateExistingApplication(form: any, id: any) {
     this.getprojectId();
 
@@ -219,12 +221,13 @@ export class ApplicationsComponent implements OnInit {
       this.appData1 = data;
       for (let index = 0; index < this.appData1.length; index++) {
         if (this.appData1[index].appName === form.value.appName) {
-          this.createFlag = true;
-          alert("The application name '" + form.value.appName + "' has already been reported");
-          break;
+          this.appNameCount ++;
+          if(this.appData1[index].appid === id){
+            this.updateFlag = true;
+          }
         }
       }
-      if (this.createFlag == false) {
+      if ((this.updateFlag == true && this.appNameCount == 1) || this.appNameCount == 0) {
         for (let index = 0; index < this.appData1.length; index++) {
           if (this.appData1[index].appid === id) {
             this.updatedFormData = {
@@ -241,14 +244,16 @@ export class ApplicationsComponent implements OnInit {
         console.log(id);
         console.log(this.updatedFormData);
         this.user.updateApplication(id, this.updatedFormData).subscribe((data) => {
-            console.log(data);
-            this.loadApplicationData();
-            this.projectID = null;
-          });
+          console.log(data);
+          this.loadApplicationData();
+          this.projectID = null;
+        });
         this.closeEditDuplicateDeletePopup();
       } else {
-        this.createFlag = false;
+        alert("The application name '" + form.value.appName + "' has already been reported");
       }
+      this.updateFlag = false;
+      this.appNameCount = 0;
     });
   }
 
@@ -321,6 +326,5 @@ export class ApplicationsComponent implements OnInit {
     });
   };
 
-
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
