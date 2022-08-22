@@ -61,14 +61,14 @@
                             <hr class="hrStyle">
                             <div class="form-control">
                                 <label class="popupProjectDetails">Project Name</label>
+                                <label *ngIf="uname.errors?.['minlength'] || (updateProjectForm.controls['projectName']?.touched && updateProjectForm.controls['projectName']?.invalid)" class="errorMessage">
+                                    Project Name must be at least 1 character long.
+                                </label>
+                                <label *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                    Project Name maximum of 25 characters only.
+                                </label>
                                 <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                                  required ngModel="{{ teProjectsData.projectName }}" maxlength="25" minlength="1" />
-                                 <h5 *ngIf="uname.errors?.['minlength'] || (updateProjectForm.controls['projectName']?.touched && updateProjectForm.controls['projectName']?.invalid)" style="color: red;">
-                                    Project Name must be at least 1 character long.
-                                </h5>
-                                <h5 *ngIf="uname.errors?.['maxlength']" style="color: red;">
-                                    Project Name maximum of 25 characters only.
-                                </h5>
                             </div>
                             <div class="control">
                                 <label class="popupProjectDetails">Description</label><br />
@@ -95,14 +95,14 @@
                             <hr class="hrStyle">
                             <div class="form-control">
                                 <label class="popupProjectDetails">Project Name</label>
+                                <label *ngIf="uname.errors?.['minlength'] || (duplicateProjectForm.controls['projectName']?.touched && duplicateProjectForm.controls['projectName']?.invalid)" class="errorMessage">
+                                    Project Name must be at least 1 character long.
+                                </label>
+                                <label *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                    Project Name maximum of 25 characters only.
+                                </label>
                                 <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                                 required ngModel="{{ teProjectsData.projectName }}_copy" maxlength="25" minlength="1" />
-                                <h5 *ngIf="uname.errors?.['minlength'] || (duplicateProjectForm.controls['projectName']?.touched && duplicateProjectForm.controls['projectName']?.invalid)" style="color: red;">
-                                    Project Name must be at least 1 character long.
-                                </h5>
-                                <h5 *ngIf="uname.errors?.['maxlength']" style="color: red;">
-                                    Project Name maximum of 25 characters only.
-                                </h5>
                             </div>
                             <div class="control">
                                 <label class="popupProjectDetails">Description</label><br />

@@ -206,22 +206,26 @@ export class CardComponent implements OnInit{
     this.membersFlag = true;
   }
 
+  projectNameCount: any = {} = 0;
   updateExistingProject(form: any, id: any){
    
     this.user.getProjectsData().subscribe(data => {
       this.data1 = data;
       this.totalProjects = Object.keys(data).length;
 
-
       for (let index = 0; index < this.totalProjects; index++) {
         if (this.data1[index].projectName === form.value.projectName){
-          alert("The project name '" + this.data[index].projectName + "' has already been Reported");
-          this.flag = true;
-          break;
+          this.projectNameCount ++;
+          if(this.data1[index].projectid === id){
+            this.flag = true;
+          }
+          // alert("The project name '" + this.data[index].projectName + "' has already been Reported");
+          // this.flag = true;
+          // break;
         }
       }
 
-      if(this.flag == false){
+      if((this.flag == true && this.projectNameCount == 1) || this.projectNameCount == 0){
         for (let index = 0; index < this.totalProjects; index++) {
           if (this.data1[index].projectid === id){
             this.updatedFormData = {
@@ -245,8 +249,10 @@ export class CardComponent implements OnInit{
         this.closeModal();
       }
       else{
-        this.flag = false;
+        alert("The project name '" + form.value.projectName + "' has already been Reported");
       }
+      this.flag = false;
+      this.projectNameCount = 0;
     });
   }
 
