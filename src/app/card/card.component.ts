@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../users.service';
 import * as $ from "jquery";
 import { Subscription } from 'rxjs';
@@ -9,6 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent implements OnInit{
+
+  @ViewChild('searchField') searchField!: ElementRef;
 
   clickEventSubscription:Subscription;
 
@@ -24,8 +26,7 @@ export class CardComponent implements OnInit{
   avatarImg1Path: string = '/assets/images/avatar-photo4px-1.png';
   avatarImg2Path: string = '/assets/images/avatar-photo4px-2.png';
   textImgPath: string = '/assets/images/text-4px.png';
-
-
+  srarchImagePath: string = '/assets/images/search.png';
 
   manageMembersData:any = [
     {
@@ -84,29 +85,71 @@ export class CardComponent implements OnInit{
     this.loadProjectData();
   }
 
+  searchdValue: string = '';
+  searchdValueDisplay: string = '';
+  searchFlag: boolean = true;
+  searchString(event: any){
+    this.searchFlag = true;
+    this.searchdValue = event.target.value;
+    this.searchdValueDisplay = this.searchdValue;
+    console.log(this.searchdValue);
+  }
+
+  searchData(){
+    if(this.searchdValue != ''){
+      this.loadProjectData();
+    } else{
+      alert("You must enter at least one character.");  
+      this.loadProjectData();    
+    }
+  }
+
   loadProjectData(){
-    this.uiData = [];
-    console.log(this.uiData);
-    this.user.getProjectsData().subscribe(data => {
-      this.data = data;
-      for (let index = 0; index < this.data.length; index++) {
-        console.log(this.data[index].deleted);
-        if(this.data[index].deleted == false){
-          this.uiData = [...this.uiData, {
-            projectid:this.data[index].projectid,
-            projectName: this.data[index].projectName,
-            projectDescription:this.data[index].projectDescription,
-            deleted:this.data[index].deleted,
-            createdBy:this.data[index].createdBy,
-            createdOn:this.data[index].createdOn,
-            updatedBy:this.data[index].updatedBy,
-            updatedOn:this.data[index].updatedOn
-          }];
-        }
-      }
+    
+    this.searchFlag = true;
+    console.log(this.searchdValue);
+
+    if(this.searchdValue == ''){
+      this.uiData = [];
       console.log(this.uiData);
-      console.log(this.uiData[0].projectid);
-    });
+      this.user.getProjectsData().subscribe(data => {
+        this.data = data;
+        this.filterData();
+        console.log(this.uiData);
+      });
+    } else{
+      this.uiData = [];
+      this.user.searchProjects(this.searchdValue).subscribe(data => {
+        this.data = data;
+        if(this.data.length != 0 ){
+        this.filterData();
+        this.searchField.nativeElement.value = '';
+        this.searchdValue = '';
+        } else{
+          this.searchFlag = false;
+          this.searchField.nativeElement.value = '';
+          this.searchdValue = '';
+        }
+        console.log(this.uiData);
+      });
+    }
+  }
+  
+  filterData(){
+    for (let index = 0; index < this.data.length; index++) {
+      if(this.data[index].deleted == false){
+        this.uiData = [...this.uiData, {
+          projectid:this.data[index].projectid,
+          projectName: this.data[index].projectName,
+          projectDescription:this.data[index].projectDescription,
+          deleted:this.data[index].deleted,
+          createdBy:this.data[index].createdBy,
+          createdOn:this.data[index].createdOn,
+          updatedBy:this.data[index].updatedBy,
+          updatedOn:this.data[index].updatedOn
+        }];
+      }
+    }
   }
 
   deleteManageMembersData(id: any){
@@ -204,6 +247,12 @@ export class CardComponent implements OnInit{
   membersModal(id: any) {
     this.membersId = id;
     this.membersFlag = true;
+  }
+
+  openModal() {
+    $('.bg-modal').css({
+      'display': 'grid'
+    });
   }
 
   projectNameCount: any = {} = 0;

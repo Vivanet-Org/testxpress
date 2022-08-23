@@ -23,8 +23,6 @@ export class TestExpressNavComponent implements OnInit {
   inactiveQuestionImg: string = '/assets/images/inactive-question.png';
   iconAccountImg: string = '/assets/images/icon-account.png';
 
-
-
   constructor(public usersService:UsersService) { }
 
   projectsModal() {

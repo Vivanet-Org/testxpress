@@ -41,6 +41,11 @@ export class UsersService {
     return this.http.get(getUrl);
   }
 
+  searchProjects(searchString: any, ){
+    let getUrl = this.serverlesUrl + "/project/searchProjects/" + searchString;
+    return this.http.get(getUrl);
+  }
+
   // Project functions end
 
   // Application functions start
