@@ -180,7 +180,7 @@
                                 Application Name maximum of 25 characters only.
                             </label><br />
                             <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel" 
-                            placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" />
+                            placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" #appName />
                         </div>
                         <div>
                             <label class="appDetails">Project Name</label><br>
@@ -194,7 +194,7 @@
                         <div class="control">
                             <label class="appDetails">Application Description</label><br />
                             <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
-                            placeholder="Enter Application Description" ngModel maxlength="150" minlength="1"> </textarea>
+                            placeholder="Enter Application Description" ngModel maxlength="150" minlength="1" #appDescription > </textarea>
                         </div>
                         <hr class="hrStyle">
                         <button class="btnCreate" [disabled]="!createNewApplicationForm.valid">Create</button>

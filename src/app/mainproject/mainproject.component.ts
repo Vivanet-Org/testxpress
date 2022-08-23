@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from "jquery";
 import { UsersService } from '../users.service';
 
@@ -8,6 +8,9 @@ import { UsersService } from '../users.service';
   styleUrls: ['./mainproject.component.css']
 })
 export class MainprojectComponent implements OnInit {
+
+  @ViewChild('projectName') projectName!: ElementRef;
+  @ViewChild('projectDescription') projectDescription!: ElementRef;
 
   closeImagePath: string = '/assets/images/close.png';
 
@@ -21,6 +24,8 @@ export class MainprojectComponent implements OnInit {
     $('.bg-modal').css({
       'display': 'none'
     });
+    this.projectName.nativeElement.value = '';
+    this.projectDescription.nativeElement.value = '';
   }
 
   createNewProject(form: any){
