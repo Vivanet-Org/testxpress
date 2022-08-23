@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import { UsersService } from '../users.service';
 import { Subscription } from 'rxjs';
@@ -9,6 +9,10 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./applications.component.css'],
 })
 export class ApplicationsComponent implements OnInit {
+  
+  @ViewChild('appName') appName!: ElementRef;
+  @ViewChild('appDescription') appDescription!: ElementRef;
+
   clickEventSubscription: Subscription;
 
   appsImgPath: string = '/assets/images/apps.png';
@@ -40,6 +44,8 @@ export class ApplicationsComponent implements OnInit {
       display: 'none',
     });
     this.selectedLevel = '';
+    this.appName.nativeElement.value = '';
+    this.appDescription.nativeElement.value = '';
   }
 
   appDots: boolean = true;
