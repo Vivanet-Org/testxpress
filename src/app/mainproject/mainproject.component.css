@@ -64,12 +64,13 @@
   margin-top: 10px;
   margin-bottom: 10px;
   width: 474px;
-  height: 32px;
+  height: 26px;
   border: 1px solid gray;
   font: normal normal 400 14px Lato, sans-serif;
   resize: none;
   color: #525156;
   padding-left: 10px;
+  padding-top: 8px;
 }
 .btnClose {
   float: right;

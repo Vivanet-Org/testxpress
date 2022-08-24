@@ -17,6 +17,78 @@
 
 /* end: Global */
 
+/* Top nav Start */
+
+.topNav {
+  display: block;
+}
+.projHeadingBg {
+  margin-right: -8px;
+  background-color: #ffffff;
+  margin-top: -8px;
+  height: 64px;
+}
+.projHeading {
+  padding-top: 16px;
+  font: normal normal 700 20px Lato, sans-serif;
+  margin-left: 100px;
+  color: #000000;
+}
+.projectFunctioningItems {
+  margin-top: 20px;
+  text-indent: 70px;
+}
+.projectsCount {
+  font: normal normal 700 16px Lato, sans-serif;
+  margin-left: 30px;
+  color: #232324;
+}
+.alignFunctionalItems {
+  float: right;
+  margin-right: 45px;
+}
+.select-plotform {
+  margin-right: 20px;
+  width: 148px;
+  height: 32px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  color: #525156;
+  font: normal normal 400 14px Lato, sans-serif;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.search-style {
+  width: 236px;
+  height: 32px;
+  border: 1px solid grey;
+  border-radius: 2px;
+  padding-left: 12px;
+  color: #525156;
+  font: normal normal 400 14px Lato, sans-serif;
+  padding-right: 30px;
+}
+.searchImg {
+  width: 16px;
+
+  position: relative;
+  left: -25px;
+  top: 5px;
+  cursor: pointer;
+}
+.createButton {
+  width: 120px;
+  height: 32px;
+  font: normal normal 400 14px Lato, sans-serif;
+  background-color: #3e38d5;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Top nav End */
+
 .icon-bar a {
   float: left;
   transition: all 0.3s ease;
@@ -127,6 +199,7 @@
   border: 1px solid gray;
   font: normal normal 400 14px Lato, sans-serif;
   padding-left: 10px;
+  padding-top: 7px;
   border-radius: 2px;
   resize: none;
   color: #525156;
@@ -240,8 +313,8 @@
 }
 .membersSend {
   font: normal normal 400 14px Lato, sans-serif;
-  background-color: #3e38d5;
-  color: #ffffff;
+  background-color: #3E38D5;
+  color: #FFFFFF;
   border: none;
   border-radius: 2px;
   padding-top: 8px;
@@ -295,5 +368,13 @@
 .manageMembersDetails {
   font: normal normal 400 14px Lato, sans-serif;
   margin-bottom: 10px;
+  color: #232324;
+}
+
+.dataNotFound{
+  text-align: center;
+  font: normal normal 700 32px Lato, sans-serif;
+  margin-left: 50px;
+  margin-top: 100px;
   color: #232324;
 }
