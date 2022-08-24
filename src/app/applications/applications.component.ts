@@ -10,8 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class ApplicationsComponent implements OnInit {
   
-  @ViewChild('appName') appName!: ElementRef;
-  @ViewChild('appDescription') appDescription!: ElementRef;
+  @ViewChild('createNewApplicationForm') createNewApplicationForm : any;
 
   clickEventSubscription: Subscription;
 
@@ -44,8 +43,7 @@ export class ApplicationsComponent implements OnInit {
       display: 'none',
     });
     this.selectedLevel = '';
-    this.appName.nativeElement.value = '';
-    this.appDescription.nativeElement.value = '';
+    this.createNewApplicationForm.reset();
   }
 
   appDots: boolean = true;
@@ -174,46 +172,51 @@ export class ApplicationsComponent implements OnInit {
   projectData1: any = {};
   createFlag: boolean = false;
   createNewApplication(form: any) {
-    this.getprojectId();
-    if(this.selectedLevel == ''){
-      alert("Please select a project name");
-    }
-    else{
-      this.user.getApplicationsData().subscribe((data) => {
-        this.appData1 = data;
-        for (let index = 0; index < this.appData1.length; index++) {
-          if (this.appData1[index].appName === form.value.appName) {
-            this.createFlag = true;
-            alert("The application name '" + form.value.appName +"' has already been reported");
-            break;
-          }
-        }
-        if (this.createFlag == false) {
-          console.log(this.projectID);
-          let newFormData = {
-            appName: form.value.appName,
-            appDescription: form.value.appDescription,
-            deleted: false,
-            projectID: this.projectID,
-            platformID: 5,
-            createdBy: 5,
-            createdOn: Date.now(),
-            updatedBy: 1,
-            updatedOn: Date.now()
-          };
-          console.log(newFormData);
 
-          this.user.createApplication(newFormData).subscribe((data) => {
-            console.log(data);
-          });
-          alert("'" + form.value.appName + "' Application Created Successfully");
-          this.closeModal();
-          this.user.sendClickEvent();
-          this.projectID = null;
-        } else {
-          this.createFlag = false;
-        }
-      });
+    if(form.value.appName != null && form.value.appName != ''){
+      this.getprojectId();
+      if(this.selectedLevel == ''){
+        alert("Please select a project name");
+      }
+      else{
+        this.user.getApplicationsData().subscribe((data) => {
+          this.appData1 = data;
+          for (let index = 0; index < this.appData1.length; index++) {
+            if (this.appData1[index].appName === form.value.appName) {
+              this.createFlag = true;
+              alert("The application name '" + form.value.appName +"' has already been reported");
+              break;
+            }
+          }
+          if (this.createFlag == false) {
+            console.log(this.projectID);
+            let newFormData = {
+              appName: form.value.appName,
+              appDescription: form.value.appDescription,
+              deleted: false,
+              projectID: this.projectID,
+              platformID: 5,
+              createdBy: 5,
+              createdOn: Date.now(),
+              updatedBy: 1,
+              updatedOn: Date.now()
+            };
+            console.log(newFormData);
+
+            this.user.createApplication(newFormData).subscribe((data) => {
+              console.log(data);
+              alert("'" + form.value.appName + "' Application Created Successfully");
+              this.closeModal();
+              this.projectID = null;
+              this.user.sendClickEvent();
+            });
+          } else {
+            this.createFlag = false;
+          }
+        });
+      }
+    } else{
+      alert("Please Enter Application Name");
     }
   }
 

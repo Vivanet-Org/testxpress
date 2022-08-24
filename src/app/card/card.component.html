@@ -18,8 +18,6 @@
     </div>
 </div>
 
-<!-- *ngIf="searchFlag" -->
-
 <section class="card-home">
     <div class="grid-container" *ngIf="searchFlag">
         <div *ngFor="let teProjectsData of uiData">
@@ -202,9 +200,8 @@
         </div>
     </div>
 
-    <!-- *ngIf="!searchFlag" -->
     <div class="dataNotFound" *ngIf="!searchFlag">
-        <p>Sorry, your search data <span style="color: #3E38D5;">{{searchdValueDisplay}} </span> was not found.</p>
+        <p>Sorry, your search data <span style="color: #3E38D5;"> "{{searchdValueDisplay}}" </span> was not found.</p>
     </div>
     
 </section>
