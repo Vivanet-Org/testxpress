@@ -106,7 +106,6 @@ export class ApplicationsComponent implements OnInit {
     this.duplicateFlag = false;
     this.deleteId = null;
     this.deleteFlag = false;
-    this.projectsDropdown.nativeElement.value = "All Applications";
   }
 
   projectIdName: any = [];
