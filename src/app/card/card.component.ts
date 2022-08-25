@@ -89,13 +89,13 @@ export class CardComponent implements OnInit{
   searchdValueDisplay: string = '';
   searchFlag: boolean = true;
   searchString(event: any){
-    this.searchFlag = true;
     this.searchdValue = event.target.value;
-    this.searchdValueDisplay = this.searchdValue;
     console.log(this.searchdValue);
   }
 
   searchData(){
+    this.searchFlag = true;
+    this.searchdValueDisplay = this.searchdValue;
     if(this.searchdValue != ''){
       this.loadProjectData();
     } else{
@@ -121,15 +121,12 @@ export class CardComponent implements OnInit{
       this.uiData = [];
       this.user.searchProjects(this.searchdValue).subscribe(data => {
         this.data = data;
-        if(this.data.length != 0 ){
         this.filterData();
+        if(this.uiData.length == 0 ){
+          this.searchFlag = false;
+        }
         this.searchField.nativeElement.value = '';
         this.searchdValue = '';
-        } else{
-          this.searchFlag = false;
-          this.searchField.nativeElement.value = '';
-          this.searchdValue = '';
-        }
         console.log(this.uiData);
       });
     }

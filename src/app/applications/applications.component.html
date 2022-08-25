@@ -115,7 +115,7 @@
                                         Application Name maximum of 25 characters only.
                                     </label><br />
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
-                                    required ngModel="{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
+                                    required ngModel= "{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
                                 </div>
                                 <div>
                                     <label class="appDetails">Project Name</label><br>
@@ -129,7 +129,7 @@
                                 <div class="control">
                                     <label class="popupAppDetails">Application Description</label><br />
                                     <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
-                                    ngModel="{{ teAppData.appDescription }}" maxlength="150" minlength="1"> </textarea>
+                                    ngModel= "{{ teAppData.appDescription }}" maxlength="150" minlength="1"> </textarea>
                                 </div>
                                 <hr class="hrStyleEdd">
                                 <button class="btnDuplicate" [disabled]="!duplicateApplicationForm.valid">Duplicate</button>
@@ -198,7 +198,7 @@
                             placeholder="Enter Application Description" ngModel maxlength="150" minlength="1" #appDescription > </textarea>
                         </div>
                         <hr class="hrStyle">
-                        <button class="btnCreate" [disabled]="!createNewApplicationForm.valid">Create</button>
+                        <button class="btnCreate">Create</button>
                 </form>
                 <button class="CreateProjBtnClose" (click)="closeModal()">Cancel</button>
             </div>

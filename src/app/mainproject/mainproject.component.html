@@ -16,15 +16,15 @@
                         Application Name maximum of 25 characters only.
                     </label>
                     <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
-                    placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" #projectName />
+                    placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
                 </div>
                 <div class="control">
                     <label class="projectDetails">Description</label><br />
                     <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
-                    placeholder="Enter Project Description" ngModel maxlength="150" minlength="1" #projectDescription > </textarea>
+                    placeholder="Enter Project Description" ngModel maxlength="150" minlength="1" > </textarea>
                 </div>
                 <hr class="hrStyle">
-                <button class="btnCreate" [disabled]="!createNewProjectForm.valid">Create</button>
+                <button class="btnCreate">Create</button>
         </form>
         <button class="btnClose" (click)="closeModal()">Cancel</button>
     </div>
