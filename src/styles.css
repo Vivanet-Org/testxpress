@@ -127,7 +127,8 @@ body {
   color: red;
   font: normal normal 600 12px Lato, sans-serif;
 }
-.dataNotFound{
+.dataNotFound,
+.appDataNotFound{
   text-align: center;
   font: normal normal 700 32px Lato, sans-serif;
   margin-left: 30px;

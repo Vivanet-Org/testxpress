@@ -56,7 +56,8 @@
 
 .girdFooter {
   background-color: #f6f6f9;
-  height: 50px;
+  height: 54px;
+  width: 424px;
   margin-left: -10px;
   margin-right: -10px;
   margin-bottom: -10px;
@@ -109,6 +110,8 @@
   font: normal normal 700 20px Lato, sans-serif;
   color: #232324;
   margin-left: 42px;
+  width: 111px;
+  height: 28px;
 }
 
 .windowsIconBg {
@@ -167,6 +170,8 @@
   margin-left: 50px;
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
+  height: 24px;
+  width: 89px;
 }
 
 .projectsDropdown {

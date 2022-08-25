@@ -64,6 +64,11 @@ export class UsersService {
     return this.http.put(updateUrl, updatedBody);
   }
 
+  searchApplication(projectId: any){
+    let searchUrl = this.serverlesUrl + "/application/searchApplications/" + projectId;
+    return this.http.get(searchUrl);
+  }
+
   // Application functions end
    
 }

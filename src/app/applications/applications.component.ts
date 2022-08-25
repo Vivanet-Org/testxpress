@@ -106,6 +106,7 @@ export class ApplicationsComponent implements OnInit {
     this.duplicateFlag = false;
     this.deleteId = null;
     this.deleteFlag = false;
+    this.projectsDropdown.nativeElement.value = "All Applications";
   }
 
   projectIdName: any = [];
@@ -116,36 +117,75 @@ export class ApplicationsComponent implements OnInit {
     });
   }
 
+  searchFlag: boolean = true;
+  selectedValueDisplay: string = '';
+  selectedProjectValue: string = '';
+  isSelectedproject: boolean = false;
+  selectedProject(event: any) {
+    this.isSelectedproject = true;
+    this.searchFlag = true;
+    this.selectedProjectValue = event.target.value;
+    this.selectedValueDisplay = this.selectedProjectValue;
+    console.log(this.selectedProjectValue);
+    if(this.selectedProjectValue == "All Applications"){
+      this.loadApplicationData();
+    } else {
+      this.getprojectId();
+    }
+  }
+
   appUiData: any = [];
   appData: any = {};
   loadApplicationData() {
+    this.searchFlag = true;
     this.appUiData = [];
     console.log(this.appUiData);
-    this.user.getApplicationsData().subscribe((data) => {
-      this.appData = data;
-      for (let index = 0; index < this.appData.length; index++) {
-        console.log(this.appData[index].deleted);
-        if (this.appData[index].deleted == false) {
-          this.appUiData = [
-            ...this.appUiData,
-            {
-              appid: this.appData[index].appid,
-              appName: this.appData[index].appName,
-              appDescription: this.appData[index].appDescription,
-              deleted: this.appData[index].deleted,
-              projectID: this.appData[index].projectID,
-              platformID: this.appData[index].platformID,
-              createdBy: this.appData[index].createdBy,
-              createdOn: this.appData[index].createdOn,
-              updatedBy: this.appData[index].updatedBy,
-              updatedOn: this.appData[index].updatedOn,
-            },
-          ];
+
+    if(this.projectID == null || this.selectedProjectValue == "All Applications"){
+      this.appUiData = [];
+      this.user.getApplicationsData().subscribe((data) => {
+        this.appData = data;
+        this.filterAppData();
+        console.log(this.appUiData);
+      });
+    } else{
+      this.appUiData = [];
+      this.user.searchApplication(this.projectID).subscribe((data) => {
+        this.appData = data;
+        this.filterAppData();
+        if(this.appUiData.length == 0 ){
+          // this.filterAppData();
+        //   this.selectedProjectValue = "All Applications";
+        // } else{
+          this.searchFlag = false;
+          this.selectedProjectValue = "All Applications";
+          this.projectID = null;
         }
+        this.projectID = null;
+        console.log(this.appUiData);
+      });
+      
+    }
+  }
+
+  filterAppData(){
+    for (let index = 0; index < this.appData.length; index++) {
+      if (this.appData[index].deleted == false) {
+        this.appUiData = [...this.appUiData, {
+            appid: this.appData[index].appid,
+            appName: this.appData[index].appName,
+            appDescription: this.appData[index].appDescription,
+            deleted: this.appData[index].deleted,
+            projectID: this.appData[index].projectID,
+            platformID: this.appData[index].platformID,
+            createdBy: this.appData[index].createdBy,
+            createdOn: this.appData[index].createdOn,
+            updatedBy: this.appData[index].updatedBy,
+            updatedOn: this.appData[index].updatedOn,
+          },
+        ];
       }
-      console.log(this.appUiData);
-      console.log(this.appUiData[0].appid);
-    });
+    }
   }
 
   selectedLevel: string = '';
@@ -155,19 +195,25 @@ export class ApplicationsComponent implements OnInit {
     console.log(this.selectedLevel);
   }
   getprojectId() {
-    if (this.selectedLevel != '') {
+    if (this.selectedLevel != '' || this.selectedProjectValue != '') {
       this.user.getProjectIdProjectName().subscribe((data) => {
         this.projectData1 = data;
         for (let index = 0; index < this.projectData1.length; index++) {
-          console.log(this.projectData1[index].projectname);
-          if (this.projectData1[index].projectname == this.selectedLevel) {
+          // console.log(this.projectData1[index].projectname);
+          if (this.projectData1[index].projectname == this.selectedLevel || this.projectData1[index].projectname == this.selectedProjectValue) {
             this.projectID = this.projectData1[index].projectid;
             console.log(this.projectID);
+            if(this.isSelectedproject){
+              this.loadApplicationData();
+              this.isSelectedproject = false;              
+            }
+            break;
           }
         }
       });
     }
   }
+
   appData1: any = {};
   projectData1: any = {};
   createFlag: boolean = false;

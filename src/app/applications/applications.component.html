@@ -14,13 +14,14 @@
     <div class="appData">
         <div class="appDataAlign">
             <label class="appHead">Applications</label>
-            <select class="projectsDropdown">
-                <option *ngFor="let teProjectsName of projectIdName">
+            <select class="projectsDropdown" (change)="selectedProject($event)" #projectsDropdown>
+                <option value= "All Applications">All Applications</option>
+                <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
                     {{teProjectsName.projectname}}
                 </option>
             </select>
         </div><br>
-        <div class="app-grid-container">
+        <div class="app-grid-container" *ngIf="searchFlag">
             <div *ngFor="let teAppData of appUiData">
                 <div class="grid-item" >
                     <div>
@@ -205,4 +206,9 @@
         <!-- Create Application Popup End -->
 
     </div>
+
+    <div class="appDataNotFound" *ngIf="!searchFlag">
+        <p>Sorry, no applications were found for your selected project name <span style="color: #3E38D5;"> "{{selectedValueDisplay}}"</span>. </p>
+    </div>
+
 </section>
