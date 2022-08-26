@@ -2,12 +2,10 @@
     <div class="appHeader">
         <p class="appHeading">Project / Applications</p>
         <div class="appTopAlign">
-            <label class="appLabel">
                 <div class="windowsIconBg">
                     <img class="applicationImg" [src] ="appsImgPath" alt="Application Image" /> 
                 </div>
-                Applications
-            </label>
+                <p class="appImgLabel">Applications</p>
             <button class="createAppBtn" (click)="openModal()">Create Application</button>
         </div><br><br>
     </div>
@@ -21,13 +19,10 @@
                 </option>
             </select>
         </div><br>
-        <div class="app-grid-container" *ngIf="searchFlag">
+        <div class="app-grid-container">
             <div *ngFor="let teAppData of appUiData">
                 <div class="grid-item" >
                     <div>
-                        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                            integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                            crossorigin="anonymous" referrerpolicy="no-referrer" />
                         <div class="app-dots">
                             <img class="appMoreImg" [src] ="moreImgPath" alt="more Image" (click)="openAppTaskMenu(teAppData.appid)" />
                             <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
@@ -210,5 +205,5 @@
     <div class="appDataNotFound" *ngIf="!searchFlag">
         <p>Sorry, no applications were found for your selected project name <span style="color: #3E38D5;"> "{{selectedValueDisplay}}"</span>. </p>
     </div>
-
+    
 </section>

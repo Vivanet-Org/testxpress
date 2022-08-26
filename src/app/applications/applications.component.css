@@ -26,7 +26,7 @@
   font: normal normal 400 14px Lato, sans-serif;
   color: #232324;
   padding-left: 5px;
-  padding-top: 15px;
+  padding-top: 20px;
 }
 
 .appCardHeading {
@@ -105,10 +105,11 @@
   font: normal normal 400 14px Lato, sans-serif;
 }
 
-.appLabel {
+.appImgLabel {
   font: normal normal 700 20px Lato, sans-serif;
   color: #232324;
   margin-left: 42px;
+  padding-top: 5px;
   width: 111px;
   height: 28px;
 }
@@ -153,6 +154,7 @@
   border: none;
   border-radius: 2px;
   margin-right: 54px;
+  margin-top: -30px;
 }
 
 .createAppBtn:hover {
@@ -169,8 +171,8 @@
   margin-left: 50px;
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
-  height: 24px;
   width: 89px;
+  height: 24px;
 }
 
 .projectsDropdown {

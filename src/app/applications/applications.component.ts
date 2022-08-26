@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class ApplicationsComponent implements OnInit {
   
+  @ViewChild('projectsDropdown') projectsDropdown!: ElementRef;
   @ViewChild('createNewApplicationForm') createNewApplicationForm : any;
 
   clickEventSubscription: Subscription;
@@ -106,6 +107,7 @@ export class ApplicationsComponent implements OnInit {
     this.duplicateFlag = false;
     this.deleteId = null;
     this.deleteFlag = false;
+    this.projectsDropdown.nativeElement.value = "All Applications";
   }
 
   projectIdName: any = [];
@@ -141,6 +143,7 @@ export class ApplicationsComponent implements OnInit {
     console.log(this.appUiData);
 
     if(this.projectID == null || this.selectedProjectValue == "All Applications"){
+      console.log("Search edit");
       this.appUiData = [];
       this.user.getApplicationsData().subscribe((data) => {
         this.appData = data;
@@ -194,6 +197,8 @@ export class ApplicationsComponent implements OnInit {
     console.log(this.selectedLevel);
   }
   getprojectId() {
+    console.log(this.selectedLevel);
+    console.log(this.selectedProjectValue);
     if (this.selectedLevel != '' || this.selectedProjectValue != '') {
       this.user.getProjectIdProjectName().subscribe((data) => {
         this.projectData1 = data;
@@ -202,6 +207,8 @@ export class ApplicationsComponent implements OnInit {
           if (this.projectData1[index].projectname == this.selectedLevel || this.projectData1[index].projectname == this.selectedProjectValue) {
             this.projectID = this.projectData1[index].projectid;
             console.log(this.projectID);
+            this.selectedProjectValue = '';
+            this.selectedLevel = '';
             if(this.isSelectedproject){
               this.loadApplicationData();
               this.isSelectedproject = false;              
@@ -212,7 +219,7 @@ export class ApplicationsComponent implements OnInit {
       });
     }
   }
-
+  
   appData1: any = {};
   projectData1: any = {};
   createFlag: boolean = false;
@@ -299,6 +306,8 @@ export class ApplicationsComponent implements OnInit {
         console.log(this.updatedFormData);
         this.user.updateApplication(id, this.updatedFormData).subscribe((data) => {
           console.log(data);
+          this.updatedFormData = [];
+          this.selectedProjectValue = "All Applications";
           this.loadApplicationData();
           this.projectID = null;
         });
@@ -344,6 +353,8 @@ export class ApplicationsComponent implements OnInit {
         }
         this.user.createApplication(this.duplicateData).subscribe(data => {
           console.log(data);
+          this.duplicateData = [];
+          this.selectedProjectValue = "All Applications";
           this.loadApplicationData();
           this.projectID = null;
         });

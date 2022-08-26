@@ -17,7 +17,7 @@ export class UsersService {
 
   constructor(private http: HttpClient) { }
 
-  serverlesUrl : string = "http://localhost:8080";
+  serverlesUrl : string = "http://localhost:8090";
   //serverlesUrl : string = "https://zew9dv8n6g.execute-api.ap-south-1.amazonaws.com/QA";
 
   // Project functions start
@@ -68,7 +68,7 @@ export class UsersService {
     let searchUrl = this.serverlesUrl + "/application/searchApplications/" + projectId;
     return this.http.get(searchUrl);
   }
-
+  
   // Application functions end
    
 }
