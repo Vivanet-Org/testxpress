@@ -88,10 +88,7 @@ export class CardComponent implements OnInit{
   searchdValue: string = '';
   searchdValueDisplay: string = '';
   searchFlag: boolean = true;
-  searchString(event: any){
-    this.searchdValue = event.target.value;
-    console.log(this.searchdValue);
-  }
+  errorFlag: boolean = true;
 
   searchData(){
     this.searchFlag = true;
@@ -99,14 +96,17 @@ export class CardComponent implements OnInit{
     if(this.searchdValue != ''){
       this.loadProjectData();
     } else{
-      alert("You must enter at least one character.");  
-      this.loadProjectData();    
+      // alert("You must enter at least one character.");
+      this.errorFlag = false;
+      // this.loadProjectData();    
     }
   }
 
   loadProjectData(){
     
     this.searchFlag = true;
+    this.errorFlag = true;
+
     console.log(this.searchdValue);
 
     if(this.searchdValue == ''){
