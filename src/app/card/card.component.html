@@ -10,8 +10,12 @@
                     <option value="" selected>All Platform</option>
                     <option value="manual">Manual</option>
                 </select>
-                    <input class="search-style" type="text" placeholder="Search" name="search" (change)="searchString($event)" #searchField >
+                    <!-- <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (change)="searchString($event)" #searchField > -->
+                    <!-- <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" /> -->
+
+                    <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (keyup.enter)="searchData()" [(ngModel)]="searchdValue" #searchField >
                     <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" />
+                    <!-- <p>{{ searchdValue }}</p> -->
                 <button class="createButton" (click)="openModal()">Create Project</button>
             </div>
         </div>
@@ -19,7 +23,7 @@
 </div>
 
 <section class="card-home">
-    <div class="grid-container" *ngIf="searchFlag">
+    <div class="grid-container" *ngIf="searchFlag && errorFlag">
         <div *ngFor="let teProjectsData of uiData">
             <div class="grid-item" >
                 <div>
@@ -203,5 +207,7 @@
     <div class="dataNotFound" *ngIf="!searchFlag">
         <p>Sorry, your search data <span style="color: #3E38D5;"> "{{searchdValueDisplay}}" </span> was not found.</p>
     </div>
-    
+    <div class="dataNotFound" *ngIf="!errorFlag">
+        <p style="color: #3E38D5;">You must enter at least one character.</p>
+    </div>
 </section>
