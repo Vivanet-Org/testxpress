@@ -10,12 +10,8 @@
                     <option value="" selected>All Platform</option>
                     <option value="manual">Manual</option>
                 </select>
-                    <!-- <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (change)="searchString($event)" #searchField > -->
-                    <!-- <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" /> -->
-
-                    <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (keyup.enter)="searchData()" [(ngModel)]="searchdValue" #searchField >
-                    <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" />
-                    <!-- <p>{{ searchdValue }}</p> -->
+                <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (keyup.enter)="searchData()" [(ngModel)]="searchdValue" #searchField >
+                <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" />
                 <button class="createButton" (click)="openModal()">Create Project</button>
             </div>
         </div>
@@ -27,9 +23,6 @@
         <div *ngFor="let teProjectsData of uiData">
             <div class="grid-item" >
                 <div>
-                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-                        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
-                        crossorigin="anonymous" referrerpolicy="no-referrer" />
                     <div class="dots">
                         <img class="moreImg" [src] ="moreImgPath" alt="more Image" (click)="openTaskMenu(teProjectsData.projectid)" />
                         <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">

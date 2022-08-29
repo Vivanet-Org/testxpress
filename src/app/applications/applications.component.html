@@ -71,9 +71,8 @@
                                 </div>
                                 <div>
                                     <label class="appDetails">Project Name</label><br>
-                                    <select class="createProjectsDropdown" (change)="selected($event)">
-                                        <option value="">Select Project</option>
-                                        <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
+                                    <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
+                                        <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
                                             {{teProjectsName.projectname}}
                                         </option>
                                     </select>
@@ -114,9 +113,8 @@
                                 </div>
                                 <div>
                                     <label class="appDetails">Project Name</label><br>
-                                    <select class="createProjectsDropdown" (change)="selected($event)">
-                                        <option value="">Select Project</option>
-                                        <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
+                                    <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
+                                        <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
                                             {{teProjectsName.projectname}}
                                         </option>
                                     </select>
