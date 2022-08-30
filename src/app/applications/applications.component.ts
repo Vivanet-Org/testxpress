@@ -16,12 +16,15 @@ export class ApplicationsComponent implements OnInit {
   clickEventSubscription: Subscription;
 
   appsImgPath: string = '/assets/images/apps.png';
-  androidPath: string = '/assets/images/android.png';
   appImgPath: string = '/assets/images/applications.png';
   desktopImgPath: string = '/assets/images/destop.png';
   moreImgPath: string = '/assets/images/more.png';
   closeImgPath: string = '/assets/images/close.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
+  webImgPath: string = '/assets/images/web.png';  
+  appleImgPath: string = '/assets/images/apple.png';
+  desktopGreyImgPath: string = '/assets/images/desktop-grey.png';
+  andriodImagePath: string = '/assets/images/android.png';
 
   constructor(private user: UsersService) {
     this.clickEventSubscription = this.user.getClickEvent().subscribe(() => {
