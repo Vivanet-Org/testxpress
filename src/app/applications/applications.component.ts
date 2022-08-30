@@ -51,6 +51,9 @@ export class ApplicationsComponent implements OnInit {
   appTaskMenuId: any = null;
   appTaskMenuFlag = true;
   openAppTaskMenu(id: any) {
+
+    this.defaultSelect(id);
+
     this.appTaskMenuId = id;
     console.log(id);
     console.log(this.appTaskMenuId);
@@ -80,6 +83,32 @@ export class ApplicationsComponent implements OnInit {
     this.openAppTaskMenu((this.appTaskMenuId = null));
     this.appTaskMenuFlag = true;
   }
+
+  defaultValue: any = [];
+  defaultProjectId: any = null;
+  defaultProjectName: any = '';
+  defaultSelect(id: any){
+    for (let index = 0; index < this.appUiData.length; index++) {
+      if (this.appUiData[index].appid == id) {
+        this.defaultProjectId = this.appUiData[index].projectID;
+        console.log(this.defaultProjectId);
+        break;
+      }
+    }
+    console.log(this.defaultProjectId);
+
+    for (let index = 0; index < this.projectIdName.length; index++) {
+      if (this.projectIdName[index].projectid == this.defaultProjectId) {
+        this.defaultProjectName = this.projectIdName[index].projectname;
+        console.log(this.defaultProjectName);
+        this.defaultValue = this.defaultProjectName;
+        break;
+      }
+    }
+    console.log(this.defaultProjectName);
+  }
+  
+
 
   duplicateId: any = null;
   duplicateFlag: any = false;
@@ -156,9 +185,6 @@ export class ApplicationsComponent implements OnInit {
         this.appData = data;
         this.filterAppData();
         if(this.appUiData.length == 0 ){
-          // this.filterAppData();
-        //   this.selectedProjectValue = "All Applications";
-        // } else{
           this.searchFlag = false;
           this.selectedProjectValue = "All Applications";
           this.projectID = null;
@@ -193,7 +219,7 @@ export class ApplicationsComponent implements OnInit {
   selectedLevel: string = '';
   projectID = null;
   selected(event: any) {
-    this.selectedLevel = event.target.value;
+    this.selectedLevel = event.target.value.slice(3);
     console.log(this.selectedLevel);
   }
   getprojectId() {
@@ -203,7 +229,6 @@ export class ApplicationsComponent implements OnInit {
       this.user.getProjectIdProjectName().subscribe((data) => {
         this.projectData1 = data;
         for (let index = 0; index < this.projectData1.length; index++) {
-          // console.log(this.projectData1[index].projectname);
           if (this.projectData1[index].projectname == this.selectedLevel || this.projectData1[index].projectname == this.selectedProjectValue) {
             this.projectID = this.projectData1[index].projectid;
             console.log(this.projectID);
