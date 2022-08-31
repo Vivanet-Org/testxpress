@@ -42,8 +42,14 @@
                     </div>
 
                     <div class="girdFooter">
+                        <div class="icon-bar">
+                            <a href="#"><img class="webImg footerImg" [src] ="webImgPath" alt="web Image" /></a>
+                            <a href="#"><img class="appleImg footerImg" [src] ="appleImgPath" alt="apple Image" /></a>
+                            <a href="#"><img class="androidImg footerImg" [src] ="andriodImagePath" alt="Android Image" /></a>
+                            <a href="#"><img class="desktopGreyImg footerImg" [src] ="desktopGreyImgPath" alt="desktopGrey Image" /></a>
+                        </div>
                             <div class="appCardDetails">
-                                <label class="appCardDetails">3 Releases &nbsp;&nbsp; 8 Test Plans</label>
+                                <label class="appCardDetails">3 Releases &nbsp; 8 Test Plans</label>
                             </div>
                     </div>
                 </div>
@@ -59,15 +65,15 @@
                                 <label class="editAppHeading">Edit Application</label>
                                 <hr class="hrStyleEdd">
                                 <div class="form-control">
-                                    <label class="popupAppDetails">Application Name</label>
-                                    <label *ngIf="uname.errors?.['minlength'] || (updateApplicationForm.controls['appName']?.touched && updateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
-                                        Application Name must be at least 1 character long.
-                                    </label>
-                                    <label *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                        Application Name maximum of 25 characters only.
-                                    </label><br />
+                                    <label class="popupAppDetails">Application Name</label><br />
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel="{{ teAppData.appName }}" maxlength="25" minlength="1" />
+                                    <p *ngIf="uname.errors?.['minlength'] || (updateApplicationForm.controls['appName']?.touched && updateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
+                                        Application Name must be at least 1 character long.
+                                    </p>
+                                    <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                        Application Name maximum of 25 characters only.
+                                    </p>
                                 </div>
                                 <div>
                                     <label class="appDetails">Project Name</label><br>
@@ -101,15 +107,15 @@
                                 <label class="duplicateAppHeading">Duplicate Application</label>
                                 <hr class="hrStyleEdd">
                                 <div class="form-control">
-                                    <label class="popupAppDetails">Application Name</label>
-                                    <label *ngIf="uname.errors?.['minlength'] || (duplicateApplicationForm.controls['appName']?.touched && duplicateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
-                                        Application Name must be at least 1 character long.
-                                    </label>
-                                    <label *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                        Application Name maximum of 25 characters only.
-                                    </label><br />
+                                    <label class="popupAppDetails">Application Name</label><br />
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel= "{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
+                                    <p *ngIf="uname.errors?.['minlength'] || (duplicateApplicationForm.controls['appName']?.touched && duplicateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
+                                        Application Name must be at least 1 character long.
+                                    </p>
+                                    <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                        Application Name maximum of 25 characters only.
+                                    </p>
                                 </div>
                                 <div>
                                     <label class="appDetails">Project Name</label><br>
@@ -166,15 +172,15 @@
                         <p class="createAppHeading">Create new Application</p>
                         <hr class="hrStyle">
                         <div>
-                            <label class="appDetails">Application Name</label>
-                            <label *ngIf="uname.errors?.['minlength'] || (createNewApplicationForm.controls['appName']?.touched && createNewApplicationForm.controls['appName']?.invalid)" class="errorMessage">
-                                Application Name must be at least 1 character long.
-                            </label>
-                            <label *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                Application Name maximum of 25 characters only.
-                            </label><br />
+                            <label class="appDetails">Application Name</label><br>
                             <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel" 
                             placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" #appName />
+                            <p *ngIf="uname.errors?.['minlength'] || (createNewApplicationForm.controls['appName']?.touched && createNewApplicationForm.controls['appName']?.invalid)" class="errorMessage">
+                                Application Name must be at least 1 character long.
+                            </p>
+                            <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                Application Name maximum of 25 characters only.
+                            </p>
                         </div>
                         <div>
                             <label class="appDetails">Project Name</label><br>

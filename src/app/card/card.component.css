@@ -211,7 +211,8 @@
 .duplicateModal,
 .deleteModal,
 .membersModal {
-  background-color: rgba(0, 0, 0, 0.8);
+  /* background-color: rgba(0, 0, 0, 0.8); */
+  background-color: rgba(95, 95, 95, 0.354);
   backface-visibility: hidden;
   width: 100%;
   height: 100%;
@@ -226,7 +227,7 @@
 .edit-modal-contents,
 .duplicate-modal-contents {
   width: 522px;
-  height: 288px;
+  /* height: 288px; */
   background-color: white;
   padding: 20px;
   position: relative;

@@ -15,7 +15,6 @@ body {
   background-color: white;
   border: 1px solid rgb(199, 199, 199);
   padding: 10px;
-  /* font-size: 20px; */
   text-align: Top-right;
 }
 .dots,
@@ -31,9 +30,9 @@ body {
 .dots .task-menu,
 .app-dots .app-task-menu {
   position: absolute;
-  padding: 10px;
   right: 0px;
-  /* bottom: -100px; */
+  padding-left: 15px;
+  padding-top: 5px;
   z-index: 2;
   transform: scale(0);
   border-radius: 2px;
@@ -41,21 +40,21 @@ body {
   transform-origin: top right;
   transition: transform 0.2s ease;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  width: 91px;
+  height: 96px;
 }
 .task-menu .menuItems,
 .app-task-menu .menuItems {
-  /* width: 91px;
-  height: 96px; */
-  /* height: 25px; */
-  margin-bottom: 2px;
-  justify-content: flex-start;
+  width: 48px;
+  height: 32px;
+  gap: 10px;
   font: normal normal 400 14px Lato, sans-serif;
+  line-height: 22px;
 }
 .menuEdit:hover,
 .menuDuplicate:hover,
 .menuDelete:hover {
   color: #3E38D5;
-  background-color: #F6F6F9;
 }
 .close {
   position: absolute;
@@ -121,11 +120,11 @@ body {
   border: none;
   border-radius: 2px;
   align-items: center;
-  /* margin-top: -5px; */
 }
 .errorMessage{
   color: red;
   font: normal normal 600 12px Lato, sans-serif;
+  margin-bottom: 5px;
 }
 
 .dataNotFound,
