@@ -57,15 +57,12 @@
                 <!-- Edit popup start -->
                 <div class="edit-app-modal" *ngIf="teAppData.appid === editId && editFlag">
                     <div class="edit-modal-contents">
-                
-                        <div class="close">
-                            <img class="closeEdit" [src] ="closeImgPath" alt="close Image"  (click)="closeEditDuplicateDeletePopup()" />
-                        </div>
+                        <img class="closeEdit" [src] ="closeImgPath" alt="close Image"  (click)="closeEditDuplicateDeletePopup()" />
                         <form #updateApplicationForm="ngForm" (submit)="updateExistingApplication(updateApplicationForm, teAppData.appid)">
-                                <label class="editAppHeading">Edit Application</label>
+                                <p class="editAppHeading">Edit Application</p>
                                 <hr class="hrStyleEdd">
                                 <div class="form-control">
-                                    <label class="popupAppDetails">Application Name</label><br />
+                                    <p class="popupAppDetails"><span class="mandatoryField">*</span> Application Name</p>
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel="{{ teAppData.appName }}" maxlength="25" minlength="1" />
                                     <p *ngIf="uname.errors?.['minlength'] || (updateApplicationForm.controls['appName']?.touched && updateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
@@ -99,15 +96,12 @@
                 <!-- duplicate popup start -->
                 <div class="duplicate-app-modal" *ngIf="teAppData.appid === duplicateId && duplicateFlag">
                     <div class="duplicate-modal-contents">
-                
-                        <div class="close">
-                            <img class="closeDuplicate" [src] ="closeImgPath" alt="close Image"  (click)="closeEditDuplicateDeletePopup()" />
-                        </div>
+                        <img class="closeDuplicate" [src] ="closeImgPath" alt="close Image"  (click)="closeEditDuplicateDeletePopup()" />
                         <form #duplicateApplicationForm="ngForm" (submit)="duplicateApplication(duplicateApplicationForm, teAppData.appid)">
-                                <label class="duplicateAppHeading">Duplicate Application</label>
+                                <p class="duplicateAppHeading">Duplicate Application</p>
                                 <hr class="hrStyleEdd">
                                 <div class="form-control">
-                                    <label class="popupAppDetails">Application Name</label><br />
+                                    <label class="popupAppDetails"><span class="mandatoryField">*</span> Application Name</label><br />
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel= "{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
                                     <p *ngIf="uname.errors?.['minlength'] || (duplicateApplicationForm.controls['appName']?.touched && duplicateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
@@ -141,12 +135,12 @@
                 <!-- Delete popup Start -->
                 <div class="delete-app-modal" *ngIf="teAppData.appid === deleteId && deleteFlag">
                     <div class="delete-modal-contents">
-                        <label class="deleteAppHeading">
+                        <div class="deleteAppHeadingAlign">
                             <p class="deleteIconAlign">
                                 <img [src] ="deleteRedImagePath" alt="close Image" class="deleteIcon"/>
                             </p>                        
-                            Do you want to delete this Application?
-                        </label>
+                            <p class="deleteAppHeading"> Do you want to delete this Application? </p>
+                        </div>
                         <div>
                             <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>
                         </div>
@@ -164,15 +158,12 @@
         <!-- Create Application Popup Start -->
         <div class="create-app-modal">
             <div class="create-modal-contents">
-        
-                <div class="close">
-                    <img class="closeModel" [src] ="closeImgPath" alt="close Image"  (click)="closeModal()" />
-                </div>
+                <img class="closeModel" [src] ="closeImgPath" alt="close Image"  (click)="closeModal()" />
                 <form #createNewApplicationForm="ngForm" (submit)="createNewApplication(createNewApplicationForm)">
                         <p class="createAppHeading">Create new Application</p>
                         <hr class="hrStyle">
                         <div>
-                            <label class="appDetails">Application Name</label><br>
+                            <p class="appDetails"><span class="mandatoryField">*</span> Application Name</p>
                             <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel" 
                             placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" #appName />
                             <p *ngIf="uname.errors?.['minlength'] || (createNewApplicationForm.controls['appName']?.touched && createNewApplicationForm.controls['appName']?.invalid)" class="errorMessage">

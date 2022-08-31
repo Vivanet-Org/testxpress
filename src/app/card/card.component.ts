@@ -17,7 +17,6 @@ export class CardComponent implements OnInit{
   andriodImagePath: string = '/assets/images/android.png';
   deleteImagePath: string = '/assets/images/delete.png';
   closeImagePath: string = '/assets/images/close.png';
-  // buttonCloseImagePath: string = '/assets/images/close.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
   moreImgPath: string = '/assets/images/more.png';
   webImgPath: string = '/assets/images/web.png';  

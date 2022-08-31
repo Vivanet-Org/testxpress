@@ -1,26 +1,23 @@
 <div class="bg-modal">
     <div class="modal-contents">
-
-        <div class="close">
-            <img class="closeModel" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
-        </div>
+        <img class="closeModel" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
         <form #createNewProjectForm="ngForm" (submit)="createNewProject(createNewProjectForm)">
-                <label class="projectHeading"><strong>Create a new Project</strong></label>
+                <p class="projectHeading">Create a new Project</p>
                 <hr class="hrStyle">
                 <div class="form-control">
-                    <label class="projectDetails">Project Name</label>
+                    <p class="projectDetails"><span class="mandatoryField">*</span> Project Name</p>
                     <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                     placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
                     <p *ngIf="uname.errors?.['minlength'] || (createNewProjectForm.controls['projectName']?.touched && createNewProjectForm.controls['projectName']?.invalid)" class="errorMessage">
-                        Application Name must be at least 1 character long.
+                        Project Name must be at least 1 character long.
                     </p>
                     <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                        Application Name maximum of 25 characters only.
+                        Project Name maximum of 25 characters only.
                     </p>
                 </div>
                 <div class="control">
                     <label class="projectDetails">Description</label><br />
-                    <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
+                    <textarea type="text" name="projectDescription" class="textareaStyles" id="Description"
                     placeholder="Enter Project Description" ngModel maxlength="150" minlength="1" > </textarea>
                 </div>
                 <hr class="hrStyle">
