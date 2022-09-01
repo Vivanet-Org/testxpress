@@ -69,15 +69,12 @@
             <!-- Edit popup start -->
             <div class="editModal" *ngIf="teProjectsData.projectid === editId && editFlag">
                 <div class="edit-modal-contents">
-            
-                    <div class="close">
-                        <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
-                    </div>
+                    <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
                     <form #updateProjectForm="ngForm" (submit)="updateExistingProject(updateProjectForm, teProjectsData.projectid)">
-                            <label class="projectHeading">Edit {{ teProjectsData.projectName }}</label>
-                            <hr class="hrStyle">
+                            <p class="editprojectHeading">Edit {{ teProjectsData.projectName }}</p>
+                            <hr class="hrStyle" style="margin-bottom: 20px;">
                             <div class="form-control">
-                                <label class="popupProjectDetails">Project Name</label>
+                                <p class="popupProjectDetails"><span class="mandatoryField">*</span> Project Name</p>
                                 <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                                  required ngModel="{{ teProjectsData.projectName }}" maxlength="25" minlength="1" />
                                  <p *ngIf="uname.errors?.['minlength'] || (updateProjectForm.controls['projectName']?.touched && updateProjectForm.controls['projectName']?.invalid)" class="errorMessage">
@@ -87,11 +84,9 @@
                                     Project Name maximum of 25 characters only.
                                 </p>
                             </div>
-                            <div class="control">
-                                <label class="popupProjectDetails">Description</label><br />
+                                <p class="popupProjectDetails">Description</p>
                                 <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
                                  ngModel="{{ teProjectsData.projectDescription }}" maxlength="150" minlength="1"> </textarea>
-                            </div>
                             <hr class="hrStyle">
                             <button class="btnCreate" [disabled]="!updateProjectForm.valid">Save</button>
                     </form>
@@ -103,31 +98,26 @@
             <!-- Duplicate popup Start -->
             <div class="duplicateModal" *ngIf="teProjectsData.projectid === editId && duplicateFlag">
                 <div class="duplicate-modal-contents">
-            
-                    <div class="close">
-                        <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
-                    </div>
+                    <img class="closeEdit" [src] ="closeImagePath" alt="close Image"  (click)="closeModal()" />
                     <form #duplicateProjectForm="ngForm" (submit)="duplicateProject(duplicateProjectForm, teProjectsData.projectid)">
-                            <label class="projectHeading">Duplicate Project</label>
-                            <hr class="hrStyle">
-                            <div class="form-control">
-                                <label class="popupProjectDetails">Project Name</label>
-                                <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
-                                required ngModel="{{ teProjectsData.projectName }}_copy" maxlength="25" minlength="1" />
-                                <p *ngIf="uname.errors?.['minlength'] || (duplicateProjectForm.controls['projectName']?.touched && duplicateProjectForm.controls['projectName']?.invalid)" class="errorMessage">
-                                    Project Name must be at least 1 character long.
-                                </p>
-                                <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                    Project Name maximum of 25 characters only.
-                                </p>
-                            </div>
-                            <div class="control">
-                                <label class="popupProjectDetails">Description</label><br />
-                                <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
-                                ngModel="{{ teProjectsData.projectDescription }}" maxlength="150" minlength="1"> </textarea>
-                            </div>
-                            <hr class="hrStyle">
-                            <button class="btnDuplicate" [disabled]="!duplicateProjectForm.valid">Duplicate</button>
+                        <p class="duplicateprojectHeading">Duplicate Project</p>
+                        <hr class="hrStyle" style="margin-bottom: 20px;">
+                        <div class="form-control">
+                            <p class="popupProjectDetails"><span class="mandatoryField">*</span> Project Name</p>
+                            <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
+                            required ngModel="{{ teProjectsData.projectName }}_copy" maxlength="25" minlength="1" />
+                            <p *ngIf="uname.errors?.['minlength'] || (duplicateProjectForm.controls['projectName']?.touched && duplicateProjectForm.controls['projectName']?.invalid)" class="errorMessage">
+                                Project Name must be at least 1 character long.
+                            </p>
+                            <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                Project Name maximum of 25 characters only.
+                            </p>
+                        </div>
+                            <p class="popupProjectDetails">Description</p>
+                            <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
+                            ngModel="{{ teProjectsData.projectDescription }}" maxlength="150" minlength="1"> </textarea>
+                        <hr class="hrStyle">
+                        <button class="btnDuplicate" [disabled]="!duplicateProjectForm.valid">Duplicate</button>
                     </form>
                     <button class="btnClose" (click)="closeModal()">Cancel</button>
                 </div>
@@ -137,12 +127,12 @@
             <!-- Delete popup Start -->
             <div class="deleteModal" *ngIf="teProjectsData.projectid === editId && deleteFlag">
                 <div class="delete-modal-contents">
-                    <label class="deleteProjectHeading">
+                    <div class="deleteProjectHeadingAlign">
                         <p class="deleteIconAlign">
                             <img [src] ="deleteRedImagePath" alt="close Image" class="deleteIcon"/>
                         </p>                        
-                        Do you Want to delete these items?
-                    </label>
+                        <p class="deleteProjectHeading">Do you Want to delete these items?</p>
+                    </div>
                     <div>
                         <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>
                     </div>
@@ -156,39 +146,36 @@
             <!-- Manage members popup start -->
             <div class="membersModal" *ngIf="teProjectsData.projectid === membersId && membersFlag">
                 <div class="members-modal-contents">
-            
-                    <div class="close">
-                        <img [src] ="closeImagePath" alt="close Image" class="members-close" (click)="closeModal()" />
-                    </div>
+                    <img [src] ="closeImagePath" alt="close Image" class="members-close" (click)="closeModal()" />
                     <form #updateProjectForm="ngForm" (submit)="manageMembers(updateProjectForm, teProjectsData.projectid)">
-                            <label class="membersProjectHeading"><strong>Manage Member</strong></label>
-                            <hr class="hrStyle">
-                            <div class="form-control">
-                                <label class="manageMembersDetails">Email <span style="color: #F5222D;">*</span></label><br>
+                        <p class="membersProjectHeading"><strong>Manage Member</strong></p>
+                        <hr class="hrStyle">
+                        <div class="form-control">
+                            <p class="manageMembersDetails">Email <span style="color: #F5222D;">*</span></p>
 
-                                 <div class="members-inputStyles">
-                                     <button class="members-mail"> Jerome Bell <img [src] ="closeImagePath" alt="close Image" class="button-close"/></button>
-                                     <button class="members-mail"> Kathryn Murphy <img [src] ="closeImagePath" alt="close Image" class="button-close"/></button>
-                                 </div>
-
-                                 <button class="membersSend" [disabled]="!updateProjectForm.valid">Send Invite</button>
-                                 
-                            </div><br>
-                            <div class="control">
-                                <label class="members-content">Manage Member</label><br />
-                                <div *ngFor="let manageMembers of manageMembersData">
-                                    <div class="members-group" *ngIf="!manageMembers.memberIsDeleted">
-                                        <img class="members" src={{manageMembers.memberImg}} alt="Image" />
-                                        <label class="members-font">{{manageMembers.memberName}}</label>
-                                        <label class="members-email">{{manageMembers.memberEmail}}</label>
-                                        <label class="members-email">{{manageMembers.memberRole}}</label>
-                                        <img [src] ="deleteImagePath" alt="delete Image" class="members-deleteIcon" (click)="deleteManageMembersData(manageMembers.memberId)" />
-                                    </div>
-                                    <hr *ngIf="!manageMembers.memberIsDeleted && manageMembers.memberId != manageMembersLastId" />
+                                <div class="members-inputStyles">
+                                    <button class="members-mail"> Jerome Bell <img [src] ="closeImagePath" alt="close Image" class="button-close"/></button>
+                                    <button class="members-mail"> Kathryn Murphy <img [src] ="closeImagePath" alt="close Image" class="button-close"/></button>
                                 </div>
-            
+
+                                <button class="membersSend" [disabled]="!updateProjectForm.valid">Send Invite</button>
+                                
+                        </div>
+                        <div class="control">
+                            <p class="members-content">Manage Member</p>
+                            <div *ngFor="let manageMembers of manageMembersData">
+                                <div class="members-group" *ngIf="!manageMembers.memberIsDeleted">
+                                    <img class="members" src={{manageMembers.memberImg}} alt="Image" />
+                                    <label class="members-font">{{manageMembers.memberName}}</label>
+                                    <label class="members-email">{{manageMembers.memberEmail}}</label>
+                                    <label class="members-email">{{manageMembers.memberRole}}</label>
+                                    <img [src] ="deleteImagePath" alt="delete Image" class="members-deleteIcon" (click)="deleteManageMembersData(manageMembers.memberId)" />
+                                </div>
+                                <hr *ngIf="!manageMembers.memberIsDeleted && manageMembers.memberId != manageMembersLastId" class="membersHrStyle" />
                             </div>
-                            
+        
+                        </div>
+                        
                     </form>
                 </div>
             </div>

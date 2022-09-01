@@ -169,10 +169,26 @@
 /*end avatar*/
 
 .projectHeading,
+.editprojectHeading,
+.duplicateprojectHeading,
 .deleteProjectHeading,
 .membersProjectHeading {
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
+}
+.editprojectHeading,
+.duplicateprojectHeading,
+.membersProjectHeading{
+  margin-top: 16px;
+  margin-left: 24px;
+  margin-bottom: 16px;
+}
+.deleteProjectHeading{
+  padding-top: 4px;
+}
+.deleteProjectHeadingAlign{
+  margin-top: 24px;
+  margin-left: 24px;
 }
 .girdFooter {
   background-color: #f6f6f9;
@@ -185,15 +201,16 @@
   width: 474px;
   height: 32px;
   border: 1px solid gray;
-  margin-top: 10px;
   margin-bottom: 10px;
   font: normal normal 400 14px Lato, sans-serif;
   padding-left: 10px;
   border-radius: 2px;
   color: #525156;
+
+  margin-left: 24px;
+  box-sizing: border-box;
 }
 .textareaStyles {
-  margin-top: 10px;
   width: 474px;
   height: 32px;
   border: 1px solid gray;
@@ -203,6 +220,12 @@
   border-radius: 2px;
   resize: none;
   color: #525156;
+
+  margin-left: 24px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 26px;
+
 }
 
 /* Edit, Duplicate and Delete popup start */
@@ -211,7 +234,6 @@
 .duplicateModal,
 .deleteModal,
 .membersModal {
-  /* background-color: rgba(0, 0, 0, 0.8); */
   background-color: rgba(95, 95, 95, 0.354);
   backface-visibility: hidden;
   width: 100%;
@@ -227,22 +249,19 @@
 .edit-modal-contents,
 .duplicate-modal-contents {
   width: 522px;
-  /* height: 288px; */
   background-color: white;
-  padding: 20px;
   position: relative;
   border-radius: 2px;
 }
 .hrStyle {
-  margin-top: 18px;
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 .popupProjectDetails {
   font: normal normal 400 14px Lato, sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #232324;
+  margin-left: 24px;
+  margin-top: 10px;
 }
 .textareaStylesCard {
   margin-top: 5px;
@@ -267,6 +286,9 @@
   border: none;
   border-radius: 2px;
   align-items: center;
+  margin-right: 16px;
+  margin-bottom: 10px;
+
 }
 .btnDuplicate {
   float: right;
@@ -279,6 +301,9 @@
   border: none;
   border-radius: 2px;
   align-items: center;
+
+  margin-right: 16px;
+  margin-bottom: 10px;
 }
 .btnDelete {
   width: 53px;
@@ -289,7 +314,6 @@
 .members-modal-contents {
   width: 522px;
   background-color: #ffffff;
-  padding: 20px;
   position: relative;
   border-radius: 2px;
   overflow: auto;
@@ -298,12 +322,16 @@
   width: 357px;
   height: 32px;
   border: 1px solid gray;
-  margin-top: 10px;
-  margin-bottom: 10px;
   font: normal normal 18px Lato, sans-serif;
-  padding-left: 10px;
   border-radius: 2px;
   float: left;
+
+  margin-left: 24px;
+  box-sizing: border-box;
+  padding-left: 3px;
+  padding-top: 3px;
+
+
 }
 .members-mail {
   padding-left: 5px;
@@ -325,19 +353,22 @@
   width: 101px;
   height: 32px;
   margin-top: 10px;
-  margin-left: 370px;
+  margin-left: 385px;
 }
 .members-content {
   font: normal normal 400 14px Lato, sans-serif;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   color: #232324;
+  margin-top: 24px;
+  margin-left: 24px;
 }
 .members-group {
-  width: 100%;
-  margin-top: 5px;
+  width: 90%;
   display: grid;
   grid-template-columns: 10% 30% 40% 15% 5%;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0px 15px 0px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .members {
   width: 32px;
@@ -362,12 +393,15 @@
   cursor: pointer;
   width: 16px;
 }
-.members-close {
-  cursor: pointer;
-  width: 18px;
-}
+
 .manageMembersDetails {
   font: normal normal 400 14px Lato, sans-serif;
   margin-bottom: 10px;
   color: #232324;
+  margin-top: 24px;
+  margin-left: 24px;
+}
+.membersHrStyle{
+  margin-left: 24px;
+  margin-right: 24px;
 }

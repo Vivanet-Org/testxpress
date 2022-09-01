@@ -13,33 +13,30 @@
   align-items: center;
 }
 .modal-contents {
-  /* height: 288px; */
   width: 522px;
   background-color: white;
-  padding: 20px;
   position: relative;
   border-radius: 2px;
 }
 .inputStyles {
-  width: 462px;
+  width: 474px;
   height: 32px;
   border: 1px solid gray;
-  margin-top: 10px;
   margin-bottom: 10px;
   font: normal normal 400 14px Lato, sans-serif;
   color: #525156;
+  margin-left: 24px;
+  box-sizing: border-box;
   padding-left: 10px;
 }
-.close {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 42px;
-  cursor: pointer;
-  margin-right: 10px;
+.errorMessage{
+  margin-left: 24px;
 }
 .closeModel {
   width: 18px;
+  float: right;
+  margin-top: 16px;
+  margin-right: 24px;
 }
 .closeModel:hover {
   cursor: pointer;
@@ -47,30 +44,32 @@
 .projectHeading {
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
-  /* text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);  */
+  margin-top: 16px;
+  margin-left: 24px;
+  margin-bottom: 16px;
 }
 .hrStyle {
-  margin-top: 20px;
-  margin-left: -20px;
-  margin-right: -20px;
-  margin-bottom: 20px;
+  margin-top: 16px;
+  margin-bottom: 10px;
 }
 .projectDetails {
   font: normal normal 400 14px Lato, sans-serif;
-  margin-bottom: 10px;
   color: #232324;
+  margin-left: 24px;
 }
 .textareaStyles {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-left: 24px;
   width: 474px;
-  height: 26px;
+  height: 32px;
   border: 1px solid gray;
   font: normal normal 400 14px Lato, sans-serif;
   resize: none;
   color: #525156;
+
+  box-sizing: border-box;
   padding-left: 10px;
-  padding-top: 8px;
+  padding-top: 7px;
 }
 .btnClose {
   float: right;
@@ -86,6 +85,8 @@
 .btnCreate {
   float: right;
   margin-left: 10px;
+  margin-right: 16px;
+  margin-bottom: 10px;
   width: 73px;
   height: 32px;
   font: normal normal 400 14px Lato, sans-serif;

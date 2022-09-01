@@ -20,12 +20,12 @@ body {
 .dots,
 .app-dots {
   float: right;
-  cursor: pointer;
   position: relative;
 }
 .moreImg,
 .appMoreImg {
   width: 24px;
+  cursor: pointer;
 }
 .dots .task-menu,
 .app-dots .app-task-menu {
@@ -55,6 +55,7 @@ body {
 .menuDuplicate:hover,
 .menuDelete:hover {
   color: #3E38D5;
+  cursor: pointer;
 }
 .close {
   position: absolute;
@@ -63,10 +64,14 @@ body {
 }
 .closeEdit,
 .closeModel,
-.closeDuplicate {
+.closeDuplicate,
+.members-close {
   width: 18px;
   height: 18px;
   cursor: pointer;
+  float: right;
+  margin-top: 16px;
+  margin-right: 24px;
 }
 .btnClose,
 .CreateProjBtnClose {
@@ -78,7 +83,6 @@ body {
   color: #525156;
   border: 1px solid #CBCAD6;
   border-radius: 2px;
-  /* margin-top: -5px; */
 }
 .btnCreate:hover,
 .btnDuplicate:hover,
@@ -92,21 +96,21 @@ body {
   width: 423px;
   height: 180px;
   background-color: white;
-  padding: 20px;
+  /* padding: 20px; */
   position: relative;
   border-radius: 2px;
 }
 .deleteIconAlign {
   float: left;
-  margin-right: 15px;
+  margin-right: 16px;
 }
 .deleteIcon {
   width: 24px;
 }
 .deleteInfo {
   font: normal normal 400 14px Lato, sans-serif;
-  margin-left: 40px;
-  margin-top: 20px;
+  margin-left: 64px;
+  margin-top: 15px;
   margin-bottom: 30px;
   color: #525156;
 }
@@ -120,11 +124,13 @@ body {
   border: none;
   border-radius: 2px;
   align-items: center;
+  margin-right: 24px;
 }
 .errorMessage{
   color: red;
   font: normal normal 600 12px Lato, sans-serif;
   margin-bottom: 5px;
+  margin-left: 24px;
 }
 
 .dataNotFound,
@@ -134,4 +140,10 @@ body {
   margin-left: 30px;
   margin-top: 100px;
   color: #232324;
+}
+.mandatoryField{
+  color: red;
+  font: normal normal 400 18px Lato, sans-serif;
+  position: relative;
+  top: 5px;
 }
