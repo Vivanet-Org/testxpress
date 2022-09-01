@@ -175,7 +175,7 @@
                         </div>
                         <div>
                             <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
-                            <select class="createProjectsDropdown" (change)="selected($event)">
+                            <select class="createProjectsDropdown" (change)="selectedCreate($event)">
                                 <option value="">Select Project</option>
                                 <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
                                     {{teProjectsName.projectname}}

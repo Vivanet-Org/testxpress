@@ -225,6 +225,9 @@ export class ApplicationsComponent implements OnInit {
     this.selectedLevel = event.target.value.slice(3);
     console.log(this.selectedLevel);
   }
+  selectedCreate(event: any) {
+    this.selectedLevel = event.target.value;
+  }
   getprojectId() {
     console.log(this.selectedLevel);
     console.log(this.selectedProjectValue);
