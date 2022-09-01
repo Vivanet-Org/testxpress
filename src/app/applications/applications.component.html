@@ -73,7 +73,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <label class="appDetails">Project Name</label><br>
+                                    <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
                                     <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
                                         <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
                                             {{teProjectsName.projectname}}
@@ -112,7 +112,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <label class="appDetails">Project Name</label><br>
+                                    <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
                                     <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
                                         <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
                                             {{teProjectsName.projectname}}
@@ -174,7 +174,7 @@
                             </p>
                         </div>
                         <div>
-                            <label class="appDetails">Project Name</label><br>
+                            <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
                             <select class="createProjectsDropdown" (change)="selected($event)">
                                 <option value="">Select Project</option>
                                 <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
