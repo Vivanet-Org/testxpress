@@ -31,6 +31,7 @@
 }
 .errorMessage{
   margin-left: 24px;
+  margin-top: 1px;
 }
 .closeModel {
   width: 18px;
@@ -101,7 +102,4 @@
 }
 .btnClose:hover {
   cursor: pointer;
-}
-.errorMessage{
-  margin-top: 1px;
 }

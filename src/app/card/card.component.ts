@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  styleUrls: ['./card.component.css', '../../assets/bootstrap/css/cardStyles.css', '../../styles.css']
 })
 export class CardComponent implements OnInit{
 
