@@ -13,7 +13,7 @@
         <div class="appDataAlign">
             <label class="appHead">Applications</label>
             <select class="projectsDropdown" (change)="selectedProject($event)" #projectsDropdown>
-                <option value= "All Applications">All Applications</option>
+                <option value= "All Projects">All Projects</option>
                 <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
                     {{teProjectsName.projectname}}
                 </option>
