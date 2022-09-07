@@ -1,19 +1,17 @@
 <div class="topNav">
     <div class="projHeadingBg">
-        <header class="projHeading">Projects</header>
+        <p class="projHeading">Projects</p>
     </div>
-    <div style="width: 100%; height:50px">
-        <div class="projectFunctioningItems">
-            <label class="projectsCount"> My Projects ({{uiData.length}}) </label>
-            <div class="alignFunctionalItems">
-                <select class="select-plotform" name="jump1" size="1">
-                    <option value="" selected>All Platform</option>
-                    <option value="manual">Manual</option>
-                </select>
-                <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (keyup.enter)="searchData()" [(ngModel)]="searchdValue" #searchField >
-                <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" />
-                <button class="createButton" (click)="openModal()">Create Project</button>
-            </div>
+    <div class="projectFunctioningItems">
+        <P class="projectsCount"> My&nbsp;Projects&nbsp;({{uiData.length}}) </P>
+        <div class="alignFunctionalItems">
+            <select class="select-plotform" name="jump1" size="1">
+                <option value="" selected>All Platform</option>
+                <option value="manual">Manual</option>
+            </select>
+            <input id="searchEnter" class="search-style" type="text" placeholder="Search" name="search" (keyup.enter)="searchData()" [(ngModel)]="searchdValue" #searchField >
+            <img id="filterSubmit" class="searchImg" [src] ="srarchImagePath" alt="search Image" (click)="searchData()" />
+            <button class="createButton" (click)="openModal()">Create Project</button>
         </div>
     </div>
 </div>
@@ -22,7 +20,7 @@
     <div class="grid-container" *ngIf="searchFlag && errorFlag">
         <div *ngFor="let teProjectsData of uiData">
             <div class="grid-item" >
-                <div>
+                <div class="project-card-data">
                     <div class="dots">
                         <img class="moreImg" [src] ="moreImgPath" alt="more Image" (click)="openTaskMenu(teProjectsData.projectid)" />
                         <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">
@@ -31,11 +29,9 @@
                             <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectid)">Delete</p>
                         </div>
                     </div>
-                    <div class="existingData">
-                        <label class="projectHeading">{{ teProjectsData.projectName }}</label>
-                        <textarea type="text" name="projectDescription" class="textareaStylesCard"
-                        ngModel="{{ teProjectsData.projectDescription }}" disabled> </textarea>
-                    </div>
+                    <p class="projectHeading">{{ teProjectsData.projectName }}</p>
+                    <textarea type="text" name="projectDescription" class="textareaStylesCard"
+                    ngModel="{{ teProjectsData.projectDescription }}" disabled> </textarea>
                 </div>
 
                 <div class="girdFooter">

@@ -139,7 +139,7 @@ export class ApplicationsComponent implements OnInit {
     this.duplicateFlag = false;
     this.deleteId = null;
     this.deleteFlag = false;
-    this.projectsDropdown.nativeElement.value = "All Applications";
+    this.projectsDropdown.nativeElement.value = "All Projects";
   }
 
   projectIdName: any = [];
@@ -160,7 +160,7 @@ export class ApplicationsComponent implements OnInit {
     this.selectedProjectValue = event.target.value;
     this.selectedValueDisplay = this.selectedProjectValue;
     console.log(this.selectedProjectValue);
-    if(this.selectedProjectValue == "All Applications"){
+    if(this.selectedProjectValue == "All Projects"){
       this.loadApplicationData();
     } else {
       this.getprojectId();
@@ -174,7 +174,7 @@ export class ApplicationsComponent implements OnInit {
     this.appUiData = [];
     console.log(this.appUiData);
 
-    if(this.projectID == null || this.selectedProjectValue == "All Applications"){
+    if(this.projectID == null || this.selectedProjectValue == "All Projects"){
       console.log("Search edit");
       this.appUiData = [];
       this.user.getApplicationsData().subscribe((data) => {
@@ -189,7 +189,7 @@ export class ApplicationsComponent implements OnInit {
         this.filterAppData();
         if(this.appUiData.length == 0 ){
           this.searchFlag = false;
-          this.selectedProjectValue = "All Applications";
+          this.selectedProjectValue = "All Projects";
           this.projectID = null;
         }
         this.projectID = null;
@@ -338,7 +338,7 @@ export class ApplicationsComponent implements OnInit {
         this.user.updateApplication(id, this.updatedFormData).subscribe((data) => {
           console.log(data);
           this.updatedFormData = [];
-          this.selectedProjectValue = "All Applications";
+          this.selectedProjectValue = "All Projects";
           this.loadApplicationData();
           this.projectID = null;
         });
@@ -385,7 +385,7 @@ export class ApplicationsComponent implements OnInit {
         this.user.createApplication(this.duplicateData).subscribe(data => {
           console.log(data);
           this.duplicateData = [];
-          this.selectedProjectValue = "All Applications";
+          this.selectedProjectValue = "All Projects";
           this.loadApplicationData();
           this.projectID = null;
         });

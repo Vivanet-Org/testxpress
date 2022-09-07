@@ -1,10 +1,15 @@
-/* @import "../../styles.css"; */
-/* @import "../../assets/bootstrap/css/cardStyles.css"; */
-
 .card-home {
-  width: 91.9%;
-  margin-left: 50px;
   display: block;
+}
+.grid-container{
+  display: grid;
+  gap: 24px 24px;
+  grid-template-columns: 423px 423px 423px;
+  margin-top: 16px;
+  margin-left: 80px;
+}
+.grid-item{
+  height: 139px;
 }
 
 /* start: Global */
@@ -24,17 +29,18 @@
   color: #555;
   font-size: 36px;
   margin-top: 7px;
-  margin-left: 5px;
+  margin-left: 4px;
 }
 .webImg {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .footerImg {
   width: 24px;
+  height: 24px;
 }
 .projDetails {
   font: normal normal 400 14px Lato, sans-serif;
-  padding-left: 10px;
+  padding-left: 8px;
   padding-top: 18px;
   color: #232324;
 }
@@ -45,14 +51,14 @@
   display: flex;
   justify-content: flex-end;
   margin-top: -20px;
-  margin-right: 14px;
+  margin-right: 16px;
 }
 .avatar {
   position: relative;
   transition: 0.2s;
 }
 .avatar:not(:first-child) {
-  margin-left: -1rem;
+  margin-left: -0.7rem;
 }
 .avatar:hover {
   z-index: 1;
@@ -105,6 +111,10 @@
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
 }
+.projectHeading{
+  padding-top: 16px;
+  margin-left: 16px;
+}
 .editprojectHeading,
 .duplicateprojectHeading,
 .membersProjectHeading{
@@ -119,12 +129,16 @@
   margin-top: 24px;
   margin-left: 24px;
 }
+.project-card-data{
+  width: 424px;
+  height: 82px;
+}
 .girdFooter {
-  background-color: #f6f6f9;
+  background-color: #F6F6F9;
+  width: 424px;
   height: 56px;
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-bottom: -10px;
+  border: 1px solid #DDDDE6;
+  margin-left: -1px;
 }
 .inputStyles {
   width: 474px;
@@ -193,9 +207,9 @@
   margin-top: 10px;
 }
 .textareaStylesCard {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  width: 100%;
+  margin-left: 16px;
+  margin-top: 4px;
+  width: 93%;
   height: 32px;
   font: normal normal 400 14px Lato, sans-serif;
   border: none;
