@@ -17,7 +17,7 @@ export class TestExpressNavComponent implements OnInit {
   inactiveNotepadImg: string = '/assets/images/inactive-notepad.png';
   inactivePlayImg: string = '/assets/images/inactive-play.png';
   inactiveFileImg: string = '/assets/images/inactive-file.png';
-  Line6Img: string = '/assets/images/Line6.png';
+  inactiveLineImg: string = '/assets/images/inactive-line.png'
   inactiveGearImg: string = '/assets/images/inactive-gear.png';
   inactiveBellImg: string = '/assets/images/inactive-bell.png';
   inactiveQuestionImg: string = '/assets/images/inactive-question.png';
