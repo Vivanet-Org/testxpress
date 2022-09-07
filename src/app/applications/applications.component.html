@@ -1,13 +1,15 @@
 <section class="appHome">
     <div class="appHeader">
-        <p class="appHeading">Project / Applications</p>
-        <div class="appTopAlign">
-                <div class="windowsIconBg">
-                    <img class="applicationImg" [src] ="appsImgPath" alt="Application Image" /> 
-                </div>
-                <p class="appImgLabel">Applications</p>
-            <button class="createAppBtn" (click)="openModal()">Create Application</button>
-        </div><br><br>
+        <div class="appTopData">
+            <p class="appHeading">Project / Applications</p>
+            <div class="appTopAlign">
+                    <div class="windowsIconBg">
+                        <img class="applicationImg" [src] ="appsImgPath" alt="Application Image" /> 
+                    </div>
+                    <p class="appImgLabel">Applications</p>
+                <button class="createAppBtn" (click)="openModal()">Create Application</button>
+            </div>
+        </div>
     </div>
     <div class="appData">
         <div class="appDataAlign">
@@ -18,11 +20,11 @@
                     {{teProjectsName.projectname}}
                 </option>
             </select>
-        </div><br>
+        </div>
         <div class="app-grid-container">
             <div *ngFor="let teAppData of appUiData">
-                <div class="grid-item" >
-                    <div>
+                <div class="app-grid-item" >
+                    <div class="app-card-data">
                         <div class="app-dots">
                             <img class="appMoreImg" [src] ="moreImgPath" alt="more Image" (click)="openAppTaskMenu(teAppData.appid)" />
                             <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
@@ -31,14 +33,10 @@
                                 <p class="menuItems menuDelete" (click)="deleteModal(teAppData.appid)">Delete</p>
                             </div>
                         </div>
-                        <div class="existingData">
-                            <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" />
-                            <p class="appCardHeading">
-                                &nbsp; {{teAppData.appName}}
-                            </p>
-                            <textarea type="text" name="projectDescription" class="textareaStylesCard"
-                            ngModel="{{teAppData.appDescription}}" disabled> </textarea>
-                        </div>
+                        <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" />
+                        <p class="appCardHeading"> &nbsp; {{teAppData.appName}} </p>
+                        <textarea type="text" name="projectDescription" class="textareaStylesCard"
+                        ngModel="{{teAppData.appDescription}}" disabled> </textarea>
                     </div>
 
                     <div class="girdFooter">

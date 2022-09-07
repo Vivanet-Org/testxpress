@@ -1,13 +1,15 @@
-/* @import "../../styles.css"; */
-
 .appHome {
-  width: 93.75%;
-  margin-left: 50px;
   display: none;
 }
-
 .app-grid-container {
-  width: 95%;
+  display: grid;
+  gap: 24px 24px;
+  grid-template-columns: 424px 424px 424px;
+  margin-top: 16px;
+  margin-left: 80px;
+}
+.app-grid-item{
+  height: 137px;
 }
 
 /* start: Global */
@@ -21,7 +23,10 @@
 }
 
 /* end: Global */
-
+.app-card-data{
+  width: 424px;
+  height: 82px;
+}
 .appCardDetails {
   font: normal normal 400 14px Lato, sans-serif;
   color: #232324;
@@ -33,13 +38,13 @@
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
   margin-top: -32px;
-  margin-left: 40px;
+  margin-left: 50px;
 }
 
 .textareaStylesCard {
-  margin-top: 5px;
-  width: 100%;
-  height: 50px;
+  margin-top: 15px;
+  width: 366px;
+  height: 22px;
   font: normal normal 400 14px Lato, sans-serif;
   line-height: 22px;
   border: none;
@@ -47,6 +52,7 @@
   background-color: white;
   scroll-behavior: smooth;
   color: #818089;
+  margin-left: 16px;
 }
 
 .appDetails {
@@ -58,10 +64,10 @@
 
 .girdFooter {
   background-color: #f6f6f9;
+  width: 424px;
   height: 54px;
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-bottom: -10px;
+  border: 1px solid #DDDDE6;
+  margin-left: -1px;
 }
 
 .projectHeadings {
@@ -88,14 +94,17 @@
 }
 
 .appHeader {
-  margin-right: -36px;
+  width: 1384px;
+  height: 116px;
   background-color: white;
   margin-top: -8px;
+  margin-left: 48px;
+}
+.appTopData{
+  padding: 16px 0px 16px 32px;
 }
 
 .appHeading {
-  padding-top: 10px;
-  margin-left: 50px;
   color: #818089;
   font: normal normal 400 14px Lato, sans-serif;
 }
@@ -115,11 +124,11 @@
   align-items: center;
   padding: 6px;
   gap: 10px;
-  position: absolute;
   width: 32px;
   height: 32px;
-  background: #f2f1fc;
+  background: #F2F1Fc;
   border-radius: 2px;
+  float: left;
 }
 
 .applicationImg {
@@ -129,13 +138,14 @@
 .desktopImg {
   width: 32px;
   height: 32px;
-  background: #f2f1fc;
+  background: #F2F1Fc;
   border-radius: 2px;
+  margin-top: 12px;
+  margin-left: 16px;
 }
 
 .appTopAlign {
-  margin-left: 50px;
-  padding-top: 10px;
+  margin-top: 10px;
 }
 
 .createAppBtn {
@@ -148,7 +158,7 @@
   color: #ffffff;
   border: none;
   border-radius: 2px;
-  margin-right: 54px;
+  margin-right: 32px;
   margin-top: -30px;
 }
 
@@ -156,14 +166,14 @@
   cursor: pointer;
 }
 
-.appData {
-  margin-right: -34px;
+.appDataAlign{
+  width: 1384px;
+  margin-left: 48px;
 }
-
 .appHead {
-  margin-top: 25px;
+  margin-top: 36px;
   display: inline-block;
-  margin-left: 50px;
+  margin-left: 32px;
   font: normal normal 700 16px Lato, sans-serif;
   color: #232324;
   width: 89px;
@@ -171,8 +181,8 @@
 }
 
 .projectsDropdown {
-  margin-top: 20px;
-  margin-right: 50px;
+  margin-top: 32px;
+  margin-right: 32px;
   float: right;
   width: 225px;
   height: 32px;
@@ -180,6 +190,7 @@
   border: 1px solid gray;
   border-radius: 2px;
   color: #525156;
+  box-sizing: border-box;
   padding-left: 10px;
   cursor: pointer;
 }
@@ -200,7 +211,6 @@
 }
 
 .create-modal-contents {
-  /* height: 358px; */
   width: 522px;
   background-color: white;
   position: relative;

@@ -3,19 +3,11 @@
 body {
   background-color: #f6f6f9;
 }
-
-.grid-container,
-.app-grid-container {
-  display: grid;
-  gap: 30px 30px;
-  grid-template-columns: 33.333333% 33.333333% 33.333333%;
-  padding: 10px 50px 20px 50px;
-}
-.grid-item {
+.grid-item,
+.app-grid-item {
   background-color: white;
-  border: 1px solid rgb(199, 199, 199);
-  padding: 10px;
-  text-align: Top-right;
+  border: 1px solid #DDDDE6;
+  width: 424px;
 }
 .dots,
 .app-dots {
@@ -24,13 +16,16 @@ body {
 }
 .moreImg,
 .appMoreImg {
+  margin-top: 16px;
+  margin-right: 16px;
   width: 24px;
   cursor: pointer;
 }
 .dots .task-menu,
 .app-dots .app-task-menu {
   position: absolute;
-  right: 0px;
+  top: 42px;
+  right: 15px;
   padding-left: 15px;
   padding-top: 5px;
   z-index: 2;
@@ -50,10 +45,10 @@ body {
   gap: 10px;
   font: normal normal 400 14px Lato, sans-serif;
   line-height: 22px;
+  color: #525156;
 }
-.menuEdit:hover,
-.menuDuplicate:hover,
-.menuDelete:hover {
+.task-menu .menuItems:hover,
+.app-task-menu .menuItems:hover{
   color: #3E38D5;
   cursor: pointer;
 }
@@ -96,7 +91,6 @@ body {
   width: 423px;
   height: 180px;
   background-color: white;
-  /* padding: 20px; */
   position: relative;
   border-radius: 2px;
 }
@@ -137,9 +131,15 @@ body {
 .appDataNotFound{
   text-align: center;
   font: normal normal 700 32px Lato, sans-serif;
-  margin-left: 30px;
+  margin-left: 80px;
   margin-top: 100px;
   color: #232324;
+
+  width: 90%;
+  height: 100%;
+  position: fixed;
+  justify-content: center;
+  align-items: center;
 }
 .mandatoryField{
   color: red;
