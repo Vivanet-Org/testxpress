@@ -23,8 +23,9 @@
 }
 
 .logo {
-  margin-top: -5px;
-  margin-bottom: 40px;
+  /* margin-top: -5px; */
+  margin-bottom: 64px;
+  margin-left: -1px;
 }
 
 .tsImg {
@@ -58,6 +59,7 @@
 .inactiveAccount{
   width:32px;
   height:32px;
+  margin-top: -10px;
 }
 
 .icon-background {
@@ -67,8 +69,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 16px;
 }
-
+.inactiveLineAlign{
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.inactiveQuestionAlign {
+  margin-top: 272px;
+}
 .folderBg:hover,
 .windowsBg:hover {
   cursor: pointer;
@@ -80,4 +89,12 @@
 
 .footerIcons {
   margin-top: 50px;
+}
+
+.inactiveAccountBg{
+  position: absolute;
+  width: 56px;
+  height: 64px;
+  margin-left: -8px;
+  background: #000000;
 }
