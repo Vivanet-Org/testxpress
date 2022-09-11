@@ -4,7 +4,7 @@
 .grid-container{
   display: grid;
   gap: 24px 24px;
-  grid-template-columns: 423px 423px 423px;
+  grid-template-columns: 427px 427px 427px;
   margin-top: 16px;
   margin-left: 80px;
 }

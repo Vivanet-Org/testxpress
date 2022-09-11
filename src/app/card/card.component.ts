@@ -95,9 +95,7 @@ export class CardComponent implements OnInit{
     if(this.searchdValue != ''){
       this.loadProjectData();
     } else{
-      // alert("You must enter at least one character.");
       this.errorFlag = false;
-      // this.loadProjectData();    
     }
   }
 
@@ -264,9 +262,6 @@ export class CardComponent implements OnInit{
           if(this.data1[index].projectid === id){
             this.flag = true;
           }
-          // alert("The project name '" + this.data[index].projectName + "' has already been Reported");
-          // this.flag = true;
-          // break;
         }
       }
 
@@ -320,7 +315,6 @@ export class CardComponent implements OnInit{
             this.duplicateData = {
               projectName: form.value.projectName,
               projectDescription:form.value.projectDescription,
-              // projectDescription:this.data[index].projectDescription,
               deleted:this.data[index].deleted,
               createdBy:this.data[index].createdBy,
               createdOn:Date.now(),
@@ -332,7 +326,7 @@ export class CardComponent implements OnInit{
         }
         this.user.createProject(this.duplicateData).subscribe(data => {
           console.log(data);
-          this.user.sendClickEvent();
+          this.loadProjectData();
         });
         console.log(this.duplicateData);
         this.closeModal();
@@ -363,7 +357,7 @@ export class CardComponent implements OnInit{
       console.log(this.updatedFormData);
       this.user.updateProject(id, this.updatedFormData).subscribe(data => {
         console.log(data);
-        this.user.sendClickEvent();
+        this.loadProjectData();
         this.closeModal();
       });
     });

@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import { UsersService } from '../users.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-applications',
@@ -13,24 +12,14 @@ export class ApplicationsComponent implements OnInit {
   @ViewChild('projectsDropdown') projectsDropdown!: ElementRef;
   @ViewChild('createNewApplicationForm') createNewApplicationForm : any;
 
-  clickEventSubscription: Subscription;
-
   appsImgPath: string = '/assets/images/apps.png';
   appImgPath: string = '/assets/images/applications.png';
   desktopImgPath: string = '/assets/images/destop.png';
   moreImgPath: string = '/assets/images/more.png';
   closeImgPath: string = '/assets/images/close.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
-  webImgPath: string = '/assets/images/web.png';  
-  appleImgPath: string = '/assets/images/apple.png';
-  desktopGreyImgPath: string = '/assets/images/desktop-grey.png';
-  andriodImagePath: string = '/assets/images/android.png';
 
   constructor(private user: UsersService) {
-    this.clickEventSubscription = this.user.getClickEvent().subscribe(() => {
-      this.loadApplicationData();
-      this.loadProjectName();
-    });
     this.loadApplicationData();
     this.loadProjectName();
   }
@@ -110,8 +99,6 @@ export class ApplicationsComponent implements OnInit {
     }
     console.log(this.defaultProjectName);
   }
-  
-
 
   duplicateId: any = null;
   duplicateFlag: any = false;
@@ -291,7 +278,7 @@ export class ApplicationsComponent implements OnInit {
               alert("'" + form.value.appName + "' Application Created Successfully");
               this.closeModal();
               this.projectID = null;
-              this.user.sendClickEvent();
+              this.loadApplicationData();
             });
           } else {
             this.createFlag = false;
