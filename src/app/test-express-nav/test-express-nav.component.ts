@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
 
+import { Router, NavigationStart, Event as NavigationEvent } from '@angular/router';
+
 @Component({
   selector: 'app-test-express-nav',
   templateUrl: './test-express-nav.component.html',
@@ -22,18 +24,50 @@ export class TestExpressNavComponent implements OnInit {
   inactiveQuestionImg: string = '/assets/images/inactive-question.png';
   iconAccountImg: string = '/assets/images/icon-account.png';
 
+  event$;
   routeUrl: string = '';
 
-  constructor() { }
+  constructor(private router: Router) {
+    console.log(router.url);
+    this.event$ = this.router.events.subscribe((event: NavigationEvent) => {
+      if(event instanceof NavigationStart) {
+        console.log(event.url);
+        this.routeUrl =  event.url;
+        this.routingPath();        
+      }
+    });
+  }
+  
+  routingPath(){
+    console.log(this.routeUrl);
+    switch (this.routeUrl) {
+      case '/':
+        this.projectsModal();
+        console.log("switch '/' ");
+        break;
+      case '/applications':
+        this.applicationsModal();
+        console.log("switch '/applications' ");
+        break;
+      case '/release':
+        this.releaseModal();
+        console.log("switch '/release' ");
+        // break;
+    }
+  }
 
   projectsModal() {
     this.activeFolderImg = '/assets/images/active-folder.png';
     this.inactiveAppImg = '/assets/images/inactive-app.png';
+    this.inactiveRocketImg = '/assets/images/inactive-rocket.png';
 
     $('.folderBg').css({
       'background-color': '#464755'
     });
     $('.windowsBg').css({
+      'background-color': ''
+    });
+    $('.rocketBg').css({
       'background-color': ''
     });
   }
@@ -41,24 +75,40 @@ export class TestExpressNavComponent implements OnInit {
   applicationsModal() {
     this.activeFolderImg = '/assets/images/inactive-folder.png';
     this.inactiveAppImg = '/assets/images/active-app.png';
+    this.inactiveRocketImg = '/assets/images/inactive-rocket.png';
 
+    $('.windowsBg').css({
+      'background-color': '#464755'
+    });
+    $('.folderBg').css({
+      'background-color': ''
+    });
+    $('.rocketBg').css({
+      'background-color': ''
+    });
+    
+  }
+
+  releaseModal() {
+    this.activeFolderImg = '/assets/images/inactive-folder.png';
+    this.inactiveAppImg = '/assets/images/inactive-app.png';
+    this.inactiveRocketImg = '/assets/images/active-rocket.png';
+
+    $('.rocketBg').css({
+      'background-color': '#464755'
+    });
     $('.folderBg').css({
       'background-color': ''
     });
     $('.windowsBg').css({
-      'background-color': '#464755'
+      'background-color': ''
     });
   }
 
-  ngOnInit(): void {
-    this.routeUrl = window.location.href.slice(22);
-    console.log(this.routeUrl);
-    if(this.routeUrl == ''){
-      this.projectsModal();
-    }
-    if(this.routeUrl == 'applications'){
-      this.applicationsModal();
-    }
+  ngOnInit(): void { }
+
+  ngOnDestroy() {
+    this.event$.unsubscribe();
   }
 
 }

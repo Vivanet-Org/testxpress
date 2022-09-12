@@ -11,6 +11,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ApplicationsComponent } from './applications/applications.component';
+import { ReleaseComponent } from './release/release.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ApplicationsComponent } from './applications/applications.component';
     TestExpressNavComponent,
     CardComponent,
     MainprojectComponent,
-    ApplicationsComponent
+    ApplicationsComponent,
+    ReleaseComponent
    
   ],
   imports: [
