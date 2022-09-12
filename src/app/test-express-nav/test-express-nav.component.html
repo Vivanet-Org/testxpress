@@ -7,7 +7,7 @@
     <ul class="nav">
         <div class="logo">
             <li> 
-                <img class="tsImg" [src] ="testXpressImg" alt="testXpress Image" (click)="projectsModal()" />
+                <img class="tsImg" [src] ="testXpressImg" alt="testXpress Image" />
             </li>
         </div>
 
@@ -17,15 +17,19 @@
             </li>
         </div>
 
-        <div class="icon-background folderBg" (click)="projectsModal()">
+        <div class="icon-background folderBg" [style.background-color]="routeUrl === '' ? '#464755' : ''">
             <li> 
-                <img class="navIcons folderIcon" [src] ="activeFolderImg" alt="activeFolder Image" />
+                <a routerLink="">
+                    <img class="navIcons folderIcon" [src] ="activeFolderImg" alt="activeFolder Image" (click)="projectsModal()" />
+                </a>
             </li>
         </div>
 
-        <div class="icon-background windowsBg" (click)="applicationsModal()">
+        <div class="icon-background windowsBg" [style.background-color]="routeUrl === 'applications' ? '#464755' : ''">
             <li>
-                <img class="navIcons appImg" [src] ="inactiveAppImg" alt="inactiveApp Image" /> 
+                <a routerLink="applications">
+                    <img class="navIcons appImg" [src] ="inactiveAppImg" alt="inactiveApp Image" (click)="applicationsModal()" /> 
+                </a>
             </li>
         </div>
 
@@ -85,4 +89,5 @@
             </div>
         </div>
     </ul>    
+
 </div>

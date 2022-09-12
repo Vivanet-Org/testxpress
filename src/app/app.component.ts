@@ -7,7 +7,7 @@ import { data } from 'jquery';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'TM-project';
+  title = 'testxpress';
 
   constructor(){  }
 }

@@ -1,5 +1,5 @@
 .appHome {
-  display: none;
+  display: block;
 }
 .app-grid-container {
   display: grid;
@@ -276,23 +276,6 @@
   justify-content: center;
   align-items: center;
   z-index: 3;
-}
-
-.icon-bar a {
-  float: left;
-  transition: all 0.3s ease;
-  color: #555;
-  font-size: 36px;
-  margin-top: 7px;
-  margin-left: 5px;
-}
-
-.webImg {
-  margin-left: 5px;
-}
-
-.footerImg {
-  width: 24px;
 }
 
 .edit-modal-contents,

@@ -23,7 +23,6 @@
 }
 
 .logo {
-  /* margin-top: -5px; */
   margin-bottom: 64px;
   margin-left: -1px;
 }
@@ -31,30 +30,26 @@
 .tsImg {
   width: 40px;
   height: 40px;
-  cursor: pointer;
 }
 
 .navIcons {
   width: 24px;
   height: 24px;
-  margin-top: -10px;
+  margin-top: -6px;
 }
 
 .inactiveNotepad {
   width: 16.5px;
   height: 21px;
-  margin-top: -10px;
 }
 
 .inactiveRocket {
   width: 24px;
   height: 24px;
-  margin-top: -10px;
 }
 
 .inactiveLine {
   width: 40px;
-  margin-top: -10px;
 }
 .inactiveAccount{
   width:32px;
@@ -78,13 +73,9 @@
 .inactiveQuestionAlign {
   margin-top: 272px;
 }
-.folderBg:hover,
-.windowsBg:hover {
+.folderIcon:hover,
+.appImg:hover {
   cursor: pointer;
-}
-
-.folderBg {
-  background-color: rgb(95, 93, 93);
 }
 
 .footerIcons {

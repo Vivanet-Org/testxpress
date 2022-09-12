@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from "jquery";
-import { UsersService } from '../users.service';
 
 @Component({
   selector: 'app-test-express-nav',
@@ -23,65 +22,43 @@ export class TestExpressNavComponent implements OnInit {
   inactiveQuestionImg: string = '/assets/images/inactive-question.png';
   iconAccountImg: string = '/assets/images/icon-account.png';
 
-  constructor(public usersService:UsersService) { }
+  routeUrl: string = '';
+
+  constructor() { }
 
   projectsModal() {
     this.activeFolderImg = '/assets/images/active-folder.png';
     this.inactiveAppImg = '/assets/images/inactive-app.png';
 
-    $('.topNav').css({
-      'display': 'block'
-    });
-
-    $('.card-home').css({
-      'display': 'block'
-    });
-
-    $('.appHome').css({
-      'display': 'none'
-    });
-
     $('.folderBg').css({
-      'background-color': 'rgb(95, 93, 93)'
+      'background-color': '#464755'
     });
-
     $('.windowsBg').css({
-      'background-color': 'rgb(42, 42, 42)'
+      'background-color': ''
     });
-
-    this.usersService.sendClickEvent();
-
   }
 
   applicationsModal() {
     this.activeFolderImg = '/assets/images/inactive-folder.png';
     this.inactiveAppImg = '/assets/images/active-app.png';
 
-    $('.topNav').css({
-      'display': 'none'
-    });
-
-    $('.card-home').css({
-      'display': 'none'
-    });
-
-    $('.appHome').css({
-      'display': 'block'
-    });
-
     $('.folderBg').css({
-      'background-color': 'rgb(42, 42, 42)'
+      'background-color': ''
     });
-
     $('.windowsBg').css({
-      'background-color': 'rgb(95, 93, 93)'
+      'background-color': '#464755'
     });
-
-    this.usersService.sendClickEvent();
-
   }
 
   ngOnInit(): void {
+    this.routeUrl = window.location.href.slice(22);
+    console.log(this.routeUrl);
+    if(this.routeUrl == ''){
+      this.projectsModal();
+    }
+    if(this.routeUrl == 'applications'){
+      this.applicationsModal();
+    }
   }
 
 }
