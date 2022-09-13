@@ -1,0 +1,152 @@
+.releaseHome {
+  display: block;
+}
+.releaseHeader {
+  width: 1384px;
+  height: 116px;
+  background-color: #ffffff;
+  margin-top: -8px;
+  margin-left: 48px;
+}
+.releaseTopData {
+  padding: 16px 0px 16px 32px;
+}
+.releaseHeading {
+  color: #818089;
+  font: normal normal 400 14px Lato, sans-serif;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+.releaseTopAlign {
+  margin-top: 10px;
+}
+.releaseIconBg {
+  gap: 10px;
+  width: 32px;
+  height: 32px;
+  background: #f2f1fc;
+  border-radius: 2px;
+  float: left;
+  position: relative;
+}
+.releaseImg {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.releaseImgLabel {
+  font: normal normal 700 20px Lato, sans-serif;
+  color: #232324;
+  margin-left: 42px;
+  padding-top: 5px;
+  width: 111px;
+  height: 28px;
+}
+.createReleaseBtn {
+  float: right;
+  width: 124px;
+  height: 32px;
+  font: normal normal 400 14px Lato, sans-serif;
+  background-color: #3e38d5;
+  color: #ffffff;
+  border: none;
+  border-radius: 2px;
+  margin-right: 32px;
+  margin-top: -52.5px;
+}
+.createReleaseBtn:hover {
+  cursor: pointer;
+}
+.releaseDataAlign {
+  width: 1384px;
+  margin-left: 48px;
+}
+.releaseHead {
+  margin-top: 36px;
+  display: inline-block;
+  margin-left: 32px;
+  font: normal normal 700 16px Lato, sans-serif;
+  color: #232324;
+  width: 55px;
+  height: 24px;
+}
+.projectsDropdown,
+.applicationsDropdown {
+  margin-top: 32px;
+  width: 225px;
+  height: 32px;
+  font: normal normal 400 14px Lato, sans-serif;
+  border: 1px solid gray;
+  border-radius: 2px;
+  color: #525156;
+  box-sizing: border-box;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.projectsDropdown {
+  margin-left: 799px;
+  margin-right: 16px;
+}
+.applicationsDropdown {
+  margin-right: 32px;
+}
+
+/* release-table start */
+
+.release-table {
+  margin-top: 16px;
+  width: 1320px;
+  margin-left: 80px;
+  border-collapse: collapse;
+}
+.release-table th {
+  font: normal normal 700 14px Lato, sans-serif;
+  text-align: left;
+  background-color: #EEEEF4;
+  color: #232324;
+  height: 46px;
+  border: none;
+  box-sizing: border-box;
+  padding-left: 8px;
+}
+.table-header{
+  float: left;
+}
+.sortImg{
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 15px;
+  left: 4px;
+}
+.release-table td {
+  text-align: left;
+  height: 46px;
+  font: normal normal 400 14px Lato, sans-serif;
+  color: #525156;
+  background: #FFFFFF;
+  box-sizing: border-box;
+  padding-left: 8px;
+  border-top: 1px solid #EEEEF4;
+  border-bottom: 1px solid #EEEEF4;
+
+}
+.eyeImg,
+.editImg{
+  width: 16px;
+  height: 16px;
+}
+.eyeImg{
+  margin-left: 8px;
+  margin-right: 16px;
+}
+td:hover{
+  cursor: pointer;
+}
+
+/* release-table end */

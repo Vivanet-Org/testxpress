@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { CardComponent } from './card/card.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { ReleaseComponent } from './release/release.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     component:ApplicationsComponent,
     path:'applications'
+  },
+  {
+    component:ReleaseComponent,
+    path:'release'
   }
 ];
 

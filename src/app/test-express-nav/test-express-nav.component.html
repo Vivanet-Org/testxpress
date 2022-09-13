@@ -17,25 +17,27 @@
             </li>
         </div>
 
-        <div class="icon-background folderBg" [style.background-color]="routeUrl === '' ? '#464755' : ''">
+        <div class="icon-background folderBg">
             <li> 
                 <a routerLink="">
-                    <img class="navIcons folderIcon" [src] ="activeFolderImg" alt="activeFolder Image" (click)="projectsModal()" />
+                    <img class="navIcons folderIcon" [src] ="activeFolderImg" alt="activeFolder Image" />
                 </a>
             </li>
         </div>
 
-        <div class="icon-background windowsBg" [style.background-color]="routeUrl === 'applications' ? '#464755' : ''">
+        <div class="icon-background windowsBg">
             <li>
                 <a routerLink="applications">
-                    <img class="navIcons appImg" [src] ="inactiveAppImg" alt="inactiveApp Image" (click)="applicationsModal()" /> 
+                    <img class="navIcons appImg" [src] ="inactiveAppImg" alt="inactiveApp Image" /> 
                 </a>
             </li>
         </div>
 
         <div class="icon-background rocketBg">
             <li> 
-                <img class="inactiveRocket" [src] ="inactiveRocketImg" alt="inactiveRocket Image" />
+                <a routerLink="release">
+                    <img class="navIcons inactiveRocket" [src] ="inactiveRocketImg" alt="inactiveRocket Image" />
+                </a>
             </li>
         </div>
 
