@@ -70,7 +70,7 @@
                             <p class="editprojectHeading">Edit {{ teProjectsData.projectName }}</p>
                             <hr class="hrStyle" style="margin-bottom: 20px;">
                             <div class="form-control">
-                                <p class="popupProjectDetails"><span class="mandatoryField">*</span> Project Name</p>
+                                <p class="popupProjectDetails">Project Name<span class="mandatoryField">*</span></p>
                                 <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                                  required ngModel="{{ teProjectsData.projectName }}" maxlength="25" minlength="1" />
                                  <p *ngIf="uname.errors?.['minlength'] || (updateProjectForm.controls['projectName']?.touched && updateProjectForm.controls['projectName']?.invalid)" class="errorMessage">
@@ -81,7 +81,7 @@
                                 </p>
                             </div>
                                 <p class="popupProjectDetails">Description</p>
-                                <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
+                                <textarea name="projectDescription" class="textareaStyles" id="Description" 
                                  ngModel="{{ teProjectsData.projectDescription }}" maxlength="150" minlength="1"> </textarea>
                             <hr class="hrStyle">
                             <button class="btnCreate" [disabled]="!updateProjectForm.valid">Save</button>
