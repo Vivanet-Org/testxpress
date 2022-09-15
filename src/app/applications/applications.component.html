@@ -54,7 +54,7 @@
                                 <p class="editAppHeading">Edit Application</p>
                                 <hr class="hrStyleEdd">
                                 <div class="form-control">
-                                    <p class="popupAppDetails"><span class="mandatoryField">*</span> Application Name</p>
+                                    <p class="popupAppDetails">Application Name<span class="mandatoryField">*</span></p>
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel="{{ teAppData.appName }}" maxlength="25" minlength="1" />
                                     <p *ngIf="uname.errors?.['minlength'] || (updateApplicationForm.controls['appName']?.touched && updateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
@@ -65,7 +65,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
+                                    <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
                                     <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
                                         <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
                                             {{teProjectsName.projectname}}
@@ -93,7 +93,7 @@
                                 <p class="duplicateAppHeading">Duplicate Application</p>
                                 <hr class="hrStyleEdd">
                                 <div class="form-control">
-                                    <label class="popupAppDetails"><span class="mandatoryField">*</span> Application Name</label><br />
+                                    <label class="popupAppDetails">Application Name<span class="mandatoryField">*</span></label><br />
                                     <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel= "{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
                                     <p *ngIf="uname.errors?.['minlength'] || (duplicateApplicationForm.controls['appName']?.touched && duplicateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
@@ -104,7 +104,7 @@
                                     </p>
                                 </div>
                                 <div>
-                                    <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
+                                    <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
                                     <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
                                         <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
                                             {{teProjectsName.projectname}}
@@ -155,7 +155,7 @@
                         <p class="createAppHeading">Create new Application</p>
                         <hr class="hrStyle">
                         <div>
-                            <p class="appDetails"><span class="mandatoryField">*</span> Application Name</p>
+                            <p class="appDetails">Application Name<span class="mandatoryField">*</span></p>
                             <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel" 
                             placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" #appName />
                             <p *ngIf="uname.errors?.['minlength'] || (createNewApplicationForm.controls['appName']?.touched && createNewApplicationForm.controls['appName']?.invalid)" class="errorMessage">
@@ -166,7 +166,7 @@
                             </p>
                         </div>
                         <div>
-                            <label class="appDetails"><span class="mandatoryField">*</span> Project Name</label><br>
+                            <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
                             <select class="createProjectsDropdown" (change)="selectedCreate($event)">
                                 <option value="">Select Project</option>
                                 <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>

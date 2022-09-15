@@ -5,7 +5,7 @@
                 <p class="projectHeading">Create a new Project</p>
                 <hr class="hrStyle">
                 <div class="form-control">
-                    <p class="projectDetails"><span class="mandatoryField">*</span> Project Name</p>
+                    <p class="projectDetails">Project Name<span class="mandatoryField">*</span></p>
                     <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                     placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
                     <p *ngIf="uname.errors?.['minlength'] || (createNewProjectForm.controls['projectName']?.touched && createNewProjectForm.controls['projectName']?.invalid)" class="errorMessage">
