@@ -121,8 +121,8 @@ body {
   margin-right: 24px;
 }
 .errorMessage{
-  color: red;
-  font: normal normal 600 12px Lato, sans-serif;
+  color: #F5222D;
+  font: normal normal 400 14px Lato, sans-serif;
   margin-bottom: 5px;
   margin-left: 24px;
 }
@@ -142,8 +142,6 @@ body {
   align-items: center;
 }
 .mandatoryField{
-  color: red;
+  color: #F5222D;
   font: normal normal 400 18px Lato, sans-serif;
-  position: relative;
-  top: 5px;
 }

@@ -81,7 +81,7 @@
                                 </p>
                             </div>
                                 <p class="popupProjectDetails">Description</p>
-                                <textarea name="projectDescription" class="textareaStyles" id="Description" 
+                                <textarea type="text" name="projectDescription" class="textareaStyles" id="Description" 
                                  ngModel="{{ teProjectsData.projectDescription }}" maxlength="150" minlength="1"> </textarea>
                             <hr class="hrStyle">
                             <button class="btnCreate" [disabled]="!updateProjectForm.valid">Save</button>
@@ -99,7 +99,7 @@
                         <p class="duplicateprojectHeading">Duplicate Project</p>
                         <hr class="hrStyle" style="margin-bottom: 20px;">
                         <div class="form-control">
-                            <p class="popupProjectDetails"><span class="mandatoryField">*</span> Project Name</p>
+                            <p class="popupProjectDetails">Project Name<span class="mandatoryField">*</span></p>
                             <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
                             required ngModel="{{ teProjectsData.projectName }}_copy" maxlength="25" minlength="1" />
                             <p *ngIf="uname.errors?.['minlength'] || (duplicateProjectForm.controls['projectName']?.touched && duplicateProjectForm.controls['projectName']?.invalid)" class="errorMessage">

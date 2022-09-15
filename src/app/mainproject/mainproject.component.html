@@ -5,23 +5,23 @@
                 <p class="projectHeading">Create a new Project</p>
                 <hr class="hrStyle">
                 <div class="form-control">
-                    <p class="projectDetails">Project Name<span class="mandatoryField">*</span></p>
+                    <label class="projectDetails">Project Name<span class="mandatoryField">*</span></label>
                     <input class="inputStyles" id="name" type="text" name="projectName" #uname="ngModel"
-                    placeholder="Enter Project Name" required ngModel maxlength="25" minlength="1" />
-                    <p *ngIf="uname.errors?.['minlength'] || (createNewProjectForm.controls['projectName']?.touched && createNewProjectForm.controls['projectName']?.invalid)" class="errorMessage">
-                        Project Name must be at least 1 character long.
+                    required ngModel maxlength="25" minlength="1" [(ngModel)]="projectNameValue" (keypress)="projNameData()" (keydown.backspace)="projNameData()"/>
+                    <p class="errorMessage" *ngIf="projectNameFlag">
+                        Please enter Project Name
                     </p>
-                    <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                        Project Name maximum of 25 characters only.
+                    <p class="errorMessage" *ngIf="existingProjectNameFlag">
+                        The project name " {{projectNameValue}} " has already been reported
                     </p>
                 </div>
                 <div class="control">
-                    <label class="projectDetails">Description</label><br />
+                    <label class="projectDescription">Description</label><br />
                     <textarea type="text" name="projectDescription" class="textareaStyles" id="Description"
-                    placeholder="Enter Project Description" ngModel maxlength="150" minlength="1" > </textarea>
+                    ngModel maxlength="150" minlength="1" > </textarea>
                 </div>
                 <hr class="hrStyle">
-                <button class="btnCreate">Create</button>
+                <button class="btnCreate" name="createBtn">Create</button>
         </form>
         <button class="btnClose" (click)="closeModal()">Cancel</button>
     </div>
