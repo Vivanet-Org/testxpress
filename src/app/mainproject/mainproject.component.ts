@@ -18,13 +18,34 @@ export class MainprojectComponent implements OnInit {
   data: any = {};
   totalProjects: number = {} = 0;
   flag: boolean = false;
+  projectNameValue: string = '';
+  projectNameFlag: boolean = false;
+  existingProjectNameFlag: boolean = false;
+
 
   closeModal() {
     $('.bg-modal').css({
       'display': 'none'
     });
 
+    this.projectNameFlag = false;
+    this.existingProjectNameFlag = false;
+    this.projectNameValue = '';
+    $('.inputStyles').css({
+      'border': ''
+    });
+
     this.createNewProjectForm.reset(); 
+  }
+
+  projNameData(){
+    if(this.projectNameValue != "" || this.projectNameValue != null){
+      this.projectNameFlag = false;
+      this.existingProjectNameFlag = false;      
+      $('.inputStyles').css({
+        'border': ''
+      });
+    }
   }
 
   createNewProject(form: any){
@@ -47,7 +68,10 @@ export class MainprojectComponent implements OnInit {
         for (let index = 0; index < this.totalProjects; index++) {
           if (this.data[index].projectName === form.value.projectName){
             this.flag = true;
-            alert("The project name '" + form.value.projectName + "' has already been reported");
+            this.existingProjectNameFlag = true; 
+            $('.inputStyles').css({
+              'border': '1px solid #F5222D'
+            });
             break;
           }
         }
@@ -67,7 +91,10 @@ export class MainprojectComponent implements OnInit {
       });
 
     } else{
-      alert("Please Enter Project Name");
+      this.projectNameFlag = true; 
+      $('.inputStyles').css({
+        'border': '1px solid #F5222D'
+      });
     }
   }
 

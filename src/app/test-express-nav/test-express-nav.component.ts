@@ -33,6 +33,7 @@ export class TestExpressNavComponent implements OnInit {
       if(event instanceof NavigationStart) {
         console.log(event.url);
         this.routeUrl =  event.url;
+        this.clearCss();
         this.routingPath();        
       }
     });
@@ -43,64 +44,47 @@ export class TestExpressNavComponent implements OnInit {
     switch (this.routeUrl) {
       case '/':
         this.projectsModal();
-        console.log("switch '/' ");
         break;
       case '/applications':
         this.applicationsModal();
-        console.log("switch '/applications' ");
         break;
       case '/release':
         this.releaseModal();
-        console.log("switch '/release' ");
-        // break;
     }
   }
 
   projectsModal() {
     this.activeFolderImg = '/assets/images/active-folder.png';
-    this.inactiveAppImg = '/assets/images/inactive-app.png';
-    this.inactiveRocketImg = '/assets/images/inactive-rocket.png';
-
     $('.folderBg').css({
       'background-color': '#464755'
-    });
-    $('.windowsBg').css({
-      'background-color': ''
-    });
-    $('.rocketBg').css({
-      'background-color': ''
     });
   }
 
   applicationsModal() {
-    this.activeFolderImg = '/assets/images/inactive-folder.png';
     this.inactiveAppImg = '/assets/images/active-app.png';
-    this.inactiveRocketImg = '/assets/images/inactive-rocket.png';
-
     $('.windowsBg').css({
       'background-color': '#464755'
-    });
-    $('.folderBg').css({
-      'background-color': ''
-    });
-    $('.rocketBg').css({
-      'background-color': ''
-    });
-    
+    });   
   }
 
   releaseModal() {
-    this.activeFolderImg = '/assets/images/inactive-folder.png';
-    this.inactiveAppImg = '/assets/images/inactive-app.png';
     this.inactiveRocketImg = '/assets/images/active-rocket.png';
-
     $('.rocketBg').css({
       'background-color': '#464755'
     });
+  }
+
+  clearCss(){
+    this.activeFolderImg = '/assets/images/inactive-folder.png';
+    this.inactiveAppImg = '/assets/images/inactive-app.png';
+    this.inactiveRocketImg = '/assets/images/inactive-rocket.png';
     $('.folderBg').css({
       'background-color': ''
     });
     $('.windowsBg').css({
+      'background-color': ''
+    });
+    $('.rocketBg').css({
       'background-color': ''
     });
   }
