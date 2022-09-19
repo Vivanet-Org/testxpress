@@ -87,21 +87,25 @@ body {
 .btnEdit:hover {
   cursor: pointer;
 }
-.delete-modal-contents {
+.delete-modal-contents,
+.cancel-modal-contents{
   width: 423px;
   height: 180px;
   background-color: white;
   position: relative;
   border-radius: 2px;
 }
-.deleteIconAlign {
+.deleteIconAlign,
+.cancelIconAlign {
   float: left;
   margin-right: 16px;
 }
-.deleteIcon {
+.deleteIcon,
+.cancelIcon {
   width: 24px;
 }
-.deleteInfo {
+.deleteInfo,
+.cancelInfo {
   font: normal normal 400 14px Lato, sans-serif;
   margin-left: 64px;
   margin-top: 15px;

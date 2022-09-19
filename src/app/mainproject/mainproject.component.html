@@ -23,6 +23,25 @@
                 <hr class="hrStyle">
                 <button class="btnCreate" name="createBtn">Create</button>
         </form>
-        <button class="btnClose" (click)="closeModal()">Cancel</button>
+        <button class="btnClose" (click)="openCancelModal()">Cancel</button>
     </div>
+
+    <!-- Cancel creating new project popup Start -->
+    <div class="cancelModal">
+        <div class="cancel-modal-contents">
+            <div class="cancelProjectHeadingAlign">
+                <p class="cancelIconAlign">
+                    <img [src]="exclamationImagePath" alt="close Image" class="exclamationIcon" />
+                </p>
+                <p class="cancelProjectHeading">Do you want to cancel creating new Project?</p>
+            </div>
+            <div>
+                <p class="cancelInfo">Your filled data within this form will be lost and <br /> cannot be recovered.</p>
+            </div>
+
+            <button class="btnContinue"(click)="closeContinueModal()">Continue</button>
+            <button class="btnExit" (click)="closeModal()">Exit</button>
+        </div>
+    </div>
+    <!-- Cancel creating new project popup End -->
 </div>
