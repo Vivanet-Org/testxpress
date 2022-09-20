@@ -25,14 +25,16 @@
             <div *ngFor="let teAppData of appUiData">
                 <div class="app-grid-item">
                     <div class="app-card-data">
-                        <div class="app-dots">
-                            <img class="appMoreImg" [src]="moreImgPath" alt="more Image"
-                                (click)="openAppTaskMenu(teAppData.appid)" />
-                            <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
-                                <p class="menuItems menuEdit" (click)="editModal(teAppData.appid)">Edit</p>
-                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teAppData.appid)">Duplicate
-                                </p>
-                                <p class="menuItems menuDelete" (click)="deleteModal(teAppData.appid)">Delete</p>
+                        <div class="app-overlay" id="appOverlay">
+                            <div class="app-dots">
+                                <img class="appMoreImg" [src]="moreImgPath" alt="more Image"
+                                    (click)="openAppTaskMenu(teAppData.appid)" />
+                                <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
+                                    <p class="menuItems menuEdit" (click)="editModal(teAppData.appid)">Edit</p>
+                                    <p class="menuItems menuDuplicate" (click)="duplicateModal(teAppData.appid)">Duplicate
+                                    </p>
+                                    <p class="menuItems menuDelete" (click)="deleteModal(teAppData.appid)">Delete</p>
+                                </div>
                             </div>
                         </div>
                         <img class="desktopImg" [src]="desktopImgPath" alt="desktop Image" />
