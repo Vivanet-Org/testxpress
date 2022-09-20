@@ -339,3 +339,62 @@
   margin-left: 24px;
 }
 /* Edit, Duplicate and Delete popup end */
+
+/* Cancel creating application start */
+.cancelModal{
+  background-color: rgba(95, 95, 95, 0.354);
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
+.cancelapp-modal-contents{
+  width: 435px;
+  height: 180px;
+  background-color: white;
+  position: relative;
+  border-radius: 2px;
+}
+.cancelApplicationHeading{
+  font: normal normal 700 15px Lato, sans-serif;
+  color: #232324;
+  padding-top: 4px;
+}
+.cancelApplicationHeadingAlign{
+  margin-top: 24px;
+  margin-left: 24px;
+}
+.btnContinue {
+  float: right;
+  margin-left: 10px;
+  width:89px;
+  height: 32px;
+  font: normal normal 400 14px Lato, sans-serif;
+  background-color: #3E38D5;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  align-items: center;
+  margin-right: 24px;
+}
+.btnExit{
+  float: right;
+  width: 56px;
+  height: 32px;
+  font: normal normal 400 14px Lato, sans-serif;
+  background-color: #ffffff;
+  color: #525156;
+  border: 1px solid #cbcad6;
+  border-radius: 2px;
+  padding: 5px 16px;
+}
+.exclamationIcon {
+  width: 24px;
+}
+/* Cancel creting application end */

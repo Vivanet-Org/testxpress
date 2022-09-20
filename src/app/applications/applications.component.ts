@@ -18,6 +18,7 @@ export class ApplicationsComponent implements OnInit {
   moreImgPath: string = '/assets/images/more.png';
   closeImgPath: string = '/assets/images/close.png';
   deleteRedImagePath: string = '/assets/images/delete-red.png';
+  exclamationImagePath: string = '/assets/images/exclamation-circle.png';
 
   constructor(private user: UsersService) {
     this.loadApplicationData();
@@ -35,8 +36,22 @@ export class ApplicationsComponent implements OnInit {
     $('.create-app-modal').css({
       display: 'none',
     });
+    $('.cancelModal').css({
+      'display': 'none'
+    });
     this.selectedLevel = '';
     this.createNewApplicationForm.reset();
+  }
+
+  openCancelModal() {
+    $('.cancelModal').css({
+      'display': 'grid'
+    });
+  }
+  closeContinueModal(){
+    $('.cancelModal').css({
+      'display': 'none'
+    });
   }
 
   appDots: boolean = true;

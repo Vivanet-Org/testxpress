@@ -12,6 +12,7 @@ export class MainprojectComponent implements OnInit {
   @ViewChild('createNewProjectForm') createNewProjectForm : any;
 
   closeImagePath: string = '/assets/images/close.png';
+  exclamationImagePath: string = '/assets/images/exclamation-circle.png';
 
   constructor(public usersService:UsersService) { }
  
@@ -25,6 +26,9 @@ export class MainprojectComponent implements OnInit {
 
   closeModal() {
     $('.bg-modal').css({
+      'display': 'none'
+    });
+    $('.cancelModal').css({
       'display': 'none'
     });
 
@@ -96,6 +100,17 @@ export class MainprojectComponent implements OnInit {
         'border': '1px solid #F5222D'
       });
     }
+  }
+
+  openCancelModal() {
+    $('.cancelModal').css({
+      'display': 'grid'
+    });
+  }
+  closeContinueModal(){
+    $('.cancelModal').css({
+      'display': 'none'
+    });
   }
 
   ngOnInit(): void {

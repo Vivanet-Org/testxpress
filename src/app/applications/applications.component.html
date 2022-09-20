@@ -3,10 +3,10 @@
         <div class="appTopData">
             <p class="appHeading">Project / Applications</p>
             <div class="appTopAlign">
-                    <div class="windowsIconBg">
-                        <img class="applicationImg" [src] ="appsImgPath" alt="Application Image" /> 
-                    </div>
-                    <p class="appImgLabel">Applications</p>
+                <div class="windowsIconBg">
+                    <img class="applicationImg" [src]="appsImgPath" alt="Application Image" />
+                </div>
+                <p class="appImgLabel">Applications</p>
                 <button class="createAppBtn" (click)="openModal()">Create Application</button>
             </div>
         </div>
@@ -15,7 +15,7 @@
         <div class="appDataAlign">
             <label class="appHead">Applications</label>
             <select class="projectsDropdown" (change)="selectedProject($event)" #projectsDropdown>
-                <option value= "All Projects">All Projects</option>
+                <option value="All Projects">All Projects</option>
                 <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
                     {{teProjectsName.projectname}}
                 </option>
@@ -23,20 +23,22 @@
         </div>
         <div class="app-grid-container">
             <div *ngFor="let teAppData of appUiData">
-                <div class="app-grid-item" >
+                <div class="app-grid-item">
                     <div class="app-card-data">
                         <div class="app-dots">
-                            <img class="appMoreImg" [src] ="moreImgPath" alt="more Image" (click)="openAppTaskMenu(teAppData.appid)" />
+                            <img class="appMoreImg" [src]="moreImgPath" alt="more Image"
+                                (click)="openAppTaskMenu(teAppData.appid)" />
                             <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
                                 <p class="menuItems menuEdit" (click)="editModal(teAppData.appid)">Edit</p>
-                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teAppData.appid)">Duplicate</p>
+                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teAppData.appid)">Duplicate
+                                </p>
                                 <p class="menuItems menuDelete" (click)="deleteModal(teAppData.appid)">Delete</p>
                             </div>
                         </div>
-                        <img class="desktopImg" [src] ="desktopImgPath" alt="desktop Image" />
+                        <img class="desktopImg" [src]="desktopImgPath" alt="desktop Image" />
                         <p class="appCardHeading"> &nbsp; {{teAppData.appName}} </p>
                         <textarea type="text" name="projectDescription" class="textareaStylesCard"
-                        ngModel="{{teAppData.appDescription}}" disabled> </textarea>
+                            ngModel="{{teAppData.appDescription}}" disabled> </textarea>
                     </div>
 
                     <div class="girdFooter">
@@ -49,36 +51,41 @@
                 <!-- Edit popup start -->
                 <div class="edit-app-modal" *ngIf="teAppData.appid === editId && editFlag">
                     <div class="edit-modal-contents">
-                        <img class="closeEdit" [src] ="closeImgPath" alt="close Image"  (click)="closeEditDuplicateDeletePopup()" />
-                        <form #updateApplicationForm="ngForm" (submit)="updateExistingApplication(updateApplicationForm, teAppData.appid)">
-                                <p class="editAppHeading">Edit Application</p>
-                                <hr class="hrStyleEdd">
-                                <div class="form-control">
-                                    <p class="popupAppDetails">Application Name<span class="mandatoryField">*</span></p>
-                                    <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
+                        <img class="closeEdit" [src]="closeImgPath" alt="close Image"
+                            (click)="closeEditDuplicateDeletePopup()" />
+                        <form #updateApplicationForm="ngForm"
+                            (submit)="updateExistingApplication(updateApplicationForm, teAppData.appid)">
+                            <p class="editAppHeading">Edit Application</p>
+                            <hr class="hrStyleEdd">
+                            <div class="form-control">
+                                <p class="popupAppDetails">Application Name<span class="mandatoryField">*</span></p>
+                                <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
                                     required ngModel="{{ teAppData.appName }}" maxlength="25" minlength="1" />
-                                    <p *ngIf="uname.errors?.['minlength'] || (updateApplicationForm.controls['appName']?.touched && updateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
-                                        Application Name must be at least 1 character long.
-                                    </p>
-                                    <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                        Application Name maximum of 25 characters only.
-                                    </p>
-                                </div>
-                                <div>
-                                    <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
-                                    <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
-                                        <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
-                                            {{teProjectsName.projectname}}
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="control">
-                                    <label class="popupAppDetails">Application Description</label><br />
-                                    <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
+                                <p *ngIf="uname.errors?.['minlength'] || (updateApplicationForm.controls['appName']?.touched && updateApplicationForm.controls['appName']?.invalid)"
+                                    class="errorMessage">
+                                    Application Name must be at least 1 character long.
+                                </p>
+                                <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                    Application Name maximum of 25 characters only.
+                                </p>
+                            </div>
+                            <div>
+                                <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
+                                <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
+                                    (change)="selected($event)">
+                                    <option *ngFor="let teProjectsName of projectIdName"
+                                        [ngValue]="teProjectsName.projectname">
+                                        {{teProjectsName.projectname}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="control">
+                                <label class="popupAppDetails">Application Description</label><br />
+                                <textarea type="text" name="appDescription" class="textareaStyles" id="Description"
                                     ngModel="{{ teAppData.appDescription }}" maxlength="150" minlength="1"> </textarea>
-                                </div>
-                                <hr class="hrStyleEdd">
-                                <button class="btnEdit" [disabled]="!updateApplicationForm.valid">Edit</button>
+                            </div>
+                            <hr class="hrStyleEdd">
+                            <button class="btnEdit" [disabled]="!updateApplicationForm.valid">Edit</button>
                         </form>
                         <button class="btnClose" (click)="closeEditDuplicateDeletePopup()">Cancel</button>
                     </div>
@@ -88,36 +95,42 @@
                 <!-- duplicate popup start -->
                 <div class="duplicate-app-modal" *ngIf="teAppData.appid === duplicateId && duplicateFlag">
                     <div class="duplicate-modal-contents">
-                        <img class="closeDuplicate" [src] ="closeImgPath" alt="close Image"  (click)="closeEditDuplicateDeletePopup()" />
-                        <form #duplicateApplicationForm="ngForm" (submit)="duplicateApplication(duplicateApplicationForm, teAppData.appid)">
-                                <p class="duplicateAppHeading">Duplicate Application</p>
-                                <hr class="hrStyleEdd">
-                                <div class="form-control">
-                                    <label class="popupAppDetails">Application Name<span class="mandatoryField">*</span></label><br />
-                                    <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
-                                    required ngModel= "{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
-                                    <p *ngIf="uname.errors?.['minlength'] || (duplicateApplicationForm.controls['appName']?.touched && duplicateApplicationForm.controls['appName']?.invalid)" class="errorMessage">
-                                        Application Name must be at least 1 character long.
-                                    </p>
-                                    <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                        Application Name maximum of 25 characters only.
-                                    </p>
-                                </div>
-                                <div>
-                                    <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
-                                    <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName" (change)="selected($event)">
-                                        <option *ngFor="let teProjectsName of projectIdName" [ngValue]= "teProjectsName.projectname">
-                                            {{teProjectsName.projectname}}
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="control">
-                                    <label class="popupAppDetails">Application Description</label><br />
-                                    <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
-                                    ngModel= "{{ teAppData.appDescription }}" maxlength="150" minlength="1"> </textarea>
-                                </div>
-                                <hr class="hrStyleEdd">
-                                <button class="btnDuplicate" [disabled]="!duplicateApplicationForm.valid">Duplicate</button>
+                        <img class="closeDuplicate" [src]="closeImgPath" alt="close Image"
+                            (click)="closeEditDuplicateDeletePopup()" />
+                        <form #duplicateApplicationForm="ngForm"
+                            (submit)="duplicateApplication(duplicateApplicationForm, teAppData.appid)">
+                            <p class="duplicateAppHeading">Duplicate Application</p>
+                            <hr class="hrStyleEdd">
+                            <div class="form-control">
+                                <label class="popupAppDetails">Application Name<span
+                                        class="mandatoryField">*</span></label><br />
+                                <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
+                                    required ngModel="{{ teAppData.appName }}_copy" maxlength="25" minlength="1" />
+                                <p *ngIf="uname.errors?.['minlength'] || (duplicateApplicationForm.controls['appName']?.touched && duplicateApplicationForm.controls['appName']?.invalid)"
+                                    class="errorMessage">
+                                    Application Name must be at least 1 character long.
+                                </p>
+                                <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                                    Application Name maximum of 25 characters only.
+                                </p>
+                            </div>
+                            <div>
+                                <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
+                                <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
+                                    (change)="selected($event)">
+                                    <option *ngFor="let teProjectsName of projectIdName"
+                                        [ngValue]="teProjectsName.projectname">
+                                        {{teProjectsName.projectname}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="control">
+                                <label class="popupAppDetails">Application Description</label><br />
+                                <textarea type="text" name="appDescription" class="textareaStyles" id="Description"
+                                    ngModel="{{ teAppData.appDescription }}" maxlength="150" minlength="1"> </textarea>
+                            </div>
+                            <hr class="hrStyleEdd">
+                            <button class="btnDuplicate" [disabled]="!duplicateApplicationForm.valid">Duplicate</button>
                         </form>
                         <button class="btnClose" (click)="closeEditDuplicateDeletePopup()">Cancel</button>
                     </div>
@@ -129,14 +142,15 @@
                     <div class="delete-modal-contents">
                         <div class="deleteAppHeadingAlign">
                             <p class="deleteIconAlign">
-                                <img [src] ="deleteRedImagePath" alt="close Image" class="deleteIcon"/>
-                            </p>                        
+                                <img [src]="deleteRedImagePath" alt="close Image" class="deleteIcon" />
+                            </p>
                             <p class="deleteAppHeading"> Do you want to delete this Application? </p>
                         </div>
                         <div>
-                            <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be recovered.</p>
+                            <p class="deleteInfo">Your datas within this item will be deleted and <br /> cannot be
+                                recovered.</p>
                         </div>
-                        
+
                         <button class="btnDelete" (click)="deleteApplication(teAppData.appid)">Delete</button>
                         <button class="btnClose" (click)="closeEditDuplicateDeletePopup()">Cancel</button>
                     </div>
@@ -144,53 +158,76 @@
                 <!-- Delete popup End -->
 
             </div>
-            
+
         </div>
 
         <!-- Create Application Popup Start -->
         <div class="create-app-modal">
             <div class="create-modal-contents">
-                <img class="closeModel" [src] ="closeImgPath" alt="close Image"  (click)="closeModal()" />
+                <img class="closeModel" [src]="closeImgPath" alt="close Image" (click)="closeModal()" />
                 <form #createNewApplicationForm="ngForm" (submit)="createNewApplication(createNewApplicationForm)">
-                        <p class="createAppHeading">Create new Application</p>
-                        <hr class="hrStyle">
-                        <div>
-                            <p class="appDetails">Application Name<span class="mandatoryField">*</span></p>
-                            <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel" 
-                            placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1" #appName />
-                            <p *ngIf="uname.errors?.['minlength'] || (createNewApplicationForm.controls['appName']?.touched && createNewApplicationForm.controls['appName']?.invalid)" class="errorMessage">
-                                Application Name must be at least 1 character long.
-                            </p>
-                            <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
-                                Application Name maximum of 25 characters only.
-                            </p>
-                        </div>
-                        <div>
-                            <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
-                            <select class="createProjectsDropdown" (change)="selectedCreate($event)">
-                                <option value="">Select Project</option>
-                                <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
-                                    {{teProjectsName.projectname}}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="control">
-                            <label class="appDetails">Application Description</label><br />
-                            <textarea type="text" name="appDescription" class="textareaStyles" id="Description" 
-                            placeholder="Enter Application Description" ngModel maxlength="150" minlength="1" #appDescription > </textarea>
-                        </div>
-                        <hr class="hrStyle">
-                        <button class="btnCreate">Create</button>
+                    <p class="createAppHeading">Create new Application</p>
+                    <hr class="hrStyle">
+                    <div>
+                        <p class="appDetails">Application Name<span class="mandatoryField">*</span></p>
+                        <input class="inputStyles" id="name" type="text" name="appName" #uname="ngModel"
+                            placeholder="Enter Application Name" required ngModel maxlength="25" minlength="1"
+                            #appName />
+                        <p *ngIf="uname.errors?.['minlength'] || (createNewApplicationForm.controls['appName']?.touched && createNewApplicationForm.controls['appName']?.invalid)"
+                            class="errorMessage">
+                            Application Name must be at least 1 character long.
+                        </p>
+                        <p *ngIf="uname.errors?.['maxlength']" class="errorMessage">
+                            Application Name maximum of 25 characters only.
+                        </p>
+                    </div>
+                    <div>
+                        <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
+                        <select class="createProjectsDropdown" (change)="selectedCreate($event)">
+                            <option value="">Select Project</option>
+                            <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
+                                {{teProjectsName.projectname}}
+                            </option>
+                        </select>
+                    </div>
+                    <div class="control">
+                        <label class="appDetails">Application Description</label><br />
+                        <textarea type="text" name="appDescription" class="textareaStyles" id="Description"
+                            placeholder="Enter Application Description" ngModel maxlength="150" minlength="1"
+                            #appDescription> </textarea>
+                    </div>
+                    <hr class="hrStyle">
+                    <button class="btnCreate">Create</button>
                 </form>
-                <button class="CreateProjBtnClose" (click)="closeModal()">Cancel</button>
+                <button class="CreateProjBtnClose" (click)="openCancelModal()">Cancel</button>
             </div>
         </div>
         <!-- Create Application Popup End -->
 
+        <!-- Cancel creating new application popup Start -->
+        <div class="cancelModal">
+            <div class="cancelapp-modal-contents">
+                <div class="cancelApplicationHeadingAlign">
+                    <p class="cancelIconAlign">
+                        <img [src]="exclamationImagePath" alt="close Image" class="exclamationIcon" />
+                    </p>
+                    <p class="cancelApplicationHeading">Do you want to cancel creating new Application?</p>
+                </div>
+                <div>
+                    <p class="cancelInfo">Your filled data within this form will be lost and <br /> cannot be recovered.
+                    </p>
+                </div>
+
+                <button class="btnContinue" (click)="closeContinueModal()">Continue</button>
+                <button class="btnExit" (click)="closeModal()">Exit</button>
+            </div>
+        </div>
+        <!-- Cancel creating new application popup End -->
     </div>
 
     <div class="appDataNotFound" *ngIf="!searchFlag">
-        <p>Sorry, no applications were found for your selected project name <span style="color: #3E38D5;"> "{{selectedValueDisplay}}"</span>. </p>
+        <p>Sorry, no applications were found for your selected project name <span style="color: #3E38D5;">
+                "{{selectedValueDisplay}}"</span>. </p>
     </div>
-    
+
 </section>
