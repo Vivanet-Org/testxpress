@@ -26,8 +26,6 @@ export class CardComponent implements OnInit{
   avatarImg2Path: string = '/assets/images/avatar-photo4px-2.png';
   textImgPath: string = '/assets/images/text-4px.png';
   srarchImagePath: string = '/assets/images/search.png';
-  rightmarkImagePath: string = '/assets/images/rightmark.png';
-  closebtnImagePath: string = '/assets/images/closebtn.png';
 
   manageMembersData:any = [
     {
