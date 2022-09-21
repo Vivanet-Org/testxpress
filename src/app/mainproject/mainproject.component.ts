@@ -13,6 +13,8 @@ export class MainprojectComponent implements OnInit {
 
   closeImagePath: string = '/assets/images/close.png';
   exclamationImagePath: string = '/assets/images/exclamation-circle.png';
+  rightmarkImagePath: string = '/assets/images/rightmark.png';
+  closebtnImagePath: string = '/assets/images/closebtn.png';
 
   constructor(public usersService:UsersService) { }
  
@@ -23,6 +25,8 @@ export class MainprojectComponent implements OnInit {
   projectNameFlag: boolean = false;
   existingProjectNameFlag: boolean = false;
 
+  projectNameValueDisplay: string = '';
+
 
   closeModal() {
     $('.bg-modal').css({
@@ -31,6 +35,11 @@ export class MainprojectComponent implements OnInit {
     $('.cancelModal').css({
       'display': 'none'
     });
+    $('.alert').css({
+      'display': 'block'
+    });
+    console.log(this.projectNameValue);
+
 
     this.projectNameFlag = false;
     this.existingProjectNameFlag = false;
@@ -41,6 +50,21 @@ export class MainprojectComponent implements OnInit {
 
     this.createNewProjectForm.reset(); 
   }
+
+  closeMessage(){
+    console.log(this.projectNameValue);
+
+    
+    $('.alert').css({
+      
+      'display': 'none'
+    });
+    this.projectNameValue='';
+    console.log(this.projectNameValue);
+
+    
+  }
+  
 
   projNameData(){
     if(this.projectNameValue != "" || this.projectNameValue != null){
@@ -53,6 +77,7 @@ export class MainprojectComponent implements OnInit {
   }
 
   createNewProject(form: any){
+    this.projectNameValueDisplay=form.value.projectName;
     console.log(form.value.projectName);
     if(form.value.projectName != null && form.value.projectName != ''){
       const newFormData = {
@@ -83,7 +108,11 @@ export class MainprojectComponent implements OnInit {
           console.log(newFormData);
           this.usersService.createProject(newFormData).subscribe(data => {
             console.log(data);
-            alert("'" + form.value.projectName + "' Project Created Successfully");
+            
+            $('.alert').css({
+              'display': 'block'
+            });
+
             this.closeModal();
             this.usersService.sendClickEvent();
           });
