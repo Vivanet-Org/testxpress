@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { UsersService } from '../users.service';
 import * as $ from "jquery";
 import { Subscription } from 'rxjs';
@@ -84,6 +84,30 @@ export class CardComponent implements OnInit{
     this.loadProjectData();
   }
 
+  @HostListener('document:click', ['$event'])
+  documentClick(event: MouseEvent) {
+
+    let temporaryThis = this; 
+
+    $('html').click(function(e){
+      if (e.target.id == 'overlay' || $(e.target).parents('#overlay').length > 0) {
+        if(temporaryThis.editId != null){
+          temporaryThis.taskMenuFlag = false;
+        }
+      } else {
+        temporaryThis.taskMenuId = null;
+        temporaryThis.taskMenuFlag = true;
+        $('.dots, .task-menu').css({
+          'transform':'',
+          'z-index': ''
+        });
+        temporaryThis.dots = true;
+
+      }
+    });
+
+  }
+  
   searchdValue: string = '';
   searchdValueDisplay: string = '';
   searchFlag: boolean = true;
@@ -166,25 +190,27 @@ export class CardComponent implements OnInit{
   taskMenuFlag = true;
 
   openTaskMenu(id: any){
-    this.taskMenuId = id;
-    console.log(id);
-    console.log(this.taskMenuId);
-    if(this.dots){
-      this.taskMenuFlag = false;
-      $('.dots, .task-menu').css({
-        'transform':'scale(1)',
-        'z-index': '2'
-      });
-      this.dots = false;
-    }
-    else if(!this.dots){
-      this.taskMenuId = null;
-      this.taskMenuFlag = true;
-      $('.dots, .task-menu').css({
-        'transform':'',
-        'z-index': ''
-      });
-      this.dots = true;
+    if(id != '' && id != null){
+      this.taskMenuId = id;
+      console.log(id);
+      console.log(this.taskMenuId);
+      if(this.dots){
+        this.taskMenuFlag = false;
+        $('.dots, .task-menu').css({
+          'transform':'scale(1)',
+          'z-index': '2'
+        });
+        this.dots = false;
+      }
+      else if(!this.dots){
+        this.taskMenuId = null;
+        this.taskMenuFlag = true;
+        $('.dots, .task-menu').css({
+          'transform':'',
+          'z-index': ''
+        });
+        this.dots = true;
+      }
     }
   } 
   
@@ -200,6 +226,7 @@ export class CardComponent implements OnInit{
     this.deleteFlag = false;
     this.membersId = null;
     this.membersFlag = false;
+    this.dots = true;
 
     for (let index = 0; index < this.manageMembersData.length; index++) {
       this.manageMembersData[index] = {

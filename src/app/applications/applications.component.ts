@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import * as $ from 'jquery';
 import { UsersService } from '../users.service';
 
@@ -23,6 +23,30 @@ export class ApplicationsComponent implements OnInit {
   constructor(private user: UsersService) {
     this.loadApplicationData();
     this.loadProjectName();
+  }
+
+  @HostListener('document:click', ['$event'])
+  documentClick(event: MouseEvent) {
+
+    let temporaryThis = this; 
+
+    $('html').click(function(e){
+      if (e.target.id == 'appOverlay' || $(e.target).parents('#appOverlay').length > 0) {
+        if(temporaryThis.editId != null){
+          temporaryThis.appTaskMenuFlag = false;
+        }
+      } else {
+        temporaryThis.appTaskMenuId = null;
+        temporaryThis.appTaskMenuFlag = true;
+        $('.app-dots, .app-task-menu').css({
+          transform: '',
+          'z-index': '',
+        });
+        temporaryThis.appDots = true;
+
+      }
+    });
+
   }
 
   openModal() {
@@ -58,27 +82,29 @@ export class ApplicationsComponent implements OnInit {
   appTaskMenuId: any = null;
   appTaskMenuFlag = true;
   openAppTaskMenu(id: any) {
+    if(id != '' && id != null){
 
-    this.defaultSelect(id);
+      this.defaultSelect(id);
 
-    this.appTaskMenuId = id;
-    console.log(id);
-    console.log(this.appTaskMenuId);
-    if (this.appDots) {
-      this.appTaskMenuFlag = false;
-      $('.app-dots, .app-task-menu').css({
-        transform: 'scale(1)',
-        'z-index': '2',
-      });
-      this.appDots = false;
-    } else if (!this.appDots) {
-      this.appTaskMenuId = null;
-      this.appTaskMenuFlag = true;
-      $('.app-dots, .app-task-menu').css({
-        transform: '',
-        'z-index': '',
-      });
-      this.appDots = true;
+      this.appTaskMenuId = id;
+      console.log(id);
+      console.log(this.appTaskMenuId);
+      if (this.appDots) {
+        this.appTaskMenuFlag = false;
+        $('.app-dots, .app-task-menu').css({
+          transform: 'scale(1)',
+          'z-index': '2',
+        });
+        this.appDots = false;
+      } else if (!this.appDots) {
+        this.appTaskMenuId = null;
+        this.appTaskMenuFlag = true;
+        $('.app-dots, .app-task-menu').css({
+          transform: '',
+          'z-index': '',
+        });
+        this.appDots = true;
+      }
     }
   }
 

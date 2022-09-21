@@ -21,12 +21,14 @@
         <div *ngFor="let teProjectsData of uiData">
             <div class="grid-item" >
                 <div class="project-card-data">
-                    <div class="dots">
-                        <img class="moreImg" [src] ="moreImgPath" alt="more Image" (click)="openTaskMenu(teProjectsData.projectid)" />
-                        <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">
-                            <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
-                            <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
-                            <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectid)">Delete</p>
+                    <div class="overlay" id="overlay">
+                        <div class="dots">
+                            <img class="moreImg" [src] ="moreImgPath" alt="more Image" (click)="openTaskMenu(teProjectsData.projectid)" />
+                            <div class="task-menu" *ngIf="teProjectsData.projectid == taskMenuId || taskMenuFlag">
+                                <p class="menuItems menuEdit" (click)="editModal(teProjectsData.projectid)">Edit</p>
+                                <p class="menuItems menuDuplicate" (click)="duplicateModal(teProjectsData.projectid)">Duplicate</p>
+                                <p class="menuItems menuDelete" (click)="deleteModal(teProjectsData.projectid)">Delete</p>
+                            </div>
                         </div>
                     </div>
                     <p class="projectHeading">{{ teProjectsData.projectName }}</p>
