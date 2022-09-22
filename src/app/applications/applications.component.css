@@ -76,6 +76,7 @@
 }
 
 .inputStyles,
+.nameInputStyles,
 .createProjectsDropdown {
   width: 474px;
   height: 32px;
@@ -87,6 +88,10 @@
   border-radius: 2px;
   color: #525156;
   margin-left: 24px;
+}
+.errorMessage{
+  margin-top: -10px;
+  padding-bottom: 10px;
 }
 
 .createProjectsDropdown {

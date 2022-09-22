@@ -64,6 +64,14 @@ export class ApplicationsComponent implements OnInit {
       'display': 'none'
     });
     this.selectedLevel = '';
+
+    this.appNameFlag = false;
+    this.appNameValue = '';
+    this.existingAppNameFlag = false;
+    $('.nameInputStyles').css({
+      'border': ''
+    });
+
     this.createNewApplicationForm.reset();
   }
 
@@ -278,10 +286,27 @@ export class ApplicationsComponent implements OnInit {
       });
     }
   }
+
+  appNameValue: string = '';
+
+  appNameData(){
+    if(this.appNameValue != "" || this.appNameValue != null){
+      this.appNameFlag = false;
+      this.existingAppNameFlag = false;      
+      $('.nameInputStyles').css({
+        'border': ''
+      });
+    }
+  }
+
   
   appData1: any = {};
   projectData1: any = {};
   createFlag: boolean = false;
+
+  appNameFlag: boolean = false;
+  existingAppNameFlag: boolean = false;
+
   createNewApplication(form: any) {
 
     if(form.value.appName != null && form.value.appName != ''){
@@ -295,7 +320,11 @@ export class ApplicationsComponent implements OnInit {
           for (let index = 0; index < this.appData1.length; index++) {
             if (this.appData1[index].appName === form.value.appName) {
               this.createFlag = true;
-              alert("The application name '" + form.value.appName +"' has already been reported");
+              // alert("The application name '" + form.value.appName +"' has already been reported");
+              this.existingAppNameFlag = true; 
+              $('.nameInputStyles').css({
+                'border': '1px solid #F5222D'
+              });
               break;
             }
           }
@@ -327,7 +356,11 @@ export class ApplicationsComponent implements OnInit {
         });
       }
     } else{
-      alert("Please Enter Application Name");
+      // alert("Please Enter Application Name");
+      this.appNameFlag = true; 
+      $('.nameInputStyles').css({
+        'border': '1px solid #F5222D'
+      });
     }
   }
 

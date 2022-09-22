@@ -35,11 +35,7 @@ export class MainprojectComponent implements OnInit {
     $('.cancelModal').css({
       'display': 'none'
     });
-    $('.alert').css({
-      'display': 'block'
-    });
     console.log(this.projectNameValue);
-
 
     this.projectNameFlag = false;
     this.existingProjectNameFlag = false;
@@ -53,16 +49,11 @@ export class MainprojectComponent implements OnInit {
 
   closeMessage(){
     console.log(this.projectNameValue);
-
-    
     $('.alert').css({
-      
       'display': 'none'
     });
     this.projectNameValue='';
     console.log(this.projectNameValue);
-
-    
   }
   
 
