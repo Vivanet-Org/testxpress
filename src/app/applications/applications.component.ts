@@ -71,6 +71,10 @@ export class ApplicationsComponent implements OnInit {
     $('.nameInputStyles').css({
       'border': ''
     });
+    this.projectNameFlag = false;   
+    $('.createProjectsDropdown').css({
+      'border': ''
+    }); 
 
     this.createNewApplicationForm.reset();
   }
@@ -263,6 +267,14 @@ export class ApplicationsComponent implements OnInit {
   }
   selectedCreate(event: any) {
     this.selectedLevel = event.target.value;
+
+    if(this.selectedLevel != '' || this.selectedLevel != null ){
+      this.projectNameFlag = false; 
+      $('.createProjectsDropdown').css({
+        'border': ''
+      });
+    }
+
   }
   getprojectId() {
     console.log(this.selectedLevel);
@@ -275,7 +287,7 @@ export class ApplicationsComponent implements OnInit {
             this.projectID = this.projectData1[index].projectid;
             console.log(this.projectID);
             this.selectedProjectValue = '';
-            this.selectedLevel = '';
+            // this.selectedLevel = '';
             if(this.isSelectedproject){
               this.loadApplicationData();
               this.isSelectedproject = false;              
@@ -306,13 +318,18 @@ export class ApplicationsComponent implements OnInit {
 
   appNameFlag: boolean = false;
   existingAppNameFlag: boolean = false;
+  projectNameFlag: boolean = false;
 
   createNewApplication(form: any) {
 
     if(form.value.appName != null && form.value.appName != ''){
       this.getprojectId();
-      if(this.selectedLevel == ''){
-        alert("Please select a project name");
+      if(this.selectedLevel == '' ||  this.selectedLevel == null ){
+        // alert("Please select a project name");
+        this.projectNameFlag = true; 
+        $('.createProjectsDropdown').css({
+          'border': '1px solid #F5222D'
+        });
       }
       else{
         this.user.getApplicationsData().subscribe((data) => {
@@ -361,6 +378,13 @@ export class ApplicationsComponent implements OnInit {
       $('.nameInputStyles').css({
         'border': '1px solid #F5222D'
       });
+
+      if(this.selectedLevel == '' ||  this.selectedLevel == null ){
+        this.projectNameFlag = true; 
+        $('.createProjectsDropdown').css({
+          'border': '1px solid #F5222D'
+        });
+      }
     }
   }
 
