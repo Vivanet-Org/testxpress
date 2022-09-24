@@ -73,7 +73,7 @@
                             </div>
                             <div>
                                 <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
-                                <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
+                                <select class="editProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
                                     (change)="selected($event)">
                                     <option *ngFor="let teProjectsName of projectIdName"
                                         [ngValue]="teProjectsName.projectname">
@@ -118,7 +118,7 @@
                             </div>
                             <div>
                                 <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
-                                <select class="createProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
+                                <select class="duplicateProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
                                     (change)="selected($event)">
                                     <option *ngFor="let teProjectsName of projectIdName"
                                         [ngValue]="teProjectsName.projectname">
@@ -184,11 +184,14 @@
                     <div>
                         <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
                         <select class="createProjectsDropdown" (change)="selectedCreate($event)">
-                            <option value="">Select Project</option>
+                            <option style="display:none" value=""></option>
                             <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
                                 {{teProjectsName.projectname}}
                             </option>
                         </select>
+                        <p class="errorMessage" *ngIf="projectNameFlag">
+                            Please select Project Name
+                        </p>
                     </div>
                     <div class="control">
                         <label class="appDetails">Application Description</label><br />
