@@ -13,8 +13,7 @@ export class MainprojectComponent implements OnInit {
 
   closeImagePath: string = '/assets/images/close.png';
   exclamationImagePath: string = '/assets/images/exclamation-circle.png';
-  rightmarkImagePath: string = '/assets/images/rightmark.png';
-  closebtnImagePath: string = '/assets/images/closebtn.png';
+  checkCircleImg: string = '/assets/images/check-circle.png';
 
   constructor(public usersService:UsersService) { }
  
@@ -26,7 +25,6 @@ export class MainprojectComponent implements OnInit {
   existingProjectNameFlag: boolean = false;
 
   projectNameValueDisplay: string = '';
-
 
   closeModal() {
     $('.bg-modal').css({
@@ -49,7 +47,7 @@ export class MainprojectComponent implements OnInit {
 
   closeMessage(){
     console.log(this.projectNameValue);
-    $('.alert').css({
+    $('.createProjectMsg').css({
       'display': 'none'
     });
     this.projectNameValue='';
@@ -100,11 +98,14 @@ export class MainprojectComponent implements OnInit {
           this.usersService.createProject(newFormData).subscribe(data => {
             console.log(data);
             
-            $('.alert').css({
+            $('.createProjectMsg').css({
               'display': 'block'
-            });
+            });            
 
             this.closeModal();
+            setTimeout(() => {
+              this.closeMessage();
+            }, 5000);
             this.usersService.sendClickEvent();
           });
         }

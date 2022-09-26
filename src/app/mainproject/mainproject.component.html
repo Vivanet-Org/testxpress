@@ -46,11 +46,8 @@
     <!-- Cancel creating new project popup End -->
 </div>
 
-<div class="alert">
-    <img [src] ="rightmarkImagePath" alt="right mark" class="rightmark" />
-    <div class="msg-align">
-        <label class="msg">Project created successfully</label><br>
-        <label class="msgName"> {{projectNameValueDisplay}} is created! </label>
-    </div>
-    <img [src] ="closebtnImagePath" alt="close btn" class="closebtn" (click)="closeMessage()" />
+<div class="createProjectMsg">
+    <img [src] ="checkCircleImg" alt="right mark" class="rightmark" />
+    <label class="msg">Project created successfully</label><br>
+    <label class="msgName"> {{projectNameValueDisplay}} is succesfully created!</label>
 </div>
