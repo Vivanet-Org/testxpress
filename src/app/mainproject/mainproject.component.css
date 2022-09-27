@@ -170,47 +170,44 @@
 
 /* Cancel creting project end */
 
-.alert{
+/* Creting project Message Start */
+.createProjectMsg{
   display:none; 
-  background: #6FCF97;
-  width: 320px;
-  height: 68px;
+  background: #EEFFFA;
+  width: 354px;
+  height: 104px;
   position: absolute;
   right: 0;
   top: 10px;
-  border: 1px solid #6FCF97;
-  box-shadow: 0px 2px 26px rgba(82, 215, 0, 0.1);
-  border-radius: 6px;
+  border: 1px solid #85E8C6;
+  border-radius: 2px;
 }
 
 .rightmark{
-  width: 32px;
-  height: 39px;
+  width: 24px;
+  height: 24px;
   position: absolute;
-  left: 12px;
-  top: 12px;
-}
-.msg-align{
-  position: absolute;
-  left: 56px;
-  top: 12px;
+  left: 24px;
+  top: 16px;
 }
 .msg{
-  font: normal normal 600 16px Montserrat, sans-serif;
-  color: #FFFFFF;
+  position: absolute;
+  left: 64px;
+  top: 16px;
+  font: normal normal 400 16px Lato, sans-serif;
+  line-height: 24px;
+  color: #232324;
 }
 .msgName{
-  font: normal normal 400 14px Montserrat, sans-serif;
-  color: #F4FFF8;
+  font: normal normal 400 14px Lato, sans-serif;
+  line-height: 22px;
+  color: #525156;
   position: relative;
-  top: 4px;
+  position: absolute;
+  left: 64px;
+  top: 44px;
+  width: 226px;
+  height: 44px;
 }
 
-.closebtn{
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-}
+/* Creting project Message end */
