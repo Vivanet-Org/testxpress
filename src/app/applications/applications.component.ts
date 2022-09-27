@@ -75,6 +75,9 @@ export class ApplicationsComponent implements OnInit {
     $('.createProjectsDropdown').css({
       'border': ''
     }); 
+    $('.createApplicationDropdown').css({
+      'border': ''
+    }); 
 
     this.createNewApplicationForm.reset();
   }

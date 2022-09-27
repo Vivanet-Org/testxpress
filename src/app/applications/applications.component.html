@@ -31,7 +31,8 @@
                                     (click)="openAppTaskMenu(teAppData.appid)" />
                                 <div class="app-task-menu" *ngIf="teAppData.appid == appTaskMenuId || appTaskMenuFlag">
                                     <p class="menuItems menuEdit" (click)="editModal(teAppData.appid)">Edit</p>
-                                    <p class="menuItems menuDuplicate" (click)="duplicateModal(teAppData.appid)">Duplicate
+                                    <p class="menuItems menuDuplicate" (click)="duplicateModal(teAppData.appid)">
+                                        Duplicate
                                     </p>
                                     <p class="menuItems menuDelete" (click)="deleteModal(teAppData.appid)">Delete</p>
                                 </div>
@@ -118,8 +119,8 @@
                             </div>
                             <div>
                                 <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
-                                <select class="duplicateProjectsDropdown" [(ngModel)]="defaultValue" name="projectIdName"
-                                    (change)="selected($event)">
+                                <select class="duplicateProjectsDropdown" [(ngModel)]="defaultValue"
+                                    name="projectIdName" (change)="selected($event)">
                                     <option *ngFor="let teProjectsName of projectIdName"
                                         [ngValue]="teProjectsName.projectname">
                                         {{teProjectsName.projectname}}
@@ -172,8 +173,9 @@
                     <hr class="hrStyle">
                     <div>
                         <p class="appDetails">Application Name<span class="mandatoryField">*</span></p>
-                        <input class="nameInputStyles" id="name" type="text" name="appName" #uname="ngModel"
-                            required ngModel maxlength="25" minlength="1"  [(ngModel)]="appNameValue" (keypress)="appNameData()" (keydown.backspace)="appNameData()" />
+                        <input class="nameInputStyles" id="name" type="text" name="appName" #uname="ngModel" required
+                            ngModel maxlength="25" minlength="1" [(ngModel)]="appNameValue" (keypress)="appNameData()"
+                            (keydown.backspace)="appNameData()" />
                         <p class="errorMessage" *ngIf="appNameFlag">
                             Please enter Application Name
                         </p>
@@ -181,22 +183,32 @@
                             The Application name " {{appNameValue}} " has already been reported
                         </p>
                     </div>
+
                     <div>
-                        <label class="appDetails">Project Name<span class="mandatoryField">*</span></label><br>
+                        <label class="appDetails">Project Name<span class="mandatoryField">*</span></label>
+                        <label class="appTypeDetails">Application Type<span class="mandatoryField">*</span></label>
                         <select class="createProjectsDropdown" (change)="selectedCreate($event)">
                             <option style="display:none" value=""></option>
                             <option *ngFor="let teProjectsName of projectIdName" value={{teProjectsName.projectname}}>
                                 {{teProjectsName.projectname}}
                             </option>
                         </select>
+                        <select class="createApplicationDropdown">
+                            <option style="display:none" value=""></option>
+                            <option> Web </option>
+                            <option> IOS </option>
+                            <option> Android </option>
+                            <option> Desktop </option>
+                        </select>
                         <p class="errorMessage" *ngIf="projectNameFlag">
                             Please select Project Name
                         </p>
                     </div>
+
                     <div class="control">
                         <label class="appDetails">Application Description</label><br />
-                        <textarea type="text" name="appDescription" class="textareaStyles" id="Description"
-                            ngModel maxlength="150" minlength="1" > </textarea>
+                        <textarea type="text" name="appDescription" class="textareaStyles" id="Description" ngModel
+                            maxlength="150" minlength="1"> </textarea>
                     </div>
                     <hr class="hrStyle">
                     <button class="btnCreate">Create</button>
