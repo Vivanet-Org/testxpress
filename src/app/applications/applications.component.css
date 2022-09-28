@@ -124,8 +124,17 @@
   margin-top: -10px;
   padding-bottom: 10px;
 }
+.errorAppMessage{
+  /* margin-top: -30px; */
+  padding-bottom: 10px;
+  color: #F5222D;
+  font: normal normal 400 14px Lato, sans-serif;
+  margin-bottom: 5px;
+  margin-left: 270px;
+}
 
-.createProjectsDropdown {
+.createProjectsDropdown,
+.createApplicationDropdown {
   cursor: pointer;
 }
 

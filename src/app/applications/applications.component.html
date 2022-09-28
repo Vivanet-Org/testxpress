@@ -193,15 +193,18 @@
                                 {{teProjectsName.projectname}}
                             </option>
                         </select>
-                        <select class="createApplicationDropdown">
-                            <option style="display:none" value=""></option>
-                            <option> Web </option>
-                            <option> IOS </option>
-                            <option> Android </option>
-                            <option> Desktop </option>
+                        <select class="createApplicationDropdown"(change)="selectedAppCreate($event)" #appTypeDropdown>
+                            <option style="display:none" value="" selected></option>
+                            <option value="web"> Web </option>
+                            <option value="IOS"> IOS </option>
+                            <option value="android"> Android </option>
+                            <option value="desktop"> Desktop </option>
                         </select>
                         <p class="errorMessage" *ngIf="projectNameFlag">
                             Please select Project Name
+                        </p>
+                        <p class="errorAppMessage" *ngIf="applicationNameFlag" [style.margin-top]="projectNameFlag == false ? '-9px' : '-30px'">
+                            Please select Application Type
                         </p>
                     </div>
 

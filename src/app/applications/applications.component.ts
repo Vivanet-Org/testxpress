@@ -11,6 +11,7 @@ export class ApplicationsComponent implements OnInit {
   
   @ViewChild('projectsDropdown') projectsDropdown!: ElementRef;
   @ViewChild('createNewApplicationForm') createNewApplicationForm : any;
+  @ViewChild('appTypeDropdown') appTypeDropdown!: ElementRef;
 
   appsImgPath: string = '/assets/images/apps.png';
   appImgPath: string = '/assets/images/applications.png';
@@ -64,6 +65,7 @@ export class ApplicationsComponent implements OnInit {
       'display': 'none'
     });
     this.selectedLevel = '';
+    this.selectedAppLevel = '';
 
     this.appNameFlag = false;
     this.appNameValue = '';
@@ -75,11 +77,13 @@ export class ApplicationsComponent implements OnInit {
     $('.createProjectsDropdown').css({
       'border': ''
     }); 
+    this.applicationNameFlag = false;
     $('.createApplicationDropdown').css({
       'border': ''
     }); 
 
     this.createNewApplicationForm.reset();
+    this.appTypeDropdown.nativeElement.value = "";
   }
 
   openCancelModal() {
@@ -178,6 +182,7 @@ export class ApplicationsComponent implements OnInit {
     this.editId = null;
     this.editFlag = false;
     this.selectedLevel = '';
+    this.selectedAppLevel = '';
     this.duplicateId = null;
     this.duplicateFlag = false;
     this.deleteId = null;
@@ -263,6 +268,7 @@ export class ApplicationsComponent implements OnInit {
   }
 
   selectedLevel: string = '';
+  selectedAppLevel: string = '';
   projectID = null;
   selected(event: any) {
     this.selectedLevel = event.target.value.slice(3);
@@ -276,9 +282,23 @@ export class ApplicationsComponent implements OnInit {
       $('.createProjectsDropdown').css({
         'border': ''
       });
+      // $('.errorAppMessage').css({
+      //   'margin-top': '-9px'
+      // });
     }
-
   }
+
+  selectedAppCreate(event: any) {
+    this.selectedAppLevel = event.target.value;
+
+    if(this.selectedAppLevel != '' || this.selectedAppLevel != null ){
+      this.applicationNameFlag = false; 
+      $('.createApplicationDropdown').css({
+        'border': ''
+      });
+    }
+  }
+
   getprojectId() {
     console.log(this.selectedLevel);
     console.log(this.selectedProjectValue);
@@ -322,6 +342,8 @@ export class ApplicationsComponent implements OnInit {
   appNameFlag: boolean = false;
   existingAppNameFlag: boolean = false;
   projectNameFlag: boolean = false;
+  applicationNameFlag: boolean = false;
+
 
   createNewApplication(form: any) {
 
@@ -334,6 +356,13 @@ export class ApplicationsComponent implements OnInit {
           'border': '1px solid #F5222D'
         });
       }
+      if(this.selectedAppLevel == '' ||  this.selectedAppLevel == null ){
+        this.applicationNameFlag = true; 
+        $('.createApplicationDropdown').css({
+          'border': '1px solid #F5222D'
+        });
+      }
+    
       else{
         this.user.getApplicationsData().subscribe((data) => {
           this.appData1 = data;
@@ -385,6 +414,13 @@ export class ApplicationsComponent implements OnInit {
       if(this.selectedLevel == '' ||  this.selectedLevel == null ){
         this.projectNameFlag = true; 
         $('.createProjectsDropdown').css({
+          'border': '1px solid #F5222D'
+        });
+        
+      }
+      if(this.selectedAppLevel == '' ||  this.selectedAppLevel == null ){
+        this.applicationNameFlag = true; 
+        $('.createApplicationDropdown').css({
           'border': '1px solid #F5222D'
         });
       }
